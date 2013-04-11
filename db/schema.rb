@@ -11,8 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-
-ActiveRecord::Schema.define(:version => 20130411183040) do
+ActiveRecord::Schema.define(:version => 20130411185648) do
 
   create_table "tutorial_links", :force => true do |t|
     t.string   "title"
@@ -21,8 +20,6 @@ ActiveRecord::Schema.define(:version => 20130411183040) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
-ActiveRecord::Schema.define(:version => 20130411185648) do
 
   create_table "users", :force => true do |t|
     t.string   "username",               :default => "", :null => false
