@@ -1,0 +1,12 @@
+<h2>Create a tutorial</h2>
+
+<%= form_for @tutorial do |f| %>
+  <%= render 'shared/error_messages', object: @tutorial %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+
+  <%= f.label :content %>
+  <%= f.text_area :content %>
+
+  <%= f.submit "Submit tutorial" %>
+<% end %>
