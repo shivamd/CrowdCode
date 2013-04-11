@@ -1,8 +1,16 @@
 Crowdcode::Application.routes.draw do
+  root :to => "static_pages#index"
+  
   devise_for :users
   resources :tutorial_links
   resources :tutorials
-  root :to => "static_pages#index"
+  
+  match 'profile', :to => 'users#show', :as => :user_root
+  # resources :users, :only => [:show]
+
+  # match 'users/:id', to: "users#show"
+  
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

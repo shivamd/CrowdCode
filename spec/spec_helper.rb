@@ -14,6 +14,8 @@ Spork.prefork do
   require 'capybara/rails'
   require 'capybara/rspec'
   include Capybara::DSL
+  include Warden::Test::Helpers
+  Warden.test_mode!
 end
 
 Spork.each_run do
