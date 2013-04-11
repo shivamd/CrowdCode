@@ -68,6 +68,7 @@ GEM
       railties (>= 3.0.0)
     ffi (1.6.0)
     formatador (0.2.4)
+    git-pair (0.1.0)
     guard (1.7.0)
       formatador (>= 0.2.4)
       listen (>= 0.6.0)
@@ -185,6 +186,7 @@ DEPENDENCIES
   database_cleaner
   devise
   factory_girl_rails
+  git-pair
   guard-rspec
   guard-spork
   jquery-rails
