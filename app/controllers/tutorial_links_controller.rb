@@ -4,18 +4,14 @@ class TutorialLinksController < ApplicationController
 	end
 
 	def create
-		@tut_link = TutorialLink.new(params[:tutorial_links])
+		@tut_link = TutorialLink.new(params[:tutorial_link])
 		if @tut_link.save 
-			redirect_to tutorial_links, notice: "Submitted Tutorial, it will be shortly uploaded"
+			redirect_to tutorial_links_path, notice: "Submitted Tutorial, it will be shortly uploaded"
 		else
 			render :new
 		end
 	end
 
-	end
-
-	def show
-	end
 
 	def index 
 		@tut_links = TutorialLink.all

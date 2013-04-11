@@ -1,0 +1,6 @@
+<h2>Tutorials</h2>
+<% @tut_links.each do |tut| %>
+	<ul>
+		<li><%= link_to tut.title, "http://#{tut.url}" %></li>
+	</ul>
+<% end %>
