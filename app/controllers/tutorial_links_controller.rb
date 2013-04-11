@@ -1,6 +1,6 @@
 class TutorialLinksController < ApplicationController
 
-	# before_filter :authenticate_user!, only: [:new, :create]
+	before_filter :authenticate_user!, only: [:new, :create]
 
 	def new
 		@tut_link = TutorialLink.new
