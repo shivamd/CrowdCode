@@ -18,5 +18,6 @@ class TutorialsController < ApplicationController
 
 	def show 
 		@tutorial = Tutorial.find(params[:id])
+		@markdown = MARKDOWN.render(@tutorial.content)
 	end
 end
