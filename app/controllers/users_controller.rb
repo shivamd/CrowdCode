@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
 
   def show
-    @user = User.find(params[:id])
+    p current_user
+    puts '*' *30
+
   end
+
 end
