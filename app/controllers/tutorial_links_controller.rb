@@ -10,6 +10,7 @@ class TutorialLinksController < ApplicationController
 		@tut_link = TutorialLink.new(params[:tutorial_link])
 		@tut_link.user_id = current_user.id
 		if @tut_link.save 
+			@tut_link.create_tags(params[:tag])
 			redirect_to tutorial_links_path, notice: "Submitted Tutorial, it will be shortly uploaded"
 		else
 			render :new

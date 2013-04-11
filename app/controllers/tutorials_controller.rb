@@ -10,6 +10,7 @@ class TutorialsController < ApplicationController
 		@tutorial = Tutorial.new(params[:tutorial])
 		@tutorial.user_id = current_user.id
 		if @tutorial.save 
+		  @tutorial.create_tags(params[:tag])
 			redirect_to @tutorial, notice: "Thanks for creating a tutorial"
 		else
 			render :new
