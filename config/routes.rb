@@ -1,4 +1,5 @@
 Crowdcode::Application.routes.draw do
+  resources :tutorial_links
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
