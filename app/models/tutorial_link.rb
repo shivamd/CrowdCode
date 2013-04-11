@@ -2,6 +2,8 @@ class TutorialLink < ActiveRecord::Base
   attr_accessible :title, :url, :user_id
 
   belongs_to :user
+  has_many :tags, through: :taggings
+  has_many :taggings, as: :taggable
 
 
   validates :title, presence: true, length: { minimum: 15 }
