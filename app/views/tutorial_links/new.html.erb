@@ -9,6 +9,10 @@
   <%= f.label :url %>
   <%= f.text_field :url %>
 
+  <small>e.g "ruby ruby-on-rails javascript oauth"</small>
+  <%= label_tag :tags %>
+  <%= text_field_tag :tag %>
+
   <%= f.submit "Submit tutorial" %>
 <% end %>
 
