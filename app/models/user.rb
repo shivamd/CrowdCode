@@ -10,8 +10,4 @@ class User < ActiveRecord::Base
   has_many :tutorials 
   has_many :comments
   
-  def minutes_ago
-    @minutes = ((Time.now - self.created_at)/60).to_i
-  end
-
 end

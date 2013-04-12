@@ -5,10 +5,14 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(params[:comment])
+    @comment.username = current_user.username 
     @comment.user_id = current_user.id
-    @comment.username = current_user.username
     if @comment.save
-      @tutorial = TutorialLink.find(@comment.commentable_id)
+      if @comment.commentable_type == "Tutorial"
+        @tutorial = Tutorial.find(@comment.commentable_id)
+      else
+        @tutorial = TutorialLink.find(@comment.commentable_id)
+      end
       redirect_to @tutorial
     else
       redirect_to :back, notice: @comment.errors.messages #This needs to be fixed up. 
