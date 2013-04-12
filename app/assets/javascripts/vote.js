@@ -13,10 +13,10 @@ var Vote = {
   changeForm: function(event, data){
 
     $(this).closest('div').html(data.template);
+
     $(this).siblings('.points').text(data.vote_count);
-
+    
   },
-
 }
 
 $(document).ready(function(){
