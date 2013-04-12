@@ -32,6 +32,7 @@ GEM
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     bootstrap (0.0.1)
+    bootstrap-sass (2.1.0.0)
     bourbon (3.1.2.1)
       sass (>= 3.2.0)
       thor
@@ -196,6 +197,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap
+  bootstrap-sass (= 2.1)
   bourbon
   capybara
   coffee-rails (~> 3.2.1)
