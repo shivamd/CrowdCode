@@ -1,0 +1,7 @@
+<ul>
+  <% if upvote?(votable_type.class.to_s, votable_type.id)  %>
+  <li class="update"> <%= vote_button("update", "Downvote", votable_type, :put) %></li>
+  <% else  %>
+  <li class="update"> <%= vote_button("update", "Upvote", votable_type, :put) %></li>
+  <% end  %>
+</ul>

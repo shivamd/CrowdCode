@@ -4,7 +4,7 @@ Crowdcode::Application.routes.draw do
   devise_for :users
   resources :tutorial_links
   resources :tutorials
-  
+  resources :votes, :only => [:create, :update]  
   match 'profile', :to => 'users#show', :as => :user_root
   # resources :users, :only => [:show]
 

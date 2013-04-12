@@ -1,8 +1,5 @@
 Crowdcode::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
-  Tire.configure do
-    url "http://localhost:3000/tutorial_links"
-  end
   # Code is not reloaded between requests
   config.cache_classes = true
 

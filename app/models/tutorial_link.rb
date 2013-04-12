@@ -4,11 +4,8 @@ class TutorialLink < ActiveRecord::Base
   belongs_to :user
   has_many :tags, through: :taggings
   has_many :taggings, as: :taggable
+  has_many :votes, as: :votable
   accepts_nested_attributes_for :tags
-
-
-  include Tire::Model::Search
-  include Tire::Model::Callbacks 
   
   validates :title, presence: true, length: { minimum: 15 }
   VALID_URL_REGEX = /^(http|https):\/\/|[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,6}(:[0-9]{1,5})?(\/.*)?$/ix
@@ -23,4 +20,8 @@ class TutorialLink < ActiveRecord::Base
   	end
   end
 
+    def author?(user)
+      self.user == user
+    end
+  
 end

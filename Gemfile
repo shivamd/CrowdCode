@@ -25,6 +25,7 @@ group :test, :development do
   gem 'rspec-rails'
   gem 'guard-spork'
   gem 'spork'
+  gem 'debugger'
 end
 
 group :test do
@@ -41,7 +42,7 @@ gem 'bourbon'
 gem 'jquery-rails'
 gem 'bootstrap'
 gem 'git-pair'
-gem 'tire'
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
