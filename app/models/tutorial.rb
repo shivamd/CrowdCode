@@ -19,4 +19,8 @@ class Tutorial < ActiveRecord::Base
   		Tagging.create(taggable_id: self.id, taggable_type: "Tutorial", tag_id: tag.id)
   	end
   end
+
+  def vote_count
+    self.votes.map(&:score).inject(:+)
+  end
 end

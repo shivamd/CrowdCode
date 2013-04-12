@@ -8,20 +8,16 @@
 <h2>Tutorials</h2>
 <% @tut_links.each do |tut| %>
 	<ul>
-		<li><%= link_to tut.title, "http://#{tut.url}" %></li>
-    <div class="votes">
-      <p><%= points(tut) %> points</p>
-      <% if user_signed_in? && !tut.author?(current_user) %>
-        <% unless current_user.voted?(tut) %>
-        <div class="create_votes">
-          <%= render 'votes/vote', :votable_type => tut %>
-        </div> 
-        <% else %>
-        <div class="update_votes">
-          <%= render 'votes/edit_votes', :votable_type => tut %>
-        </div>
+		<li>
+      <%= link_to tut.title, "http://#{tut.url}" %>
+      <span class="points"><%= tut.vote_count %> </span>Points
+      <div class="votes">
+        <% if user_signed_in? && !tut.author?(current_user) %>
+          <% voted = current_user.voted?(tut) ? true : false %>
+          <%= render 'votes/vote', :votable_type => tut, :voted => voted %>
         <% end %>
-      <% end %>
-    </div>
+      </div>
+    </li>
+    
 	</ul>
 <% end %>

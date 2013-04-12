@@ -1,4 +1,8 @@
-<ul>
-  <li class="create"><%= vote_button "create", "Upvote", votable_type %></li>
-  <li class="create"><%= vote_button "create", "Downvote", votable_type %></li>
-</ul>
+<% if voted %>
+  <% vote_type = upvote?(votable_type.class.to_s, votable_type.id) ? "Downvote" : "Upvote" %>
+  <%= vote_button("update", vote_type, votable_type, :put) %>
+<% else %>
+  <%= vote_button "create", "Upvote", votable_type %>
+  <%= vote_button "create", "Downvote", votable_type %>
+  </ul>
+<% end %>

@@ -11,7 +11,6 @@ class User < ActiveRecord::Base
   has_many :tutorials 
   has_many :votes
 
-
   def voted?(votable)
     get_vote(votable).present?
   end

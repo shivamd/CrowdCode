@@ -20,8 +20,11 @@ class TutorialLink < ActiveRecord::Base
   	end
   end
 
-    def author?(user)
-      self.user == user
-    end
+  def author?(user)
+    self.user == user
+  end
   
+  def vote_count
+    self.votes.map(&:score).inject(:+)
+  end
 end
