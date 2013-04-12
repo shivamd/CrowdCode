@@ -6,7 +6,7 @@ class VotesController < ApplicationController
       if vote.save!
         render :text => render_to_string(:partial => 'edit_votes', :locals => { :votable_type => params[:vote][:votable_type].constantize.find(vote.votable_id) })
       else
-        "ERROR"
+        redirect_to :back
       end
     end
 
@@ -18,7 +18,7 @@ class VotesController < ApplicationController
       if vote.save!
         render :text => render_to_string(:partial => 'edit_votes', :locals => { :votable_type => params[:vote][:votable_type].constantize.find(vote.votable_id) })
       else
-        puts "nice try ballot stuffer"
+        redirect_to :back
       end
     end
 
