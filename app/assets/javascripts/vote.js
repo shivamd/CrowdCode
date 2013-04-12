@@ -1,8 +1,8 @@
 var Vote = {
 
   init: function(){
-    $('li.create form.button_to').on('ajax:success', this.replaceForm);
-    $('li.update form.button_to').on('ajax:success', this.changeForm);
+    $('.votes').on('ajax:success', 'li.create form.button_to', this.replaceForm);
+    $('.votes').on('ajax:success', 'li.update form.button_to', this.changeForm);
   },
   replaceForm: function(event, data){
     $(this).closest('div.create_votes').html(data);
