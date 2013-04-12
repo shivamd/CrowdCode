@@ -21,4 +21,5 @@ class TutorialLinksController < ApplicationController
 	def index 
 		@tut_links = TutorialLink.all
 	end
+
 end

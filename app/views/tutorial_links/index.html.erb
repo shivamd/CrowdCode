@@ -1,3 +1,9 @@
+<%= form_tag tutorial_links_path, method: :get do %>
+<p>
+  <%= text_field_tag :query, params[:query] %>
+  <%= submit_tag "Search", name: nil %>
+</p>
+<% end %>
 <h2>Tutorials</h2>
 <% @tut_links.each do |tut| %>
 	<ul>

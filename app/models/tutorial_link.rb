@@ -7,6 +7,9 @@ class TutorialLink < ActiveRecord::Base
   accepts_nested_attributes_for :tags
 
 
+  include Tire::Model::Search
+  include Tire::Model::Callbacks 
+  
   validates :title, presence: true, length: { minimum: 15 }
   VALID_URL_REGEX = /^(http|https):\/\/|[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,6}(:[0-9]{1,5})?(\/.*)?$/ix
   validates :url, presence: true, format: { with: VALID_URL_REGEX }, uniqueness: true
@@ -19,4 +22,5 @@ class TutorialLink < ActiveRecord::Base
   		Tagging.create(taggable_id: self.id, taggable_type: "TutorialLink", tag_id: tag.id)
   	end
   end
+
 end

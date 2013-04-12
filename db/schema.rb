@@ -11,6 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+
 ActiveRecord::Schema.define(:version => 20130411223136) do
 
   create_table "taggings", :force => true do |t|
@@ -26,6 +27,9 @@ ActiveRecord::Schema.define(:version => 20130411223136) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+ActiveRecord::Schema.define(:version => 20130411234558) do
+
 
   create_table "tutorial_links", :force => true do |t|
     t.string   "title"
@@ -57,6 +61,7 @@ ActiveRecord::Schema.define(:version => 20130411223136) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "description"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

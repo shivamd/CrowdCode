@@ -1,6 +1,8 @@
 Crowdcode::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb
-
+  Tire.configure do
+    url "http://localhost:3000/tutorial_links"
+  end
   # Code is not reloaded between requests
   config.cache_classes = true
 
@@ -22,7 +24,7 @@ Crowdcode::Application.configure do
 
   # Generate digests for assets URLs
   config.assets.digest = true
-
+  
   # Defaults to nil and saved in location specified by config.assets.prefix
   # config.assets.manifest = YOUR_PATH
 
