@@ -4,6 +4,8 @@ Crowdcode::Application.routes.draw do
   devise_for :users
   resources :tutorial_links
   resources :tutorials
+
+  resources :tags, only: [:index, :show]
   
   match 'profile', :to => 'users#show', :as => :user_root
   # resources :users, :only => [:show]
