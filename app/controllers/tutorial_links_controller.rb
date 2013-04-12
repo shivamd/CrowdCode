@@ -22,4 +22,25 @@ class TutorialLinksController < ApplicationController
 		@tut_links = TutorialLink.all
 	end
 
+	def edit
+		@tutorial = TutorialLink.find(params[:id])
+	end
+
+	def update
+		 @tutorial = TutorialLink.find(params[:id])
+      if @tutorial.update_attributes(params[:tutorial_link])
+         redirect_to @tutorial
+         flash_update_success
+      else
+         flash_update_failed
+         redirect_to :back
+      end
+		
+	end
+
+	def destroy
+		
+	end
+
+
 end

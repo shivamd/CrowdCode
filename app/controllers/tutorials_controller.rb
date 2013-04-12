@@ -6,6 +6,25 @@ class TutorialsController < ApplicationController
 		@tutorial = Tutorial.new
 	end
 
+	def edit
+		@tutorial = Tutorial.find(params[:id])
+		get_tags_string(@tutorial)
+	end
+
+	def update
+		@tutorial = Tutorial.find(params[:id])
+		@tutorial.update_attributes(params[:tutorial])
+		@tutorial.tags.clear
+		@tutorial.create_tags(params[:tag])
+		redirect_to @tutorial
+	end
+
+
+	def destroy
+
+	end
+
+	
 	def create 
 		@tutorial = Tutorial.new(params[:tutorial])
 		@tutorial.user_id = current_user.id
