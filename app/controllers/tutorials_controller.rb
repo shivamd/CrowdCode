@@ -6,6 +6,31 @@ class TutorialsController < ApplicationController
 		@tutorial = Tutorial.new
 	end
 
+	def edit
+		@tutorial = Tutorial.find(params[:id])
+		get_tags_string(@tutorial)
+	end
+
+	def update
+		@tutorial = Tutorial.find(params[:id])
+		if @tutorial.update_attributes(params[:tutorial])
+			@tutorial.tags.clear
+			@tutorial.create_tags(params[:tag])
+			flash_update_success
+			redirect_to @tutorial
+		else
+      flash_update_failed
+      redirect_to :back
+    end
+	end
+
+
+	def destroy
+		@tutorial = Tutorial.find(params[:id]).destroy
+		redirect_to '/profile'
+	end
+
+	
 	def create 
 		@tutorial = Tutorial.new(params[:tutorial])
 		@tutorial.user_id = current_user.id
@@ -20,5 +45,6 @@ class TutorialsController < ApplicationController
 	def show 
 		@tutorial = Tutorial.find(params[:id])
 		@markdown = MARKDOWN.render(@tutorial.content)
+		get_tags_string(@tutorial)
 	end
 end
