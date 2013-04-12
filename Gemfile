@@ -39,7 +39,6 @@ end
 gem 'devise'
 gem 'bourbon'
 gem 'jquery-rails'
-gem 'bootstrap'
 gem 'bootstrap-sass', '2.1'
 gem 'git-pair'
 gem 'tire'

@@ -42,6 +42,7 @@ class TutorialLinksController < ApplicationController
   def show 
     @tutorial = TutorialLink.find(params[:id])
     get_tags_string(@tutorial)
+    @comment = Comment.new(commentable_type: TutorialLink, commentable_id: @tutorial.id, username: current_user.username, user_id: current_user.id)
   end
 
 	def destroy

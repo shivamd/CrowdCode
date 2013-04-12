@@ -5,8 +5,10 @@ Crowdcode::Application.routes.draw do
   resources :tutorial_links, only: [:show, :new, :create, :edit, :update, :destroy]
   resources :tutorials, only: [:show, :new, :create, :edit, :update, :destroy]
   resources :tags, only: [:index, :show]
+  resources :comments
   
-  match 'profile', :to => 'users#show', :as => :user_root
+  match 'profile', :to => 'users#show', :as => :user_root, via: :get
+  match '/:username', :to => 'users#show', :as => :public_profile, via: :get
   # resources :users, :only => [:show]
 
   # match 'users/:id', to: "users#show"

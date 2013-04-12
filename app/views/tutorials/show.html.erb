@@ -5,3 +5,8 @@
 <% end %>
 <%= button_to "Edit tutorial", edit_tutorial_path, method: "get" %>
 <%= button_to "Delete tutorial", tutorial_path, method: "delete" %>
+
+<%= form_for @tutorial.comment do |f| %>
+<%= f.label :content %>
+<%= f.text_area :content %>
+<%= f.submit "Add comment" %>
