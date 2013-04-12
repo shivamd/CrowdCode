@@ -3,8 +3,8 @@ class TutorialLink < ActiveRecord::Base
 
   belongs_to :user
   has_many :tags, through: :taggings
-  has_many :taggings, as: :taggable
-  has_many :votes, as: :votable
+  has_many :taggings, as: :taggable, dependent: :destroy
+  has_many :votes, as: :votable, dependent: :destroy
   accepts_nested_attributes_for :tags
   
   validates :title, presence: true, length: { minimum: 15 }

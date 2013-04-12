@@ -20,7 +20,6 @@ module VotesHelper
 
   def find_votes(votable, votable_id)
     current_user.votes.where("votable_type = ? AND votable_id = ?", votable, votable_id)
-    # current_user.votes.find_by_votable_type_and_votable_id(votable, votable_id)
   end
 
 end

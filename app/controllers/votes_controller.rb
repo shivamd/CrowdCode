@@ -4,7 +4,7 @@ class VotesController < ApplicationController
       vote = Vote.new(params[:vote])
       vote.user_id = current_user.id
       if vote.save!
-        render :text => render_to_string(:partial => 'edit_votes', :locals => { :object => params[:vote][:votable_type].constantize.find(vote.votable_id) })
+        render :text => render_to_string(:partial => 'edit_votes', :locals => { :votable_type => params[:vote][:votable_type].constantize.find(vote.votable_id) })
       else
         "ERROR"
       end
