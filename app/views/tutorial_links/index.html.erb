@@ -10,6 +10,7 @@
 	<ul>
 		<li><%= link_to tut.title, "http://#{tut.url}" %></li>
     <div class="votes">
+      <p><%= points(tut) %> points</p>
       <% if user_signed_in? && !tut.author?(current_user) %>
         <% unless current_user.voted?(tut) %>
         <div class="create_votes">

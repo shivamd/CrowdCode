@@ -22,4 +22,16 @@ module VotesHelper
     current_user.votes.where("votable_type = ? AND votable_id = ?", votable, votable_id)
   end
 
+
+  def upvote_count(votable_type)
+    votable_type.votes.count(conditions: "score = 1")
+  end
+
+  def downvote_count(votable_type)
+    votable_type.votes.count(conditions: "score = -1")
+  end
+
+  def points(votable_type)
+    upvote_count(votable_type) - downvote_count(votable_type)
+  end
 end
