@@ -1,10 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-<<<<<<< HEAD
-  
-=======
-
   def flash_update_success
     flash[:notice] = "Successfully updated!"
   end
@@ -18,8 +14,5 @@ class ApplicationController < ActionController::Base
     tutorial.tags.each do |tag|
       @tags += tag.content + ' '
     end
-    p @tags
-
   end
->>>>>>> update
 end
