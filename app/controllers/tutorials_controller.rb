@@ -13,10 +13,15 @@ class TutorialsController < ApplicationController
 
 	def update
 		@tutorial = Tutorial.find(params[:id])
-		@tutorial.update_attributes(params[:tutorial])
-		@tutorial.tags.clear
-		@tutorial.create_tags(params[:tag])
-		redirect_to @tutorial
+		if @tutorial.update_attributes(params[:tutorial])
+			@tutorial.tags.clear
+			@tutorial.create_tags(params[:tag])
+			flash_update_success
+			redirect_to @tutorial
+		else
+      flash_update_failed
+      redirect_to :back
+    end
 	end
 
 
@@ -40,5 +45,6 @@ class TutorialsController < ApplicationController
 	def show 
 		@tutorial = Tutorial.find(params[:id])
 		@markdown = MARKDOWN.render(@tutorial.content)
+		get_tags_string(@tutorial)
 	end
 end
