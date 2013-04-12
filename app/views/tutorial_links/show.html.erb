@@ -12,20 +12,5 @@
 <%= f.submit "Add comment" %>
 <% end %>
 
-<% unless @comments.empty? %>
-<%= @comments.empty? %> 
-  <% @comments.each do |comment| %>
-    <div class="comment-box">
-      <div class="comment-header">
-        <span class="comment-head">
-          <%= link_to "#{comment.username.capitalize}", "/#{comment.username}"  %> | 
-          <%= "#{distance_of_time_in_words_to_now(comment.created_at)} ago" %>
-        </span>
-      </div>
-      <div class="comment-body">
-        <p><%= comment.content %></p><br>
-      </div>
-    </div>
-  <% end %>
-<% end %>
+<%= render 'shared/comments' %>
 

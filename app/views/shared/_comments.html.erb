@@ -1,0 +1,11 @@
+<section>
+  <% @comments.each do |comment| %>
+    <ul>
+        <li><%= comment.content %></li>
+        <small>
+          <%= time_ago_in_words(comment.created_at) %> ago
+          <%= link_to comment.user.username.capitalize , comment.user.username  %>
+        </small>
+    </ul>
+  <% end %>
+</section>
