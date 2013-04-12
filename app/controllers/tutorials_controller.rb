@@ -21,7 +21,8 @@ class TutorialsController < ApplicationController
 
 
 	def destroy
-
+		@tutorial = Tutorial.find(params[:id]).destroy
+		redirect_to '/profile'
 	end
 
 	
