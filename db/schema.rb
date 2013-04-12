@@ -11,8 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-
-ActiveRecord::Schema.define(:version => 20130411223136) do
+ActiveRecord::Schema.define(:version => 20130411234558) do
 
   create_table "taggings", :force => true do |t|
     t.string   "taggable_type"
@@ -27,9 +26,6 @@ ActiveRecord::Schema.define(:version => 20130411223136) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
-
-ActiveRecord::Schema.define(:version => 20130411234558) do
-
 
   create_table "tutorial_links", :force => true do |t|
     t.string   "title"
