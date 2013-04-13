@@ -1,3 +1,27 @@
-<h1>Welcome to your profile, <%= @current_user.username %></h1>
-<%= gravatar_for(current_user.email) %><br>
-<%= @current_user.description %>
+<h1><%= @user.username %></h1>
+<%= gravatar_for(@user.email) %><br>
+<%= @user.description %>
+
+<div class="stats">
+
+		<div class="tutorials">
+			 <h2><%= @user.username%>'s Tutorials</h2>
+			<% (@user.tutorials + @user.tutorial_links).each do |tut| %>
+				<li><%= link_to tut.title, generate_url(tut) %></li>
+			<% end %>
+		</div>
+		<div class="comments">
+			<h2>Latest Comments</h2>
+			<% @user.comments.limit(5).each do |comment| %>
+				<li>
+					<%= comment.content %> 
+					<small><%= time_ago_in_words(comment.created_at)%> ago</small> 
+				</li>
+			<% end %>
+		</div>
+
+		<div class="comments">
+			<h2>Latest Votes</h2>
+			<!-- vote logic goes here -->	
+		</div>
+</div>

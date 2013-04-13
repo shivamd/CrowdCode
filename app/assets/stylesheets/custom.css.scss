@@ -1,6 +1,6 @@
 @import "bootstrap";
 
-img {
+img.tutorial {
 	max-width: 100%;
 }
 
@@ -57,7 +57,7 @@ img.tutorial {
 
 
 @media screen and (max-width: 768px) { 
-	img {
+	img.tutorial {
 		width: 100%;
 	}
 	p.tutorial {

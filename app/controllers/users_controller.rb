@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
 
   def show
-    current_user
+   @user=  User.includes(:tutorials, 
+    							:tutorial_links,
+    							:comments).find_by_username(params[:username])
   end
 end
