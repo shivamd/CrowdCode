@@ -1,6 +1,7 @@
-<%= form_for @comment do |f| %>
-<%= f.hidden_field :commentable_id %>
-<%= f.hidden_field :commentable_type %>
-<%= f.text_area :content, size: "10x5" %><br>
-<%= f.submit "Add comment" %>
+<%= form_for comment do |f| %>
+  <%= render 'shared/error_messages', object: comment %>
+	<%= f.hidden_field :commentable_id %>
+	<%= f.hidden_field :commentable_type %>
+	<%= f.text_area :content, size: "10x5" %><br>
+	<%= f.submit "Add comment" %>
 <% end %>

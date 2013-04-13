@@ -5,6 +5,6 @@
 <%= button_to "Edit tutorial", edit_tutorial_path, method: "get" %>
 <%= button_to "Delete tutorial", tutorial_path, method: "delete" %>
 
-<%= render 'shared/comments_form' %>
+<%= render 'shared/comments_form', comment: @comment %>
 <%= render 'shared/comments' %>
 

@@ -42,7 +42,7 @@ class TutorialLinksController < ApplicationController
   def show 
     @tutorial = TutorialLink.find(params[:id])
     get_tags_string(@tutorial)
-    @comments = @tutorial.comments.all
+    @comments = @tutorial.comments.includes(:user)
     @comment = @tutorial.comments.new
   end
 

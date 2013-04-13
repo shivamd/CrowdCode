@@ -9,8 +9,8 @@ class Tutorial < ActiveRecord::Base
   accepts_nested_attributes_for :comments
 
 
-  # validates :content, presence: true, length: { minimum: 100 } # turning off for testing
-  # validates :title, presence: true, length: { minimum: 15 } # turning off for testing
+  validates :content, presence: true, length: { minimum: 100 }
+  validates :title, presence: true, length: { minimum: 15 } 
   validates :user_id, presence: true, numericality: true
 
   def create_tags(tags)
