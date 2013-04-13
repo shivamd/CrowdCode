@@ -12,4 +12,6 @@ describe Tutorial do
   it { should_not allow_value("two").for(:user_id) }
 
   it { should belong_to(:user) }
+
+  it { should have_many(:comments) }
 end
