@@ -4,7 +4,7 @@ class VotesController < ApplicationController
       vote = Vote.new(params[:vote])
       vote.user_id = current_user.id
       if vote.save!
-        render :text => render_to_string(:partial => 'edit_votes', :locals => { :votable_type => params[:vote][:votable_type].constantize.find(vote.votable_id) })
+        render :json => {:template => render_to_string(:partial => 'edit_votes', :locals => { :votable_type => params[:vote][:votable_type].constantize.find(vote.votable_id) }), :vote_count => vote.votable.vote_count}
       else
         "ERROR"
       end
@@ -16,7 +16,7 @@ class VotesController < ApplicationController
                         user_id: current_user.id).first
       vote.score = params[:vote][:score]
       if vote.save
-        render :json => {:template => render_to_string(:partial => 'edit_votes', :locals => { :votable_type => params[:vote][:votable_type].constantize.find(vote.votable_id) }), :vote_count => vote.votable.vote_count}
+        respond :json => {:template => render_to_string(:partial => 'edit_votes', :locals => { :votable_type => params[:vote][:votable_type].constantize.find(vote.votable_id) }), :vote_count => vote.votable.vote_count}
       else
         puts "already voted"
       end
