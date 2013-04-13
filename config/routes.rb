@@ -1,6 +1,6 @@
 Crowdcode::Application.routes.draw do
   root :to => "static_pages#index"  
-  devise_for :users, controllers: { omniauth_callabacks: "omniauth_callabacks" }
+  devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
 
 
   resources :tutorial_links
