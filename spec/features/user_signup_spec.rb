@@ -19,5 +19,7 @@ describe "User flow" do
     fill_in "user_password", with: "password"
     expect{ click_button "Sign up"}.to change(User, :count).by(1)
   end
-
+  it "allows user to logout" do
+    
+  end
 end

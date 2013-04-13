@@ -33,9 +33,11 @@ group :test do
   gem 'capybara'
   gem 'shoulda-matchers'
   gem 'database_cleaner'
+  gem 'faker'
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
   gem 'rb-fsevent'
+  gem 'selenium-webdriver'
 end
 
 gem 'devise'
