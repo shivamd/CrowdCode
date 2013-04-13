@@ -18,9 +18,9 @@ class TutorialLinksController < ApplicationController
 	end
 
 	def index 
-		@tut_links = TutorialLink.all
-		@search = TutorialLink.search(params[:search])
-		@tut_links = @search.result(:distinct => true)
+		# @tut_links = TutorialLink.all
+		@search = TutorialLink.search(params[:q])
+		@tut_links = @search.result
 	end
 
 	def edit
