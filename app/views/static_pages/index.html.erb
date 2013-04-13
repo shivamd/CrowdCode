@@ -1,1 +1,13 @@
-<h1>Crowdcode</h1>
+<div class="container">
+	<h1>Crowdcode</h1>
+	<div class="tutorials">
+		<% @tutorials.each do |tut| %>
+			<div class="tutorial_box">
+				<div class="tutorial">
+					<%= image_tag "ruby.png" %>
+					<p class="tutorial"><%= tut.title %></p>
+				</div>
+			</div>
+		<% end %>
+	</div>
+</div>

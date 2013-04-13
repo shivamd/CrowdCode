@@ -1,1 +1,79 @@
 @import "bootstrap";
+
+img {
+	max-width: 100%;
+}
+
+body {
+	font-size: 100%;
+	background-color: #e3e3e3;
+	font-family: Helvetica;
+
+}
+
+
+h1 {
+	font-size: 2em;
+}
+
+.container {
+	width: 90%;
+	margin: 0 auto;
+}
+div.tutorials {
+	/*width: 100%;*/
+}
+
+div.tutorial_box {
+	width: 33.5%;
+	margin: 5.208333%;
+	background-color: rgb(235, 235, 235);
+	float: left;
+	border-radius: 5px;
+	box-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+}
+
+
+
+li {
+	list-style-type: none;
+}
+
+p.tutorial {
+	display: inline;
+	width: 40.5555556%;
+	word-wrap: break-word;
+	font-weight: bold;
+	font-size: 1.8em;
+	text-align: center;
+	float: right;
+}
+
+img {
+	float: left;
+	width: 59%;
+}
+
+
+
+@media screen and (max-width: 768px) { 
+	img {
+		width: 100%;
+	}
+	p.tutorial {
+		display: block;
+		/*float: none;*/
+		width: 100%;
+		font-size: 0.8em;
+	}
+}
+
+
+@media screen and (max-width: 480px) {
+	div.tutorial_box {
+		max-height: 200px;
+		overflow: hidden;
+		float: none;
+		margin: 5.20833% auto;
+	}
+}
