@@ -13,6 +13,16 @@ module Merit
     include Merit::PointRulesMethods
 
     def initialize
+
+     
+
+      score 100, to: :user, on: 'comments#create' do |comment| 
+        comment.user.comments.count == 70
+      end
+
+      # score 13, :on => 'comments#create', :to => :user
+
+
       # score 10, :on => 'users#update' do
       #   user.name.present?
       # end

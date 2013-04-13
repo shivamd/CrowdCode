@@ -14,7 +14,12 @@ Merit.setup do |config|
 end
 
 # Create application badges (uses https://github.com/norman/ambry)
-# Merit::Badge.create!({
-#   :id => 1,
-#   :name => 'just-registered'
-# })
+Merit::Badge.create!({
+  id: 1,
+  name: 'Commenting-Junkie'
+})
+
+Merit::Badge.create!({
+	id: 2,
+	name: "Ultimate-Commenter"
+})
