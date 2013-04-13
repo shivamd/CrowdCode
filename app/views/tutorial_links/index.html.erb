@@ -1,7 +1,7 @@
 <%= form_tag tutorial_links_path, method: :get do %>
-<%= form_for @search do |f| %>
-<%= f.text_field :title_contains, :placeholder => "Search by title" %>
-<%= f.submit %>
+<%= search_form_for @search do |f| %>
+<%= f.text_field :title_cont, :placeholder => "Search by title" %>
+<%= f.submit "Search" %>
 <% end %>
 <% end %>
 <h2>Tutorials</h2>

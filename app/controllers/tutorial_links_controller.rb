@@ -20,7 +20,7 @@ class TutorialLinksController < ApplicationController
 	def index 
 		@tut_links = TutorialLink.all
 		@search = TutorialLink.search(params[:search])
-		@tut_links = @search.relation
+		@tut_links = @search.result(:distinct => true)
 	end
 
 	def edit
