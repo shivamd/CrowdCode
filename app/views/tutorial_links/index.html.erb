@@ -1,8 +1,6 @@
 <%= form_tag tutorial_links_path, method: :get do %>
-<%= search_form_for @search do |f| %>
-<%= f.text_field :title_cont, :placeholder => "Search by title" %>
-<%= f.submit "Search" %>
-<% end %>
+<%= render 'shared/search' %>
+
 <% end %>
 <h2>Tutorials</h2>
 <% @tut_links.each do |tut| %>

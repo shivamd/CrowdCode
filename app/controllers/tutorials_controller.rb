@@ -11,6 +11,12 @@ class TutorialsController < ApplicationController
 		get_tags_string(@tutorial)
 	end
 
+	def index
+		@tutorials = Tutorial.all
+		@search = Tutorial.search(params[:q])
+		@tutorials = @search.result	
+	end
+
 	def update
 		@tutorial = Tutorial.find(params[:id])
 		if @tutorial.update_attributes(params[:tutorial])

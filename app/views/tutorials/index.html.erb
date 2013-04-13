@@ -1,0 +1,4 @@
+<%= render 'shared/search' %>
+<% @tutorials.each do |tutorial| %>
+<%= link_to tutorial_path(tutorial) %>
+<% end %>

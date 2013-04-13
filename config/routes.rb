@@ -3,7 +3,7 @@ Crowdcode::Application.routes.draw do
   
   devise_for :users
   resources :tutorial_links, only: [:show, :new, :create, :edit, :update, :destroy, :index]
-  resources :tutorials, only: [:show, :new, :create, :edit, :update, :destroy]
+  resources :tutorials, only: [:show, :index, :new, :create, :edit, :update, :destroy]
   resources :tags, only: [:index, :show]
   resources :comments
   
