@@ -3,24 +3,26 @@ class TutorialLinksController < ApplicationController
 	before_filter :authenticate_user!, only: [:new, :create]
 
 	def new
-		@tut_link = TutorialLink.new
+		@tutorial = TutorialLink.new
 	end
 
 	def create
-		@tut_link = TutorialLink.new(params[:tutorial_link])
-		@tut_link.user_id = current_user.id
-		if @tut_link.save 
-			@tut_link.create_tags(params[:tag])
-			redirect_to @tut_link, notice: "Submitted Tutorial!"
+		@tutorial = TutorialLink.new(params[:tutorial_link])
+		@tutorial.user_id = current_user.id
+		if @tutorial.save 
+			@tutorial.create_tags(params[:tag])
+			redirect_to @tutorial, notice: "Submitted Tutorial!"
 		else
 			render :new
 		end
 	end
 
 	def index 
-		@tut_links = TutorialLink.all
+		@tutorials = TutorialLink.all
+    p params[:q]
+    puts '*' *300
 		@search = TutorialLink.search(params[:q])
-		@tut_links = @search.result
+		@tutorials = @search.result
 	end
 
 	def edit

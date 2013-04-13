@@ -39,7 +39,7 @@ li {
 	list-style-type: none;
 }
 
-p.tutorial {
+a.tutorial {
 	display: inline;
 	width: 40.5555556%;
 	word-wrap: break-word;
@@ -47,6 +47,12 @@ p.tutorial {
 	font-size: 1.8em;
 	text-align: center;
 	float: right;
+	text-decoration: none !important;
+	color: #444444;
+}
+
+a:hover {
+	color: #333333;
 }
 
 img.tutorial {
@@ -60,10 +66,11 @@ img.tutorial {
 	img.tutorial {
 		width: 100%;
 	}
-	p.tutorial {
+	a.tutorial {
 		display: block;
 		width: 100%;
 		font-size: 0.8em;
+		text-decoration: none !important;
 	}
 }
 
@@ -75,3 +82,4 @@ img.tutorial {
 		float: none;
 		margin: 5.20833% auto;
 	}
+}

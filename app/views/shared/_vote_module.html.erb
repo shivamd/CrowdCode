@@ -1,0 +1,9 @@
+<div class="votes">
+  <span class="points"><%= tut.vote_count ? tut.vote_count : "0" %> </span> Points
+  <div class="vote-btns">
+    <% if user_signed_in? && !tut.author?(current_user) %>
+      <% voted = current_user.voted?(tut) ? true : false %>
+      <%= render 'votes/vote', :votable_type => tut, :voted => voted %>
+    <% end %>
+  </div>
+</div>
