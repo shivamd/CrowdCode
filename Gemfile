@@ -6,6 +6,7 @@ gem 'redcarpet'
 
 gem 'ransack'
 gem 'merit'
+gem 'omniauth-github'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
