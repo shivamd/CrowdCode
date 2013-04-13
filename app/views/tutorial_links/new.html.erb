@@ -1,8 +1,8 @@
 <h1>Submit a Tutorial</h1>
 
 
-<%= form_for @tut_link do |f| %>
-  <%= render 'shared/error_messages', object: @tut_link %>
+<%= form_for @tutorial do |f| %>
+  <%= render 'shared/error_messages', object: @tutorial %>
   <%= f.label :title %>
   <%= f.text_field :title %>
 
