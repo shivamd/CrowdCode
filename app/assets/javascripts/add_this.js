@@ -1,5 +1,5 @@
 $(document).ready(function(){
- $('.add-this').hide();
+ $('.tutorial.add-this').hide();
  $('.tutorial_box').mouseenter(showShareButtons)
  $('.tutorial_box').mouseleave(hideShareButtons)
 
