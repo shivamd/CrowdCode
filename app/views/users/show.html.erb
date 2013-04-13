@@ -14,14 +14,19 @@
 			<h2>Latest Comments</h2>
 			<% @user.comments.limit(5).each do |comment| %>
 				<li>
-					<%= comment.content %> 
+					<%= link_to comment.content, comment.commentable_type.constantize.find(comment.commentable_id) %> 
 					<small><%= time_ago_in_words(comment.created_at)%> ago</small> 
 				</li>
 			<% end %>
 		</div>
 
-		<div class="comments">
+		<div class="votes">
 			<h2>Latest Votes</h2>
-			<!-- vote logic goes here -->	
+			<% @user.votes.limit(5).each do |vote| %>
+			  <li>
+			  	<%= link_to vote.votable_type.constantize.find(vote.votable_id).title, vote.votable_type.constantize.find(vote.votable_id) %>
+			  	<small><%= time_ago_in_words(vote.created_at) %> ago</small>
+			<% end %> 
+			  </li>
 		</div>
 </div>
