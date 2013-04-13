@@ -8,7 +8,6 @@ body {
 	font-size: 100%;
 	background-color: #e3e3e3;
 	font-family: Helvetica;
-
 }
 
 
@@ -21,18 +20,24 @@ h1 {
 	margin: 0 auto;
 }
 div.tutorials {
-	/*width: 100%;*/
+	position: relative;
+	span {
+		position: absolute; right: 0; bottom: 0;
+		margin: 3%;
+	}
 }
 
 div.tutorial_box {
+	position: relative;
 	width: 43.5%;
 	margin: 3.208333%;
 	background-color: rgb(235, 235, 235);
 	float: left;
 	border-radius: 5px;
 	box-shadow: 2px 2px 3px rgba(0,0,0,0.2);
-}
+	
 
+}
 
 
 li {
@@ -64,6 +69,8 @@ img.tutorial {
 
 
 
+/******* Tablets ********/
+
 @media screen and (max-width: 768px) { 
 	img.tutorial {
 		width: 100%;
@@ -76,6 +83,7 @@ img.tutorial {
 	}
 }
 
+/******* Mobile ********/
 
 @media screen and (max-width: 480px) {
 	div.tutorial_box {
