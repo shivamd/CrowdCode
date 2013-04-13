@@ -1,4 +1,4 @@
-<ul>
+
 <li><%= comment.content %></li>
 <small>
   <%= time_ago_in_words(comment.created_at) %> ago
@@ -8,4 +8,3 @@
     <%= button_to "delete comment", comment_path(comment), method: :delete %>
   <% end %>
 </small>
-</ul>
