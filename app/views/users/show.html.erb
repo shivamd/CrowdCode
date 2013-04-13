@@ -4,24 +4,36 @@
 
 <div class="stats">
 
-		<div class="tutorials">
-			 <h2><%= @user.username%>'s Tutorials</h2>
-			<% (@user.tutorials + @user.tutorial_links).each do |tut| %>
-				<li><%= link_to tut.title, generate_url(tut) %></li>
-			<% end %>
-		</div>
-		<div class="comments">
-			<h2>Latest Comments</h2>
-			<% @user.comments.limit(5).each do |comment| %>
-				<li>
-					<%= comment.content %> 
-					<small><%= time_ago_in_words(comment.created_at)%> ago</small> 
-				</li>
-			<% end %>
-		</div>
+		<% if @user.tutorials.any? || @user.tutorial_links.any? %>
+			<div class="tutorials">
+				 <h2><%= @user.username%>'s Tutorials</h2>
+				<% (@user.tutorials + @user.tutorial_links).each do |tut| %>
+					<li><%= link_to tut.title, generate_url(tut) %></li>
+				<% end %>
+			</div>
+		<% end %>
 
-		<div class="comments">
-			<h2>Latest Votes</h2>
-			<!-- vote logic goes here -->	
-		</div>
+		<% if @user.comments.any? %>
+		  <div class="comments">
+			  <h2>Latest Comments</h2>
+				  <% @user.comments.limit(5).each do |comment| %>
+					  <li>
+						  <%= link_to comment.content, comment.commentable_type.constantize.find(comment.commentable_id) %> 
+						  <small><%= time_ago_in_words(comment.created_at)%> ago</small> 
+					  </li>
+				  <% end %>
+		    </div>
+		  <% end %>
+
+		<% if @user.votes.any? %>
+		  <div class="votes">
+			 <h2>Latest Votes</h2>
+				<% @user.votes.limit(5).each do |vote| %>
+				  <li>
+				  	<%= link_to vote.votable_type.constantize.find(vote.votable_id).title, vote.votable_type.constantize.find(vote.votable_id) %>
+				  	<small><%= time_ago_in_words(vote.created_at) %> ago</small>
+				<% end %> 
+				  </li>
+		  </div>
+			<% end %>
 </div>
