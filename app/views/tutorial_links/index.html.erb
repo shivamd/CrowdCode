@@ -1,10 +1,27 @@
 <%= form_tag tutorial_links_path, method: :get do %>
 <%= render 'shared/search' %>
 
+<p>
+  <%= text_field_tag :query, params[:query] %>
+  <%= submit_tag "Search", name: nil %>
+
+</p>
+>>>>>>> votes
 <% end %>
 <h2>Tutorials</h2>
 <% @tut_links.each do |tut| %>
 	<ul>
-		<li><%= link_to tut.title, "http://#{tut.url}" %></li>
+		<li>
+      <%= link_to tut.title, "http://#{tut.url}" %>
+      <div class="votes">
+        <span class="points"><%= tut.vote_count ? tut.vote_count : "0" %> </span> Points
+        <div class="vote-btns">
+          <% if user_signed_in? && !tut.author?(current_user) %>
+            <% voted = current_user.voted?(tut) ? true : false %>
+            <%= render 'votes/vote', :votable_type => tut, :voted => voted %>
+          <% end %>
+        </div>
+      </div>
+    </li>
 	</ul>
 <% end %>
