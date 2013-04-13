@@ -5,6 +5,7 @@ gem 'markup'
 gem 'redcarpet'
 
 gem 'ransack'
+gem 'merit'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
