@@ -26,6 +26,7 @@ group :test, :development do
   gem 'rspec-rails'
   gem 'guard-spork'
   gem 'spork'
+  gem 'launchy'
 end
 
 group :test do

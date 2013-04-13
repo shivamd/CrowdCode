@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :tutorial_link do
-    title "MyString"
-    url "MyString"
+    title "What a jolly day to read a tutorial"
+    url "http://www.google.com"
     user_id 1
   end
 end
