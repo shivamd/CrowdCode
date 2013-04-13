@@ -1,0 +1,11 @@
+<ul>
+<li><%= comment.content %></li>
+<small>
+  <%= time_ago_in_words(comment.created_at) %> ago
+  <%= link_to comment.user.username.capitalize , comment.user.username  %>
+  <% if current_user.id == comment.user.id %>
+    <%= link_to "edit comment", edit_comment_path(comment) %>
+    <%= button_to "delete comment", comment_path(comment), method: :delete %>
+  <% end %>
+</small>
+</ul>
