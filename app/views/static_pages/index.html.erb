@@ -1,2 +1,10 @@
 <h1>Crowdcode</h1>
 
+<% if @tutorials %>
+  <ul>
+  <% @tutorials.each do |tutorial| %>
+    <li><%= link_to tutorial.title, tutorial %></li>
+  <% end %>
+  </ul>
+<% end %>
+

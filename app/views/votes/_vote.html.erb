@@ -1,6 +1,11 @@
 <% if voted %>
-  <% vote_type = upvote?(votable_type.class.to_s, votable_type.id) ? "Downvote" : "Upvote" %>
-  <%= vote_button("update", vote_type, votable_type, :put) %>
+  <% if upvote?(votable_type.class.to_s, votable_type.id) %>
+    <%= vote_button("update", "Upvote", votable_type, :put, "disabled") %>
+    <%= vote_button("update", "Downvote", votable_type, :put) %>
+  <% else %>
+    <%= vote_button("update", "Upvote", votable_type, :put) %>
+    <%= vote_button("update", "Downvote", votable_type, :put, "disabled") %>
+  <% end %>
 <% else %>
   <%= vote_button "create", "Upvote", votable_type %>
   <%= vote_button "create", "Downvote", votable_type %>

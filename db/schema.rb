@@ -11,7 +11,6 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20130412230633) do
 
   create_table "comments", :force => true do |t|
@@ -22,7 +21,7 @@ ActiveRecord::Schema.define(:version => 20130412230633) do
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end
-  
+
   create_table "taggings", :force => true do |t|
     t.string   "taggable_type"
     t.integer  "taggable_id"
