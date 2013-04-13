@@ -2,11 +2,23 @@
 <p>
   <%= text_field_tag :query, params[:query] %>
   <%= submit_tag "Search", name: nil %>
+
 </p>
 <% end %>
 <h2>Tutorials</h2>
 <% @tut_links.each do |tut| %>
 	<ul>
-		<li><%= link_to tut.title, "http://#{tut.url}" %></li>
+		<li>
+      <%= link_to tut.title, "http://#{tut.url}" %>
+      
+      <div class="votes">
+        <span class="points"><%= tut.vote_count %> </span>Points
+        <% if user_signed_in? && !tut.author?(current_user) %>
+          <% voted = current_user.voted?(tut) ? true : false %>
+          <%= render 'votes/vote', :votable_type => tut, :voted => voted %>
+
+        <% end %>
+      </div>
+    </li>
 	</ul>
 <% end %>

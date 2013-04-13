@@ -2,13 +2,17 @@ Crowdcode::Application.routes.draw do
   root :to => "static_pages#index"
   
   devise_for :users
+<<<<<<< HEAD
   resources :tutorial_links, only: [:show, :new, :create, :edit, :update, :destroy]
   resources :tutorials, only: [:show, :new, :create, :edit, :update, :destroy]
   resources :tags, only: [:index, :show]
   resources :comments
+  resources :votes, :only => [:create, :update]  
   
   match 'profile', :to => 'users#show', :as => :user_root, via: :get
   match '/:username', :to => 'users#show', :as => :public_profile, via: :get
+
+  
   # resources :users, :only => [:show]
 
   # match 'users/:id', to: "users#show"

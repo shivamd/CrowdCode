@@ -1,5 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
+  include VotesHelper
 
   def flash_update_success
     flash[:notice] = "Successfully updated!"
@@ -15,4 +16,5 @@ class ApplicationController < ActionController::Base
       @tags += tag.content + ' '
     end
   end
+  
 end

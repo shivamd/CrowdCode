@@ -3,8 +3,9 @@ class TutorialLink < ActiveRecord::Base
 
   belongs_to :user
   has_many :tags, through: :taggings
-  has_many :taggings, as: :taggable
-  has_many :comments, as: :commentable
+  has_many :taggings, as: :taggable, dependent: :destroy
+  has_many :votes, as: :votable, dependent: :destroy
+
   accepts_nested_attributes_for :tags
   
   validates :title, presence: true, length: { minimum: 15 }
@@ -20,4 +21,11 @@ class TutorialLink < ActiveRecord::Base
   	end
   end
 
+  def author?(user)
+    self.user == user
+  end
+  
+  def vote_count
+    self.votes.map(&:score).inject(:+)
+  end
 end

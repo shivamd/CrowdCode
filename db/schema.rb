@@ -11,6 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(:version => 20130412230633) do
 
   create_table "comments", :force => true do |t|
@@ -21,7 +22,7 @@ ActiveRecord::Schema.define(:version => 20130412230633) do
     t.datetime "created_at",       :null => false
     t.datetime "updated_at",       :null => false
   end
-
+  
   create_table "taggings", :force => true do |t|
     t.string   "taggable_type"
     t.integer  "taggable_id"
@@ -71,5 +72,14 @@ ActiveRecord::Schema.define(:version => 20130412230633) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
+
+  create_table "votes", :force => true do |t|
+    t.integer  "score"
+    t.string   "votable_type"
+    t.integer  "votable_id"
+    t.integer  "user_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
 
 end
