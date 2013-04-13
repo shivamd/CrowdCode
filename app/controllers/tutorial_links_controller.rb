@@ -19,6 +19,8 @@ class TutorialLinksController < ApplicationController
 
 	def index 
 		@tut_links = TutorialLink.all
+		@search = TutorialLink.search(params[:search])
+		@tut_links = @search.relation
 	end
 
 	def edit

@@ -2,7 +2,7 @@ Crowdcode::Application.routes.draw do
   root :to => "static_pages#index"
   
   devise_for :users
-  resources :tutorial_links, only: [:show, :new, :create, :edit, :update, :destroy]
+  resources :tutorial_links, only: [:show, :new, :create, :edit, :update, :destroy, :index]
   resources :tutorials, only: [:show, :new, :create, :edit, :update, :destroy]
   resources :tags, only: [:index, :show]
   resources :comments
