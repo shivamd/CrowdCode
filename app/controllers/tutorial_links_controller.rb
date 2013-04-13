@@ -29,16 +29,14 @@ class TutorialLinksController < ApplicationController
 	end
 
 	def update
-		 @tutorial = TutorialLink.find(params[:id])
-      if @tutorial.update_attributes(params[:tutorial_link])
-        @tutorial.tags.clear
-        @tutorial.create_tags(params[:tag])
-        flash_update_success
-        redirect_to @tutorial
-      else
-         flash_update_failed
-         redirect_to :back
-      end
+	  @tutorial = TutorialLink.find(params[:id])
+    if @tutorial.update_attributes(params[:tutorial_link])
+      @tutorial.tags.clear
+      @tutorial.create_tags(params[:tag])
+		  redirect_to @tutorial, notice: "Successfully updated!"
+	  else
+      redirect_to :back, notice: "Something went wrong, please try again"
+    end
 	end
 
   def show 
