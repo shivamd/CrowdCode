@@ -1,0 +1,6 @@
+<%= render 'shared/search' %>
+<% @tutorials.each do |tutorial| %>
+<ul>
+<li><%= link_to tutorial.title, tutorial_path(tutorial) %></li>
+</ul>
+<% end %>

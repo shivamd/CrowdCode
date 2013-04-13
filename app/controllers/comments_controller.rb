@@ -1,10 +1,10 @@
 class CommentsController < ApplicationController
-
+  
   def create
-    comment = Comment.new(params[:comment])
-    comment.user_id = current_user.id
-    @tutorial = comment.get_tutorial
-    comment.save ? redirect_to(@tutorial) : (redirect_to :back, notice: "#{comment.errors.full_messages.first}")
+    @comment = Comment.new(params[:comment])
+    @comment.user_id = current_user.id
+    @tutorial = @comment.get_tutorial
+    @comment.save
   end
 
   def edit
