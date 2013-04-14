@@ -1,9 +1,10 @@
-<%= render 'shared/search' %>
-<ul>
-<% @tutorials.each do |tut| %>
-  <li>
-    <%= link_to tut.title, generate_url(tut) %>
-    <%= render 'shared/vote_module', tut: tut %>
-  </li>
+<%= search_form_for @search, remote: true do |f| %>
+	<%= f.text_field :title_cont, :placeholder => "Title contains" %>
+	<%= f.text_field :tags_content_cont, :placeholder => "Tag contains" %>
+	<%= f.submit "Search" %>
+	<%= f.submit "Clear", :id => :search_reset %>
 <% end %>
+
+<ul class="tutorials">
+	<%= render 'tutorials/tutorials', tutorials: @tutorials %>
 </ul>

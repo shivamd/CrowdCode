@@ -12,7 +12,6 @@ class TutorialsController < ApplicationController
 	end
 
 	def index
-		@tutorials = Tutorial.all
 		@search = Tutorial.search(params[:q])
 		@tutorials = @search.result	
 	end

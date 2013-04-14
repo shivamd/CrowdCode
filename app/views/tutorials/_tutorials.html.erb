@@ -1,5 +1,5 @@
 <ul>
-<% @tutorials.each do |tut| %>
+<% tutorials.each do |tut| %>
 	<li>
     <%= link_to tut.title, generate_url(tut) %>
     <%= render 'shared/vote_module', tut: tut %>
