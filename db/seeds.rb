@@ -19,11 +19,10 @@ categories = [  "Ruby",
                 "Tools & Tips",
                 "Design",
                 "Wordpress", 
-                "CMSs", 
-                "ASP.NET",
+                "ASP.NET?",
                 "Other"
               ]
 categories.each do |category|
-  image = category.downcase.gsub(/[\.&\s]/, '') + '.png'
+  image = category.downcase.gsub(/[\.&\s?]/, '') + '.png'
   Category.create(name: category, img: image)
 end
