@@ -3,7 +3,6 @@ require 'spec_helper'
 describe Tag do
   
   it { should have_many(:tutorials) }
-  it { should have_many(:tutorial_links) }
   it { should have_many(:taggings) }
 
   it { should validate_presence_of(:content) }

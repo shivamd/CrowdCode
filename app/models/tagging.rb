@@ -6,6 +6,6 @@ class Tagging < ActiveRecord::Base
 
   validates :taggable_id, :tag_id, presence: true, numericality: true
   validates :taggable_type, presence: true
-  validates_inclusion_of :taggable_type, in: ["Tutorial", "TutorialLink"]
+  validates_inclusion_of :taggable_type, in: ["Tutorial"]
 
 end

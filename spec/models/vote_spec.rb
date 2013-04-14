@@ -13,7 +13,7 @@ describe Vote do
   it { should belong_to(:votable)}
   it { should belong_to(:user)}
 
-  ["Tutorial", "TutorialLink"].each do |tut|
+  ["Tutorial"].each do |tut|
     it { should allow_value(tut).for(:votable_type) }
   end
 
