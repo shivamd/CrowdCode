@@ -9,5 +9,7 @@ class ApplicationController < ActionController::Base
       @tags += tag.content + ' '
     end
   end
+
+ 
   
 end

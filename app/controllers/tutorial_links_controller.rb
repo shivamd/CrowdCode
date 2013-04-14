@@ -49,6 +49,6 @@ class TutorialLinksController < ApplicationController
 	def destroy
     @tutorial = TutorialLink.find(params[:id]).destroy
     redirect_to '/profile'
-  end
+  end  
 
 end

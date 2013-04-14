@@ -30,4 +30,12 @@ class Tutorial < ActiveRecord::Base
   def vote_count
     self.votes.map(&:score).inject(:+)
   end
+
+
+  def self.update_popularity
+    Tutorial.all.each do |tut|
+      tut.popularity = tut.votes.count/(((Time.now - tut.created_at)/3600.0)**1.5)
+      tut.save
+    end
+  end
 end

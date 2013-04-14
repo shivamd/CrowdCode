@@ -55,4 +55,7 @@ class TutorialsController < ApplicationController
     @comments = @tutorial.comments.all
     @comment = @tutorial.comments.new
 	end
+
+
+	
 end
