@@ -6,5 +6,24 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-  TutorialLink.create url: "http://net.tutsplus.com/tutorials/php/aspect-oriented-programming-in-php-with-go/", title: "programming with go"
-  TutorialLink.create url: "http://net.tutsplus.com/tutorials/php/laravel-4-mastery/", title: "PHP"
+  # TutorialLink.create url: "http://net.tutsplus.com/tutorials/php/aspect-oriented-programming-in-php-with-go/", title: "programming with go"
+  # TutorialLink.create url: "http://net.tutsplus.com/tutorials/php/laravel-4-mastery/", title: "PHP"
+
+
+categories = [  "Ruby",
+                "JavaScript & AJAX", 
+                "HTML & CSS", 
+                "PHP", 
+                "Python", 
+                "Databases", 
+                "Tools & Tips",
+                "Design",
+                "Wordpress", 
+                "CMSs", 
+                "ASP.NET",
+                "Other"
+              ]
+categories.each do |category|
+  image = category.downcase.gsub(/[\.&\s]/, '') + '.png'
+  Category.create(name: category, img: image)
+end

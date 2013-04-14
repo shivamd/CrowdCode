@@ -1,0 +1,6 @@
+<h1><%= category.name %></h1>
+<div class="category-tuts">
+  <% @tutorials.each do |tut| %>
+    <%= render 'shared/tutorial_box', tut: tut %>
+  <% end %>
+</div>
