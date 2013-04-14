@@ -23,7 +23,7 @@ class Tutorial < ActiveRecord::Base
   	end
   end
 
-    def author?(user)
+  def author?(user)
     self.user == user
   end
   
