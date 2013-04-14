@@ -3,7 +3,7 @@ class Tutorial < ActiveRecord::Base
 
   belongs_to :user
   has_many :tags, through: :taggings
-  has_many :comments, as: :commentable
+  has_many :comments, as: :commentable, dependent: :destroy
   has_many :taggings, as: :taggable, dependent: :destroy
   has_many :votes, as: :votable, dependent: :destroy
 

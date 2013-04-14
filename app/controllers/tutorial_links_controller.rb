@@ -19,8 +19,6 @@ class TutorialLinksController < ApplicationController
 
 	def index 
 		@tutorials = TutorialLink.all
-    p params[:q]
-    puts '*' *300
 		@search = TutorialLink.search(params[:q])
 		@tutorials = @search.result
 	end
