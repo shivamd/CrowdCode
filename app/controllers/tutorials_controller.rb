@@ -49,10 +49,13 @@ class TutorialsController < ApplicationController
 	end
 
 	def show 
-		@tutorial = Tutorial.find(params[:id])
+		@tutorial = Tutorial.joins(:category).find(params[:id])
 		@markdown = MARKDOWN.render(@tutorial.content)
 		get_tags_string(@tutorial)
     @comments = @tutorial.comments.includes(:user, :category)
     @comment = @tutorial.comments.new
 	end
+
+
+	
 end

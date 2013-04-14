@@ -1,7 +1,8 @@
 <div class="tutorial_box">
   <div class="tutorial">
-    <%= link_to image_tag("ruby.png" , class: "tutorial"), tut %>
-    <%= link_to tut.title, tut, { class: "tutorial" } %>
+    <%= link_to image_tag( tut.category.img, class: "tutorial"), tut %>
+    <%= link_to tut.title, tut, { class: "tutorial" } %><br>
+    <%= render 'shared/tutorial_category_link', tut: tut %>
     <span class="points"><%= tut.vote_count ? tut.vote_count : "0" %>  Points</span>
     <%= render 'shared/addthis' %>
   </div>

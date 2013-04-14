@@ -1,14 +1,11 @@
 <h1><%= @tutorial.title %></h1>
-<%= link_to "tutorial", Tutorial %> \ <%= link_to @tutorial.category.name, @tutorial.category %>
+<%= render 'shared/tutorial_category_link', tut: @tutorial %>
 <%= render 'shared/addthis' %>
-
 <%= render 'shared/vote_module', tut: @tutorial %>
-<% if @tags %>
-  <p>Tags: <%= @tags %></p>
+<% if @tutorial.author?(current_user) || current_user.admin? %>
+  <%= button_to "Edit tutorial", edit_tutorial_path, method: "get" %>
+  <%= button_to "Delete tutorial", tutorial_path, method: "delete" %>
 <% end %>
-<%= button_to "Edit tutorial", edit_tutorial_path, method: "get" %>
-<%= button_to "Delete tutorial", tutorial_path, method: "delete" %>
-
 <%= render 'shared/comments_form', comment: @comment %>
 <%= render 'shared/comments' %>
 

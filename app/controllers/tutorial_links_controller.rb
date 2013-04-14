@@ -40,15 +40,16 @@ class TutorialLinksController < ApplicationController
 	end
 
   def show 
-    @tutorial = TutorialLink.find(params[:id])
+    @tutorial = TutorialLink.joins(:category).find(params[:id])
     get_tags_string(@tutorial)
-    @comments = @tutorial.comments.includes(:user, :category)
+    @category = Category.where('id = ?', @tutorial.category_id)
+    @comments = @tutorial.comments.includes(:user)
     @comment = @tutorial.comments.new
   end
 
 	def destroy
     @tutorial = TutorialLink.find(params[:id]).destroy
     redirect_to '/profile'
-  end
+  end  
 
 end

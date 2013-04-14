@@ -41,35 +41,36 @@ li {
 	list-style-type: none;
 }
 
-a.tutorial {
-	display: inline;
-	width: 40.5555556%;
-	word-wrap: break-word;
-	font-weight: bold;
-	font-size: 1.8em;
-	text-align: left;
-	line-height: 1em;
-	float: left;
-	padding-left: 5%;
-	text-decoration: none !important;
-	color: #444444;
+.tutorial {
+		a.tutorial {
+			/*display: inline;*/
+			width: 40.5555556%;
+			word-wrap: break-word;
+			font-weight: bold;
+			font-size: 1.8em;
+			text-align: left;
+			line-height: 1em;
+			/*float: left;*/
+			/*margin-left: 5%;*/
+			text-decoration: none !important;
+			color: #444444;
+		}
+		a:hover {
+			color: #333333;
+		}
+		img.tutorial {
+			float: left;
+			width: 35%;
+			margin-right: 5%;
+		}
+		div#social-buttons {
+		position: absolute; left: 35%; bottom: 0;
+		margin: 3%;
+		}
+		div.category-link{
+			float: left;
+		}
 }
-
-.tutorial div#social-buttons {
-	position: absolute; left: 35%; bottom: 0;
-	margin: 3%;
-}
-
-a:hover {
-	color: #333333;
-}
-
-img.tutorial {
-	float: left;
-	width: 35%;
-}
-
-
 
 /******* Tablets ********/
 

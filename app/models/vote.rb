@@ -6,4 +6,6 @@ class Vote < ActiveRecord::Base
   validates_inclusion_of :score, :in => [-1,1]
   validates_presence_of :votable_type
   validates_inclusion_of :votable_type, :in => ["Tutorial", "TutorialLink"]
+
+  
 end
