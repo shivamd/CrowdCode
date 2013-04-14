@@ -9,6 +9,8 @@ class Tutorial < ActiveRecord::Base
   belongs_to :category
 
   validates :content, length: { minimum: 100 }
+  validates :url, :presence => true, :if => :content?
+  validates :content, :presence => true, :if => :url?
   # validates :content, presence: true, if: "url.nil?"
 #   validates :url, :presence => true, :if => "content.nil?"
 
@@ -39,5 +41,13 @@ class Tutorial < ActiveRecord::Base
       tut.popularity = tut.votes.count/(((Time.now - tut.created_at)/3600.0)**1.5)
       tut.save
     end
+  end
+
+  def content?
+    content == ""
+  end
+
+  def url?
+    url == ""
   end
 end
