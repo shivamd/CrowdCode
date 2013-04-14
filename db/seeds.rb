@@ -11,15 +11,17 @@
 
 
 categories = [  "Ruby",
-                "JavaScript & AJAX", 
-                "HTML & CSS", 
-                "PHP", 
-                "Python", 
-                "Databases", 
+                "JavaScript & AJAX",
+                "HTML & CSS",
+                "PHP",
+                "Python",
+                "iOS",
+                "Android",
+                "Databases",
                 "Tools & Tips",
                 "Design",
-                "Wordpress", 
-                "ASP.NET?",
+                "Wordpress",
+                "Java",
                 "Other"
               ]
 categories.each do |category|
