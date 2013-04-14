@@ -6,10 +6,10 @@ $(document).ready(function(){
 });
 
 function hideShareButtons() {
-  $(this).children('.tutorial').children('.add-this').hide('explode', {}, 100);
+  $(this).children('.tutorial').children('.add-this').slideUp();
 };
 
 function showShareButtons() {
-  $(this).children('.tutorial').children('.add-this').show('explode', {}, 100);
+  $(this).children('.tutorial').children('.add-this').slideDown();
 };
 
