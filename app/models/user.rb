@@ -8,7 +8,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :omniauthable,
          :recoverable, :rememberable, :trackable, :validatable
   attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :description
-  after_save :send_welcome_email
+  # after_save :send_welcome_email
   has_many :tutorial_links
   has_many :tutorials 
   has_many :comments
@@ -53,8 +53,8 @@ class User < ActiveRecord::Base
     end
   end
 
-  def send_welcome_email
-    UserMailer.welcome_email(self).deliver
-  end
+  # def send_welcome_email
+  #   UserMailer.welcome_email(self).deliver
+  # end
 
 end
