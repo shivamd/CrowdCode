@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
 
   def index
-  	@tutorials = Tutorial.all + TutorialLink.all
+  	@tutorials = Tutorial.joins(:category) + TutorialLink.joins(:category)
   end
 
   def about

@@ -98,7 +98,7 @@ ActiveRecord::Schema.define(:version => 20130414005617) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "popularity"
-    t.integer  "category_id"
+    t.integer  "category_id", :null => false
   end
 
   create_table "tutorials", :force => true do |t|
@@ -108,7 +108,7 @@ ActiveRecord::Schema.define(:version => 20130414005617) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "popularity"
-    t.integer  "category_id"
+    t.integer  "category_id", :null => false
   end
 
   create_table "users", :force => true do |t|
