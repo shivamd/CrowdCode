@@ -1,9 +1,7 @@
 <div class="container">
 	<h1>Crowdcode</h1>
 	<div class="tutorials">
-		<% @tutorials.each do |tut| %>
-		<%= render 'shared/tutorial_box', tut: tut %>
-		<% end %>
+		<%= render 'static_pages/tutorials', tutorials: @tutorials %>
 	</div>
 	<%= will_paginate @tutorials %>
 </div>
