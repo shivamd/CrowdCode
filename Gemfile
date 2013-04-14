@@ -5,7 +5,7 @@ ruby "1.9.3"
 gem 'rails', '3.2.13'
 gem 'markup'
 gem 'redcarpet'
-# gem 'addthis'
+gem 'will_paginate'
 
 gem 'ransack'
 gem 'merit'
