@@ -11,8 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-
-ActiveRecord::Schema.define(:version => 20130414004642) do
+ActiveRecord::Schema.define(:version => 20130414005617) do
 
   create_table "badges_sashes", :force => true do |t|
     t.integer  "badge_id"
@@ -24,6 +23,13 @@ ActiveRecord::Schema.define(:version => 20130414004642) do
   add_index "badges_sashes", ["badge_id", "sash_id"], :name => "index_badges_sashes_on_badge_id_and_sash_id"
   add_index "badges_sashes", ["badge_id"], :name => "index_badges_sashes_on_badge_id"
   add_index "badges_sashes", ["sash_id"], :name => "index_badges_sashes_on_sash_id"
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.string   "img"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "comments", :force => true do |t|
     t.string   "content",          :null => false
@@ -92,6 +98,7 @@ ActiveRecord::Schema.define(:version => 20130414004642) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "popularity"
+    t.integer  "category_id"
   end
 
   create_table "tutorials", :force => true do |t|
@@ -101,6 +108,7 @@ ActiveRecord::Schema.define(:version => 20130414004642) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
     t.integer  "popularity"
+    t.integer  "category_id"
   end
 
   create_table "users", :force => true do |t|

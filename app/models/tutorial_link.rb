@@ -1,14 +1,13 @@
 class TutorialLink < ActiveRecord::Base
-  attr_accessible :title, :url, :user_id, :tags_attributes
+  attr_accessible :title, :url, :user_id, :tags_attributes, :category_id
 
   belongs_to :user
   has_many :tags, through: :taggings
   has_many :taggings, as: :taggable, dependent: :destroy
   has_many :votes, as: :votable, dependent: :destroy
   has_many :comments, as: :commentable, dependent: :destroy
+  belongs_to :category
 
-  accepts_nested_attributes_for :tags
-  
   validates :title, presence: true, length: { minimum: 15 }
   VALID_URL_REGEX = /^(http|https):\/\/|[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,6}(:[0-9]{1,5})?(\/.*)?$/ix
   validates :url, presence: true, format: { with: VALID_URL_REGEX }, uniqueness: true

@@ -2,14 +2,7 @@
 	<h1>Crowdcode</h1>
 	<div class="tutorials">
 		<% @tutorials.each do |tut| %>
-			<div class="tutorial_box">
-				<div class="tutorial">
-					<%= link_to image_tag("ruby.png" , class: "tutorial"), tut %>
-					<%= link_to tut.title, tut, { class: "tutorial" } %>
-					<span class="points"><%= tut.vote_count ? tut.vote_count : "0" %>  Points</span>
-					<%= render 'shared/addthis' %>
-				</div>
-			</div>
+		<%= render 'shared/tutorial_box', tut: tut %>
 		<% end %>
 	</div>
 </div>
