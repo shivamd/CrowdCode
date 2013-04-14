@@ -62,7 +62,7 @@ url = []
 end
 
 
-tutorial_links = {  ruby:  {  title: "Ruby Tutorial Test", 
+tutorial_with_links = {  ruby:  {  title: "Ruby Tutorial Test", 
                               url: url[0], 
                               user_id: 1, 
                               category_id: 1 },
@@ -120,7 +120,7 @@ tutorials.each do |key, value|
   Tutorial.create(value)
 end
 
-tutorial_links.each do |key, value|
-  TutorialLink.create(value)
+tutorial_with_links.each do |key, value|
+  Tutorial.create(value)
 end
             
