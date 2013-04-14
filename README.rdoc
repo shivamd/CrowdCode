@@ -1,5 +1,5 @@
 == CrowdCode
-Made by Shivam, Matthew, and Ryan one week at Dev Bootcamp.
+Made by Shivam, Matthew, and Ryan as a final project for Dev Bootcamp.
 
 ==Purpose
-CrowdCode lets you share tutorials and tutorial links related to coding.
+CrowdCode is a central repository for programming tutorials.  You can post links to tutorials or write your own using markdown.
