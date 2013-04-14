@@ -13,6 +13,8 @@ class TutorialLink < ActiveRecord::Base
   validates :url, presence: true, format: { with: VALID_URL_REGEX }, uniqueness: true
   validates :user_id, presence: true, numericality: { only_integer: true }
 
+  default_scope order("popularity desc")
+
   def create_tags(tags)
   	tags = tags.split(" ")
   	tags.each do |tag|

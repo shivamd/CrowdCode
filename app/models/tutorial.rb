@@ -12,6 +12,8 @@ class Tutorial < ActiveRecord::Base
   validates :title, presence: true, length: { minimum: 15 } 
   validates :user_id, presence: true, numericality: true
 
+  default_scope order("popularity desc")
+
   def create_tags(tags)
   	tags = tags.split(" ")
   	tags.each do |tag|
