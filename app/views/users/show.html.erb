@@ -7,7 +7,7 @@
 		<% if @user.tutorials.any? || @user.tutorial_links.any? %>
 			<div class="tutorials">
 				 <h2><%= @user.username%>'s Tutorials</h2>
-				<% (@user.tutorials + @user.tutorial_links).each do |tut| %>
+				<% @user.tutorials.each do |tut| %>
 					<li><%= link_to tut.title, generate_url(tut) %></li>
 				<% end %>
 			</div>

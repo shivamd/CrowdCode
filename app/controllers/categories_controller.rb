@@ -1,7 +1,7 @@
 class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id])
-    @tutorials = @category.tutorials + @category.tutorial_links
+    @tutorials = @category.tutorials
   end
 
   def index

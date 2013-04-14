@@ -1,7 +1,6 @@
-<%= render 'shared/search' %>
 <ul>
 <% @tutorials.each do |tut| %>
-  <li>
+	<li>
     <%= link_to tut.title, generate_url(tut) %>
     <%= render 'shared/vote_module', tut: tut %>
   </li>

@@ -6,11 +6,24 @@
   <%= f.text_field :title %>
   <%= f.label "Choose Category:" %>
   <%= collection_select(:tutorial, :category_id, Category.all, :id, :name) %>
-  <%= f.label :content %>
-  <%= f.text_area :content %>
-  <small>e.g "ruby ruby-on-rails javascript oauth"</small>
+
+  <div class="tutorial_url">
+    <%= f.label :url %>
+    <%= f.text_field :url %>
+  </div>
+
+  <%= label_tag :write_a_tutorial %>
+  <%= check_box_tag :write_a_tutorial, class: "form_check" %>
+
+  <div class="tutorial_content">
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </div>
+
+
   <%= label_tag :tags %>
   <%= text_field_tag :tag %>
+  <small>e.g "ruby ruby-on-rails javascript oauth"</small> <br>
   <%= f.submit "Submit tutorial" %>
 <% end %>
 

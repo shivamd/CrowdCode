@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130414005617) do
+ActiveRecord::Schema.define(:version => 20130414164958) do
 
   create_table "badges_sashes", :force => true do |t|
     t.integer  "badge_id"
@@ -97,8 +97,8 @@ ActiveRecord::Schema.define(:version => 20130414005617) do
     t.integer  "user_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-    t.integer  "category_id"
     t.integer  "popularity"
+    t.integer  "category_id"
   end
 
   create_table "tutorials", :force => true do |t|
@@ -107,8 +107,9 @@ ActiveRecord::Schema.define(:version => 20130414005617) do
     t.integer  "user_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-    t.integer  "category_id"
     t.integer  "popularity"
+    t.integer  "category_id"
+    t.string   "url"
   end
 
   create_table "users", :force => true do |t|

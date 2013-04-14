@@ -1,5 +1,5 @@
 class Tutorial < ActiveRecord::Base
-  attr_accessible :content, :title, :user_id, :tags_attributes, :category_id
+  attr_accessible :content, :title, :user_id, :tags_attributes, :category_id, :url
 
   belongs_to :user
   has_many :tags, through: :taggings
@@ -8,7 +8,10 @@ class Tutorial < ActiveRecord::Base
   has_many :votes, as: :votable, dependent: :destroy
   belongs_to :category
 
-  validates :content, presence: true, length: { minimum: 100 }
+  validates :content, length: { minimum: 100 }
+  # validates :content, presence: true, if: "url.nil?"
+#   validates :url, :presence => true, :if => "content.nil?"
+
   validates :title, presence: true, length: { minimum: 15 } 
   validates :user_id, presence: true, numericality: true
 

@@ -1,6 +1,6 @@
 module TutorialsHelper
 	def generate_url(tutorial)
-		if tutorial.class == Tutorial 
+		if tutorial.url.blank? 
 			tutorial
 		else
 			"http://#{tutorial.url}"

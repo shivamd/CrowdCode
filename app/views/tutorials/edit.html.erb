@@ -4,9 +4,16 @@
   <%= render 'shared/error_messages', object: @tutorial %>
   <%= f.label :title %>
   <%= f.text_field :title, value: @tutorial.title %>
+ 
+  <% if @tutorial.content.blank? %>
+    <%= f.label :url %>
+    <%= f.text_field :url %>
+  <% else %>
+    <%= f.label :content %>
+    <%= f.text_area :content, value: @tutorial.content %>
+  <% end %>
 
-  <%= f.label :content %>
-  <%= f.text_area :content, value: @tutorial.content %>
+
   <small>e.g "ruby ruby-on-rails javascript oauth"</small>
   <%= label_tag :tags %>
   <%= text_field_tag :tag, @tags %>
