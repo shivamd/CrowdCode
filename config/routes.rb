@@ -2,7 +2,6 @@ Crowdcode::Application.routes.draw do
   root :to => "static_pages#index"  
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
   resources :categories, only: [:index, :show]
-  resources :tutorial_links
   resources :tutorials
   resources :tags, only: [:index, :show]
   resources :comments
