@@ -50,7 +50,7 @@ class TutorialsController < ApplicationController
 
 	def show 
 		@tutorial = Tutorial.joins(:category).find(params[:id])
-		@markdown = MARKDOWN.render(@tutorial.content)
+		@markdown = MARKDOWN.render(@tutorial.content) if @tutorial.content
 		get_tags_string(@tutorial)
     @comments = @tutorial.comments.includes(:user, :category)
     @comment = @tutorial.comments.new

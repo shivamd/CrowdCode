@@ -116,11 +116,18 @@ tutorial_with_links = {  ruby:  {  title: "Ruby Tutorial Test",
                               category_id: 13 }
               }
 
-tutorials.each do |key, value|
-  Tutorial.create(value)
+tutorials.each do |_key, value|
+  Tutorial.create(title: value[:title],
+                  content: value[:content],
+                  user_id: value[:user_id],
+                  category_id: value[:category_id])
 end
 
 tutorial_with_links.each do |key, value|
-  Tutorial.create(value)
+  Tutorial.create(title: value[:title],
+                  url: value[:url],
+                  user_id: value[:user_id],
+                  category_id: value[:category_id])
+
 end
             

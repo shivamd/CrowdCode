@@ -2,11 +2,18 @@
 <%= link_to "Tutorial", Tutorial %> \ <%= link_to @tutorial.category.name, @tutorial.category %>
 <%= render 'shared/addthis' %>
 <%= render 'shared/vote_module', tut: @tutorial %>
-<p><%= @markdown.html_safe %></p>
+
+<% if @markdown %>
+  <p><%= @markdown.html_safe  %></p>
+<% else %>
+	<%= link_to @tutorial.url, generate_url(@tutorial) %>
+<% end %>
+
 <% if @tags %>
   <p>Tags: <%= @tags %></p>
 <% end %>
-<% if @tutorial.author?(current_user) || current_user.admin? %>
+
+<% if @tutorial.author?(current_user) || (current_user && current_user.admin?) %>
 <%= button_to "Edit tutorial", edit_tutorial_path, method: "get" %>
 <%= button_to "Delete tutorial", tutorial_path, method: "delete" %>
 <% end %>

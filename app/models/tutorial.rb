@@ -8,9 +8,9 @@ class Tutorial < ActiveRecord::Base
   has_many :votes, as: :votable, dependent: :destroy
   belongs_to :category
 
-  validates :content, length: { minimum: 100 }
-  validates :url, :presence => true, :if => :content?
-  validates :content, :presence => true, :if => :url?
+  # validates :content, length: { minimum: 100 }
+  # validates :url, :presence => true, :if => :content?
+  # validates :content, :presence => true, :if => :url?
   # validates :content, presence: true, if: "url.nil?"
 #   validates :url, :presence => true, :if => "content.nil?"
 
