@@ -1,15 +1,12 @@
 class Tutorial < ActiveRecord::Base
-  attr_accessible :content, :title, :user_id, :tags_attributes
+  attr_accessible :content, :title, :user_id, :tags_attributes, :category_id
 
   belongs_to :user
   has_many :tags, through: :taggings
   has_many :comments, as: :commentable, dependent: :destroy
   has_many :taggings, as: :taggable, dependent: :destroy
   has_many :votes, as: :votable, dependent: :destroy
-
-  accepts_nested_attributes_for :tags
-  accepts_nested_attributes_for :comments
-
+  belongs_to :category
 
   validates :content, presence: true, length: { minimum: 100 }
   validates :title, presence: true, length: { minimum: 15 } 
