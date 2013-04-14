@@ -1,0 +1,126 @@
+User.create(username: "ryan", email: "ryan@ryan.com", password: "bullshit")
+User.create(username: "dummy", email: "dummy@ryan.com", password: "bullshit")
+User.create(username: "test", email: "test@ryan.com", password: "bullshit")
+content = "this is a random 100 character because we have the blasted validation on and that is this silly thing that forces me to write all this!!!!!!!!!!!!!!!!! :P"
+tutorials =  {  ruby:      {  title: "Ruby Tutorial Test", 
+                              content: content, 
+                              user_id: 1, 
+                              category_id: 1 },
+                js:        {  title: "JavaScript & AJAX Tutorial Test", 
+                              content: content +'s', 
+                              user_id: 1, 
+                              category_id: 2 },
+                html:      {  title: "HTML & CSS Tutorial Test", 
+                              content: content, 
+                              user_id: 1, 
+                              category_id: 3 },
+                php:       {  title: "PHP Tutorial Test",
+                              content: content, 
+                              user_id: 1, 
+                              category_id: 4 },
+                python:    {  title: "Python Tutorial Test", 
+                              content: content, 
+                              user_id: 1, 
+                              category_id: 5 },
+                iOS:       {  title: "iOS Tutorial Test", 
+                              content: content, 
+                              user_id: 1, 
+                              category_id: 6 },
+                android:    { title: "Android Tutorial Test", 
+                              content: content, 
+                              user_id: 1, 
+                              category_id: 7 },
+                databases: {  title: "Databases Tutorial Test", 
+                              content: content, 
+                              user_id: 1, 
+                              category_id: 8 },
+                tools:     {  title: "Tools & Tips Tutorial Test",
+                              content: content, 
+                              user_id: 1, 
+                              category_id: 9 },
+                design:    {  title: "Design Tutorial Test", 
+                              content: content, 
+                              user_id: 1, 
+                              category_id: 10 },
+                wordpress: {  title: "Wordpress Tutorial Test",
+                              content: content, 
+                              user_id: 1, 
+                              category_id: 11 },
+                java:      {  title: "Java Tutorial Test", 
+                              content: content, 
+                              user_id: 1, 
+                              category_id: 12 },
+                other:     {  title: "Other Tutorial Test", 
+                              content: content, 
+                              user_id: 1, 
+                              category_id: 13 }
+              }
+
+url = []
+(1..13).each do |i|
+  url << 'url' + i.to_s + '.com'
+end
+
+
+tutorial_links = {  ruby:  {  title: "Ruby Tutorial Test", 
+                              url: url[0], 
+                              user_id: 1, 
+                              category_id: 1 },
+                js:        {  title: "JavaScript & AJAX Tutorial Test", 
+                              url: url[1], 
+                              user_id: 1, 
+                              category_id: 2 },
+                html:      {  title: "HTML & CSS Tutorial Test", 
+                              url: url[2], 
+                              user_id: 1, 
+                              category_id: 3 },
+                php:       {  title: "PHP Tutorial Test",
+                              url: url[3], 
+                              user_id: 1, 
+                              category_id: 4 },
+                python:    {  title: "Python Tutorial Test", 
+                              url: url[4], 
+                              user_id: 1, 
+                              category_id: 5 },
+                iOS:       {  title: "iOS Tutorial Test", 
+                              url: url[5], 
+                              user_id: 1, 
+                              category_id: 6 },
+                android:    { title: "Android Tutorial Test", 
+                              url: url[6], 
+                              user_id: 1, 
+                              category_id: 7 },
+                databases: {  title: "Databases Tutorial Test", 
+                              url: url[7], 
+                              user_id: 1, 
+                              category_id: 8 },
+                tools:     {  title: "Tools & Tips Tutorial Test",
+                              url: url[8], 
+                              user_id: 1, 
+                              category_id: 9 },
+                design:    {  title: "Design Tutorial Test", 
+                              url: url[9], 
+                              user_id: 1, 
+                              category_id: 10 },
+                wordpress: {  title: "Wordpress Tutorial Test",
+                              url: url[10], 
+                              user_id: 1, 
+                              category_id: 11 },
+                java:      {  title: "Java Tutorial Test", 
+                              url: url[11], 
+                              user_id: 1, 
+                              category_id: 12 },
+                other:     {  title: "Other Tutorial Test", 
+                              url: url[12], 
+                              user_id: 1, 
+                              category_id: 13 }
+              }
+
+tutorials.each do |key, value|
+  Tutorial.create(value)
+end
+
+tutorial_links.each do |key, value|
+  TutorialLink.create(value)
+end
+            
