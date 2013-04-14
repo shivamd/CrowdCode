@@ -52,7 +52,7 @@ class TutorialsController < ApplicationController
 		@tutorial = Tutorial.find(params[:id])
 		@markdown = MARKDOWN.render(@tutorial.content)
 		get_tags_string(@tutorial)
-    @comments = @tutorial.comments.all
+    @comments = @tutorial.comments.includes(:user, :category)
     @comment = @tutorial.comments.new
 	end
 end
