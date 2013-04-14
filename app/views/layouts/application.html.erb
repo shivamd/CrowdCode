@@ -5,14 +5,15 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+  <!-- JS for addthis widget-->
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5169ce054b6dae19"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
 </head>
 <body>
-
   <%= render 'layouts/nav' %>
   <% flash.each do |key, value| %>
     <%= content_tag(:div, value, class: "alert, alert-#{key}") %>
    <% end %>
   <%= yield %>
-
 </body>
 </html>

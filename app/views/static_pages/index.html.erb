@@ -7,9 +7,9 @@
 					<%= link_to image_tag("ruby.png" , class: "tutorial"), tut %>
 					<%= link_to tut.title, tut, { class: "tutorial" } %>
 					<span class="points"><%= tut.vote_count ? tut.vote_count : "0" %>  Points</span>
+					<%= render 'shared/addthis' %>
 				</div>
 			</div>
 		<% end %>
 	</div>
 </div>
-
