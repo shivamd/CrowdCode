@@ -1,4 +1,4 @@
-<%= search_form_for @search do |f| %>
+<%= search_form_for @search, remote: true, :method => 'get' do |f| %>
 <%= f.text_field :title_cont, :placeholder => "Title contains" %>
 <%= f.text_field :tags_content_cont, :placeholder => "Tag contains" %>
 <%= f.submit "Search" %>
