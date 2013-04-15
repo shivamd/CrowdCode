@@ -5,8 +5,9 @@ var Vote = {
   },
 
   updateForm: function(event, data){
+    // debugger
     $(this).parents().siblings('.points').text(data.vote_count);
-    $(this).closest('div').html(data.template);
+    $(this).parents('.vote-btns').html(data.template);
   },
 }
 

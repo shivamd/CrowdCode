@@ -1,7 +1,2 @@
-<div class="container">
-	<h1>Crowdcode</h1>
-	<div class="tutorials">
-		<%= render 'static_pages/tutorials', tutorials: @tutorials %>
-	</div>
-	<%= will_paginate @tutorials %>
-</div>
+<%= render 'static_pages/tutorials', tutorials: @tutorials %>
+<%= will_paginate @tutorials %>

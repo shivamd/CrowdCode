@@ -1,7 +1,15 @@
 <% if upvote?(votable_type.class.to_s, votable_type.id)  %>
+  <div class="upvote">
     <%= vote_button("update", "Upvote", votable_type, :put, "disabled") %>
+  </div>
+  <div class="downvote">
     <%= vote_button("update", "Downvote", votable_type, :put) %>
+  </div>
 <% else  %>
-  <%= vote_button("update", "Upvote", votable_type, :put) %>
-  <%= vote_button("update", "Downvote", votable_type, :put, "disabled") %>
+  <div class="upvote">
+    <%= vote_button("update", "Upvote", votable_type, :put) %>
+  </div>
+  <div class="downvote">
+    <%= vote_button("update", "Downvote", votable_type, :put, "disabled") %>
+  </div>
 <% end  %>

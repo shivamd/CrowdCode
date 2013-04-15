@@ -1,6 +1,7 @@
-<h2>Create a tutorial</h2>
+
 
 <%= form_for @tutorial do |f| %>
+<h2>Create a tutorial</h2>
   <%= render 'shared/error_messages', object: @tutorial %>
   <%= f.label :title %>
   <%= f.text_field :title %>
@@ -12,8 +13,17 @@
     <%= f.text_field :url %>
   </div>
 
-  <%= label_tag :write_a_tutorial %>
-  <%= check_box_tag :write_a_tutorial, class: "form_check" %>
+  <%= label_tag :tutorial_type %>
+  <div class="tutorial-radio-btns">
+    <div class="add-link-radio">
+    <%= radio_button_tag(:tut_type, "add link") %>
+    <%= label_tag(:add_link, "Add my own link") %>
+    </div>
+    <div class="create-tutorial-radio">
+    <%= radio_button_tag(:tut_type, "create tutorial") %>
+    <%= label_tag(:create_tutorial, "Write a tutorial") %>
+    </div>
+  </div>
 
   <div class="tutorial_content">
     <%= f.label :content %>
@@ -23,7 +33,7 @@
 
   <%= label_tag :tags %>
   <%= text_field_tag :tag %>
-  <small>e.g "ruby ruby-on-rails javascript oauth"</small> <br>
-  <%= f.submit "Submit tutorial" %>
+  <small>"e.g. ruby ruby-on-rails javascript oauth" </small> <br>
+  <%= f.submit "Submit tutorial", class: "btn btn-success" %>
 <% end %>
 
