@@ -1,3 +1,8 @@
+<div class="frontpage-search">
+  <%= search_form_for @search do |f| %>
+    <%= f.text_field :title_cont, placeholder: "Search" %>
+  <% end %>
+</div>
 <div class="tutorials">
   <%= render 'static_pages/tutorials', tutorials: @tutorials %>
 </div>
