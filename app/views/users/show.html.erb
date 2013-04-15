@@ -1,5 +1,6 @@
 <h1><%= @user.username %></h1>
 <%= gravatar_for(@user.email) %><br>
+Last signed in <%= (time_ago_in_words(@user.last_sign_in_at)) %> ago
 <%= @user.description %>
 
 <ul class="tabs">
@@ -29,6 +30,7 @@
 						  <%= link_to comment.content, comment.commentable_type.constantize.find(comment.commentable_id) %> 
 						  <small><%= time_ago_in_words(comment.created_at)%> ago</small> 
 					  </li>
+			
 				  <% end %>
 		    </div>
 		  <% end %>

@@ -9,4 +9,4 @@ $(document).ready(function (){
         $tab.addClass('active');
         $other_tabs.removeClass('active');
     });
-  });
+    });
