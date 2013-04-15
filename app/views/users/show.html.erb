@@ -3,13 +3,16 @@
 <%= @user.description %>
 
 <ul class="tabs">
-	<li class="active"><a href="#tab1">Comments</a></li>
-	<li><a href="#tab2">Votes</a></li>
+	<li class="active"><a href="#tab1">Tutorials</a></li>
+	<li><a href="#tab2">Comments</a></li>
+	<li><a href="#tab3">Votes</a></li>
+	<li><a href="#tab4">Bookmarks</a></li>
 </ul>
 
 <div class="stats">
 		<% if @user.tutorials.any?  %>
 			<div class="tutorials">
+				<div class="tab" id="tab1">
 				 <h2><%= @user.username%>'s Tutorials</h2>
 				<% @user.tutorials.each do |tut| %>
 					<li><%= link_to tut.title, generate_url(tut) %></li>
@@ -19,7 +22,7 @@
 		<% end %>
 
 		<% if @user.comments.any? %>
-		  <div class="tab" id="tab1">
+		  <div class="tab" id="tab2">
 			  <h2>Latest Comments</h2>
 				  <% @user.comments.limit(5).each do |comment| %>
 					  <li>
@@ -31,7 +34,7 @@
 		  <% end %>
 
 		<% if @user.votes.any? %>
-		  <div class="tab" id="tab2">
+		  <div class="tab" id="tab3">
 			 <h2>Latest Votes</h2>
 				<% @user.votes.limit(5).each do |vote| %>
 				  <li>
@@ -43,12 +46,13 @@
 			<% end %>
 
 		<% if @user.bookmarks.any? %>
-		  <div class="tab" id="tab3">
+		  <div class="tab" id="tab4">
 		  	<h2>Latest Bookmarks</h2>
 		  	  <% @user.bookmarks.limit(5).each do |bookmark| %>
 		  	    <li>
 		  	  	  <%= link_to bookmark.tutorial.title, bookmark.tutorial %>
 		  	    </li>
+		 
 		  	  <% end %>
 		  </div>
 		<% end %>

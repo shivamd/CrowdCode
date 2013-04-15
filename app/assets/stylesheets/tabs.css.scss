@@ -1,3 +1,30 @@
+.tabs {
+  display: inline;
+  padding-top: 100px;
+  width: 100%;
+}
+.tabs li {
+  float: left;
+  margin-right: 16px;
+  padding: 10px 15px;
+  height: 30px;
+  line-height: 30px;
+}
+
+.tutorials {
+  clear: both;
+}
+
 .tabs li.active {
-  border: 1px solid #484
+    border: 1px solid #ccc;
+    border-bottom: 1px solid white;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    margin-bottom: -1px;
+    height: 31px;
+    padding: 9px 14px;
+}
+
+.tabs li a {
+  color: #9bcd69;
 }
