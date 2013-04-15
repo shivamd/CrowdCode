@@ -128,7 +128,7 @@ li {
 
 }
 
-/******* Tutorial Show and Create ********/
+/******* User & Tutorail: Pages & Forms ********/
 
 #tutorial_content {
 	width: 600px;
@@ -148,8 +148,15 @@ li {
 	margin-left: 0;
 }
 
+.sign-in input.btn.btn-large {
+	width: 200px;
+	margin-left: 229px;
+}
+
 .new_tutorial,
-.tutorial-show
+.tutorial-show,
+.sign-up,
+.sign-in
  {
 	background-color: #fff;
 	width: 420px;
@@ -185,6 +192,22 @@ li {
 			width: auto
 		}
 	}
+}
+
+.github-icon {
+	margin-left: -41px;
+}
+
+.sign-in form.button_to {
+	position: absolute;
+	top: 520px;
+}
+
+.or {
+	text-align: center;
+	padding-top: 20px;
+	font-size: 30px;
+	margin-bottom: 5px;
 }
 
 
