@@ -6,11 +6,6 @@
   <%= f.label "Choose Category:" %>
   <%= collection_select(:tutorial, :category_id, Category.all, :id, :name) %>
 
-  <div class="tutorial_url">
-    <%= f.label :url %>
-    <%= f.text_field :url %>
-  </div>
-
   <%= label_tag :tutorial_type %>
   <div class="tutorial-radio-btns">
     <div class="add-link-radio">
@@ -23,9 +18,14 @@
     </div>
   </div>
 
+  <div class="tutorial_url">
+    <%= f.label :url %>
+    <%= f.text_field :url %>
+  </div>
+
   <div class="ckeditor">
     <%= f.label :content %>
-    <%= f.cktext_area :content, :class => "", :ckeditor => {:toolbar => "mini"} %>
+    <%= f.cktext_area :content %>
   </div>
 
 
