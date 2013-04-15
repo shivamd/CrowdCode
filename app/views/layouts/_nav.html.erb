@@ -2,7 +2,7 @@
 	<div class="navbar-inner">
 		<a class="brand" href="/">Crowdcode</a>
 		<nav>
-			<ul class="nav">
+			<ul class="nav pull-left">
 				<li><%= link_to "Latest", root_path %></li>
 				<li id="fat-menu" class="dropdown">
 				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -14,18 +14,16 @@
 					  <% end %>
 				 </ul>
 			 </li>
+				<li><%= link_to "Tutorials", tutorials_path %></li>
 				<% if current_user  %>
-				  <li><%= link_to "Log Out", destroy_user_session_path, :method => :delete %></li>
 				  <li><%= link_to "New Tutorial", new_tutorial_path %></li>
 				  <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+				  <li><%= link_to "Log Out", destroy_user_session_path, :method => :delete %></li>
 				<% else %>
-				  <li><%= link_to "Sign up", new_user_registration_path %></li>
-				  <li><%= link_to "Log In", new_user_session_path %></li>
-				  <li><%= link_to "Sign in with Github", user_omniauth_authorize_path(:github)%></li>
+				  <li class="session"><%= link_to "Sign up", new_user_registration_path %></li>
+				  <li class="session"><%= link_to "Log In", new_user_session_path %></li>
 				<% end %>
-				<li><%= link_to "Tutorials", tutorials_path %></li>
-				<li id="search"><%= link_to 'Search' %></li>
-			</ul>
+			<ul>
 		</nav>
   </div>
 </header>
