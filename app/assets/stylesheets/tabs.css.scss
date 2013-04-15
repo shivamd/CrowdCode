@@ -5,6 +5,10 @@
   border-bottom: 1px solid #ccc;
 }
 .tabs li {
+<<<<<<< HEAD
+=======
+  display: inline-block;
+>>>>>>> tabs
   float: left;
   padding: 10px 15px;
   height: 30px;
@@ -21,7 +25,7 @@
 
 .tabs li.active {
     border: 1px solid #ccc;
-    border-bottom: 1px solid #9bcd69;
+    border-bottom: 1px solid #ccc;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
     margin-bottom: -1px;
