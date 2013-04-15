@@ -1,22 +1,20 @@
 <div class="meta-info">
   <div class="votes">
-  <span class="icon votes"><%= tut.vote_count ? tut.vote_count : "0" %>  </span>
-
-  <div class="favorite">
-	  <% if current_user && !tut.bookmarked_by?(current_user) %>
-	    <span class="icon star"><i class="ss-icon">star</i></span>
-	  <% elsif current_user %>
-	    <span class="icon star-yellow"><i class="ss-icon">star</i></span>
-	  <% else %>
-	  <% end %>
+    <span class="icon votes"><%= tut.vote_count ? tut.vote_count : "0" %>  </span>
+    <div class="vote-btns">
+      <% if user_signed_in? && !tut.author?(current_user) %>
+        <% voted = current_user.voted?(tut) ? true : false %>
+        <%= render 'votes/vote', :votable_type => tut, :voted => voted %>
+      <% end %>
+    </div>
   </div>
-
-  <div class="vote-btns">
-    <% if user_signed_in? && !tut.author?(current_user) %>
-      <% voted = current_user.voted?(tut) ? true : false %>
-      <%= render 'votes/vote', :votable_type => tut, :voted => voted %>
+  <div class="favorite">
+    <% if current_user && !tut.bookmarked_by?(current_user) %>
+      <span class="icon star"><i class="ss-icon">star</i></span>
+    <% elsif current_user %>
+      <span class="icon star-yellow"><i class="ss-icon">star</i></span>
+    <% else %>
     <% end %>
   </div>
-</div>
-  <span class="icon comments"><i class="ss-icon">chat</i><%= tut.comments.count %></span>
+  <span class="icon comments"><a href="/tutorials/<%= tut.id %>#comment-list"><i class="ss-icon">chat</i><%= tut.comments.count %></span>
 </div>

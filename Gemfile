@@ -6,7 +6,7 @@ gem 'rails', '3.2.13'
 gem 'markup'
 gem 'redcarpet'
 gem 'will_paginate'
-
+gem 'ckeditor'
 gem 'ransack'
 gem 'merit'
 gem 'omniauth-github'
