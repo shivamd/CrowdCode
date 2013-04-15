@@ -1,15 +1,15 @@
 $(document).ready(function(){
- $('.tutorial .add-this').hide();
- $('.tutorial_box').mouseenter(showShareButtons)
- $('.tutorial_box').mouseleave(hideShareButtons)
+ $('.tutorial-text .add-this').hide();
+ $('.tutorial-box').mouseenter(showShareButtons)
+ $('.tutorial-box').mouseleave(hideShareButtons)
 
 });
 
 function hideShareButtons() {
-  $(this).children('.tutorial').children('.add-this').slideUp();
+  $(this).children('.tutorial-content').children('.tutorial-text').children('.add-this').slideUp();
 };
 
 function showShareButtons() {
-  $(this).children('.tutorial').children('.add-this').slideDown();
+  $(this).children('.tutorial-content').children('.tutorial-text').children('.add-this').slideDown();
 };
 
