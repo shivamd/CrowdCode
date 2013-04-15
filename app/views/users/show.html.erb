@@ -3,6 +3,7 @@
 <div class="top-bar-profile">
 <h1 id="user-info"><%= @user.username %>
 </h1>
+<small><%= link_to "Edit", edit_user_registration_path %></small>
 <small>Last signed in <%= (time_ago_in_words(@user.last_sign_in_at)) %> ago</small>
 <br>
 </div>
