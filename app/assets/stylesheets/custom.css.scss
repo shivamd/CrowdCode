@@ -209,7 +209,8 @@ li {
 .new_tutorial,
 .tutorial-show,
 .sign-up,
-.sign-in
+.sign-in,
+.profile-container
  {
 	background-color: #fff;
 	width: 420px;
@@ -223,6 +224,11 @@ li {
 }
 .new_tutorial {
 	width: 600px;
+}
+
+.profile-container {
+	width: 600px;
+	height: 600px;
 }
 
 .tutorial-show {

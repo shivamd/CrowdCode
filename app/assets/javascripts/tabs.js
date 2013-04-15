@@ -1,4 +1,5 @@
 $(document).ready(function (){
+    
     $('.tabs li a').click(function (e) {
         e.preventDefault();
         var $tab = $(this).parent();
@@ -9,4 +10,4 @@ $(document).ready(function (){
         $tab.addClass('active');
         $other_tabs.removeClass('active');
     });
-    });
+});
