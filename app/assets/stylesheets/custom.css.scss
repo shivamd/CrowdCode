@@ -270,6 +270,11 @@ nav li a {
 	font-size: 1.2em;
 }
 
+ul.dropdown-menu li a:hover {
+	background: #999; /*overwrites bootstrap*/
+
+}
+
 
 /* upvote/downvote */
 
