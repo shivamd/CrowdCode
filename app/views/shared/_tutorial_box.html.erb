@@ -1,4 +1,4 @@
-<div class="tutorial-box">
+<div class="tutorial-box" id="<%= tut.id %>">
   <div class="tutorial-content">
     <%= link_to image_tag( tut.category.img, class: "tutorial-img"), tut %>
     <div class="tutorial-text">
@@ -6,6 +6,12 @@
     <%= link_to tut.title, tut, { class: "tutorial-title" } %>
     
     <div class="meta-info">
+        <% if current_user && !tut.bookmarked_by?(current_user) %>
+          <span class="icon star"><i class="ss-icon">star</i></span>
+        <% elsif current_user %>
+          <span class="icon star-yellow"><i class="ss-icon">star</i></span>
+        <% else %>
+        <% end %>
       <span class="icon comments"><i class="ss-icon">chat</i><%= tut.comments.count %></span>
       <span class="icon votes"><i class="ss-icon">heart</i><%= tut.vote_count ? tut.vote_count : "0" %>  </span>
     </div>
