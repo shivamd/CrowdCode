@@ -9,9 +9,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   attr_accessible :email, :password, :password_confirmation, :remember_me, :username, :description
   # after_save :send_welcome_email
-  has_many :tutorials 
-  has_many :comments
-  has_many :votes
+  has_many :tutorials, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :votes, dependent: :destroy
 
   def voted?(votable)
     get_vote(votable).present?
