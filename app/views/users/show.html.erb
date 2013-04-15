@@ -2,10 +2,13 @@
 <span id="profile-pic"><%= gravatar_for(@user.email) %></span><br>
 <div class="top-bar-profile">
 <h1 id="user-info"><%= @user.username %>
-<small>Last signed in <%= (time_ago_in_words(@user.last_sign_in_at)) %> ago</small></h1><br>
+</h1>
+<small>Last signed in <%= (time_ago_in_words(@user.last_sign_in_at)) %> ago</small>
+<br>
 </div>
+<div class="user-description">
 <%= @user.description %>
-
+</div>
 <ul class="tabs">
 	<li class="active"><a href="#tab1">Tutorials</a></li>
 	<li><a href="#tab2">Comments</a></li>
