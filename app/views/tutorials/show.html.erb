@@ -1,12 +1,9 @@
-<div class="tutorial-show">
+<div class="tutorial-show" id="<%= @tutorial.id %>">
   <%= link_to "Tutorial", Tutorial %> \ <%= link_to @tutorial.category.name, @tutorial.category %>
   <h1><%= @tutorial.title %></h1>
     
   <%= render 'shared/addthis' %>
   <%= render 'shared/meta_info', tut: @tutorial %>
-  <div class="bookmark">
-    <%= render 'tutorials/bookmark', tutorial: @tutorial %>
-  </div>
 
   <% if @markdown %>
     <p><%= @markdown.html_safe  %></p>

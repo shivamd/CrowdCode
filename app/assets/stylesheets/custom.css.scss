@@ -84,6 +84,18 @@ h1 {
 	right: 10px;
 }
 
+
+/* STAR BOOKMARK CREATEION */
+.star .ss-icon:hover, .star-yellow .ss-icon {
+	color: yellow;
+	cursor: pointer
+}
+
+
+
+/* STAR BOOKMARK CREATEION */
+
+
 .icon.comments {
 	padding-right: 86px;		
 }
@@ -103,11 +115,11 @@ li {
 		  line-height: 1.2;
 		  margin-top: 7px;
 		  text-decoration: none !important;
-		  color: #444444;
+		  color: #333333;
 		  padding-top: 0;
-		}
-		a:hover {
-			color: #333333;
+		  &:hover {
+		  color: #555555;
+		  }
 		}
 		.tutorial-img {
 			float: left;
@@ -118,8 +130,11 @@ li {
 		position: absolute; left: 35%; bottom: 0;
 		margin: 3%;
 		}
-		.category-link{
-			
+		.category-link, .tutorial-link{
+			color: #819E64;
+			&:hover {
+				color: #9bcd69;
+			}
 		}
 }
 
@@ -251,6 +266,15 @@ li {
 	background-size: 235px;
 }
 
+nav li a {
+	font-size: 1.2em;
+}
+
+ul.dropdown-menu li a:hover {
+	background: #999; /*overwrites bootstrap*/
+
+}
+
 
 /* upvote/downvote */
 
@@ -276,4 +300,42 @@ li {
 .downvote input[disabled="disabled"] {
 	cursor: default;
 	opacity: .4;
+}
+
+
+/*sign in page */
+
+div.session {
+	position: relative;
+	display: inline;
+}
+
+h1.separation {
+	position: absolute;
+	left: 280px;
+	bottom: 200px;
+}
+
+div.github {
+	position: absolute;
+	width: 300px;
+	left: 350px;
+	bottom: 150px;
+	img {
+		padding-left: 50px;
+	}
+}
+
+
+div.session {
+	float: right;
+}
+
+
+/* front page search */
+
+div.frontpage-search {
+	position: absolute;
+	right: 250px;
+	top: 15px;
 }

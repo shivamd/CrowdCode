@@ -2,31 +2,33 @@
 	<div class="navbar-inner">
 		<a class="brand" href="/">Crowdcode</a>
 		<nav>
-			<ul class="nav">
+			<ul class="nav pull-left">
 				<li><%= link_to "Latest", root_path %></li>
 				<li id="fat-menu" class="dropdown">
 				  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-					  Tags<b class="caret"></b>
+					  Categories<b class="caret"></b>
 					</a>
 	        <ul class="dropdown-menu">
-		        <% all_tags.each do |tag| %>
-			        <li><%=link_to tag.content, tag %></li>
+		        <% Category.all.each do |category| %>
+			        <li><%=link_to category.name, category, class: "dropdown" %></li>
 					  <% end %>
-					  <li><%= link_to "more", tags_path %></li>
 				 </ul>
 			 </li>
-				<% if current_user  %>
-				  <li><%= link_to "Log Out", destroy_user_session_path, :method => :delete %></li>
-				  <li><%= link_to "New Tutorial", new_tutorial_path %></li>
-				  <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
-				<% else %>
-				  <li><%= link_to "Sign up", new_user_registration_path %></li>
-				  <li><%= link_to "Log In", new_user_session_path %></li>
-				  <li><%= link_to "Sign in with Github", user_omniauth_authorize_path(:github)%></li>
-				<% end %>
 				<li><%= link_to "Tutorials", tutorials_path %></li>
-				<li id="search"><%= link_to 'Search' %></li>
-			</ul>
+				<% if current_user  %>
+				  <li><%= link_to "New Tutorial", new_tutorial_path %></li>
+				 </ul>
+				 <ul class="nav pull-right">
+				  <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
+				    <li><%= link_to "Log Out", destroy_user_session_path, :method => :delete %></li>
+				   </ul>
+				<% else %>
+				  </ul>
+					<ul class="nav pull-right">
+				      <li><%= link_to "Sign up", new_user_registration_path %></li>
+				      <li><%= link_to "Log In", new_user_session_path %></li>
+				   </ul>
+				<% end %>
 		</nav>
   </div>
 </header>
