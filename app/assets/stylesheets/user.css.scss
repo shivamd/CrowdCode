@@ -1,0 +1,43 @@
+#user-info {
+  padding-left: 20px;
+}
+.tabs {
+  padding-top: 50px;
+  float:left;
+  width: 50%;
+  border-bottom: 1px solid #ccc;
+}
+.tabs li {
+  display: inline-block;
+  float: left;
+  padding: 10px 15px;
+  height: 30px;
+  line-height: 25px;
+}
+
+.tab {
+  display:none;
+  padding-left: 22px;
+}
+
+.tutorials {
+  clear: both;
+}
+
+.tabs li.active {
+    border: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-bottom: -1px;
+    height: 31px;
+    padding: 9px 14px;
+}
+
+.tabs li a {
+  color: #00B8E6;
+}
+
+li a {
+  color: black;
+}
