@@ -4,6 +4,6 @@ class UsersController < ApplicationController
 
    active_user = params[:username] || current_user.username
    @user =  User.includes(:tutorials, 
-    											:comments, :votes).find_by_username(active_user)
+    											:comments, :votes, :bookmarks).find_by_username(active_user)
   end
 end
