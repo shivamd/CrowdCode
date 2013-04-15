@@ -4,7 +4,6 @@
 	<%= f.submit "Search" %>
 	<%= f.submit "Clear", :id => :search_reset %>
 <% end %>
-
-<ul class="tutorials">
+<div class="tutorial-list">
 	<%= render 'tutorials/tutorials', tutorials: @tutorials %>
-</ul>
+</div>
