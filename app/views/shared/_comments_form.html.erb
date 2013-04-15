@@ -1,7 +1,6 @@
-
 <%= form_for @comment, :remote => true do |f| %>
 <%= f.hidden_field :commentable_id %>
 <%= f.hidden_field :commentable_type %>
-<%= f.text_area :content, size: "10x5" %><br>
+<%= f.text_area :content, size: "10x5", placeholder: "Add comment here" %><br>
 <%= f.submit "Add comment", :id => "addcomment" %>
 <% end %>

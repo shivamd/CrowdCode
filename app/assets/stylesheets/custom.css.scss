@@ -1,7 +1,9 @@
 @import "bootstrap";
 
-img.tutorial {
+.tutorial-img {
 	max-width: 100%;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
 }
 
 body {
@@ -19,67 +21,127 @@ h1 {
 	width: 90%;
 	margin: 0 auto;
 }
-div.tutorials {
+
+.tutorial-box {
 	position: relative;
-	span.points{
-		position: absolute; right: 0; bottom: 0;
+	width: 43.5%;
+	margin: 3.208333%;
+	background-color: #ffffff;
+	float: left;
+	border-radius: 5px;
+	box-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+	.meta-info{
+		position: absolute;
+		right: 0; 
+		bottom: 0;
 		margin: 3%;
 	}
 }
 
-div.tutorial_box {
-	position: relative;
-	width: 43.5%;
-	margin: 3.208333%;
-	background-color: rgb(235, 235, 235);
-	float: left;
-	border-radius: 5px;
-	box-shadow: 2px 2px 3px rgba(0,0,0,0.2);
+.icon  {
+	font-size: 19px;
+	color: #999;
+
+	i {
+		margin-top: 2px;
+		font-size: 16px;
+		color: #999;
+		position: relative;
+		top: 1px;
+		right: 2px;
+	}
+}
+
+.icon.comments {
+	padding-right: 20px;		
 }
 
 li {
 	list-style-type: none;
 }
 
-.tutorial {
-		a.tutorial {
-			/*display: inline;*/
-			width: 40.5555556%;
-			word-wrap: break-word;
-			font-weight: bold;
-			font-size: 1.8em;
-			text-align: left;
-			line-height: 1em;
-			/*float: left;*/
-			/*margin-left: 5%;*/
-			text-decoration: none !important;
-			color: #444444;
+.tutorial-content {
+		.tutorial-title {
+			display: inline-block;
+		  width: 58.555556%;
+		  word-wrap: break-word;
+		  font-weight: bold;
+		  font-size: 1.8em;
+		  text-align: left;
+		  line-height: 1.2;
+		  margin-top: 7px;
+		  text-decoration: none !important;
+		  color: #444444;
+		  padding-top: 0;
 		}
 		a:hover {
 			color: #333333;
 		}
-		img.tutorial {
+		.tutorial-img {
 			float: left;
 			width: 35%;
 			margin-right: 5%;
-			border: 1px solid rgb(235, 235, 235);
 		}
-		div#social-buttons {
+		#social-buttons {
 		position: absolute; left: 35%; bottom: 0;
 		margin: 3%;
 		}
-		div.category-link{
-			float: left;
+		.category-link{
+			
 		}
 }
+
+.tutorial-text {
+	padding: 20px;
+}
+
+/******* Tutorial Create Form ********/
+
+#tutorial_content {
+	width: 600px;
+	height: 250px;
+}
+
+.new_tutorial {
+	background-color: #fff;
+	width: 420px;
+	margin: 0 auto;
+	padding: 30px 80px 50px 80px;
+	border-radius: 5px;
+	input,
+	select {
+		width: 100%;
+	}
+}
+
+#tutorial_category_id {
+	width: 434px;	
+}
+
+
+.tutorial-radio-btns {
+	label {
+		display: inline;
+		margin: 0 15px 0 5px;
+	}
+	
+	.add-link-radio,
+	.create-tutorial-radio {
+		input {
+			float: left;
+			width: auto
+		}
+	}
+}
+
 
 /******* Tablets ********/
 
 @media screen and (max-width: 768px) { 
-	img.tutorial {
+	.tutorial-img {
 		width: 100%;
 	}
-	a.tutorial {
+	.tutorial-title {
 		display: block;
 		width: 100%;
 		font-size: 0.8em;
@@ -90,10 +152,52 @@ li {
 /******* Mobile ********/
 
 @media screen and (max-width: 480px) {
-	div.tutorial_box {
+	.tutorial-box {
 		max-height: 200px;
 		overflow: hidden;
 		float: none;
 		margin: 5.20833% auto;
 	}
+}
+
+
+/***** navbar logo *****/
+
+.navbar-inner {
+	padding: 10px 30px;
+}
+
+.brand {
+	text-indent: -99999px;
+	background: url(/images/crowdcode@2x.png) no-repeat 0 0;
+	width: 235px;
+	height: 38px;
+	background-size: 235px;
+}
+
+
+/* upvote/downvote */
+
+.upvote input[type="submit"] {
+	background: url(/images/upvote.png) no-repeat 0 0;
+	border: none;
+	font-size: 0;
+	width: 30px;
+	height: 30px;
+	float: left;
+}
+
+.downvote input[type="submit"] {
+	background: url(/images/downvote.png) no-repeat 0 0;
+	border: none;
+	font-size: 0;
+	width: 30px;
+	height: 30px;
+	float: left;
+}
+
+.upvote input[disabled="disabled"],
+.downvote input[disabled="disabled"] {
+	cursor: default;
+	opacity: .4;
 }
