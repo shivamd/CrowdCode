@@ -2,6 +2,11 @@
 <%= link_to "Tutorial", Tutorial %> \ <%= link_to @tutorial.category.name, @tutorial.category %>
 <%= render 'shared/addthis' %>
 <%= render 'shared/vote_module', tut: @tutorial %>
+<% if current_user && !@tutorial.bookmarked_by?(current_user) %>
+  <%= button_to "favorite", { action: "create", controller: "bookmarks", id: @tutorial.id } %>
+<% else %>
+	<%= button_to "unfavorite", { action: "destroy", controller: "bookmarks", id: @tutorial.id }, method: :delete %>  
+<% end %>
 
 <% if @markdown %>
   <p><%= @markdown.html_safe  %></p>

@@ -51,4 +51,8 @@ class Tutorial < ActiveRecord::Base
   def url?
     url == ""
   end
+
+  def bookmarked_by?(user)
+    Bookmark.find_by_user_id_and_tutorial_id(user.id, self.id)
+  end
 end
