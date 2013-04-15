@@ -1,5 +1,6 @@
-<h1><%= @user.username %></h1>
-<%= gravatar_for(@user.email) %><br>
+<h1 id="user-info"><%= @user.username %>
+<small>Last signed in <%= (time_ago_in_words(@user.last_sign_in_at)) %> ago</small></h1><br>
+<span id="profile-pic"><%= gravatar_for(@user.email) %></span><br>
 <%= @user.description %>
 
 <ul class="tabs">
@@ -7,6 +8,7 @@
 	<li><a href="#tab2">Comments</a></li>
 	<li><a href="#tab3">Votes</a></li>
 	<li><a href="#tab4">Bookmarks</a></li>
+	<li><a href="#tab5">Badges</a>
 </ul>
 
 <div class="stats">
@@ -52,8 +54,6 @@
 		  	    <li>
 		  	  	  <%= link_to bookmark.tutorial.title, bookmark.tutorial %>
 		  	    </li>
-		  	    
-		  	    <li>You have no bookmarks. Get to it!</li>
 		  	  <% end %>
 		  </div>
 		<% end %>

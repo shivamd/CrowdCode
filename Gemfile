@@ -32,6 +32,7 @@ group :test, :development do
   gem 'guard-spork'
   gem 'spork'
   gem 'debugger'
+  gem 'faker'
 end
 
 group :test do
@@ -41,6 +42,7 @@ group :test do
   gem 'shoulda-matchers'
   gem 'factory_girl_rails'
   gem 'rb-fsevent'
+  gem 'selenium-webdriver'
 end
 
 gem 'devise'
