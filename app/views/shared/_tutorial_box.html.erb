@@ -4,11 +4,7 @@
     <div class="tutorial-text">
       <%= render 'shared/tutorial_category_link', tut: tut %><br>
     <%= link_to tut.title, tut, { class: "tutorial-title" } %>
-    
-    <div class="meta-info">
-      <span class="icon comments"><i class="ss-icon">chat</i><%= tut.comments.count %></span>
-      <span class="icon votes"><i class="ss-icon">heart</i><%= tut.vote_count ? tut.vote_count : "0" %>  </span>
-    </div>
+    <%= render 'shared/meta_info', tut: tut %>
     <%= render 'shared/addthis' %>
     </div>
   </div>
