@@ -1,8 +1,14 @@
 $(document).ready(function(){
+  $('.tutorial_url').hide();
 	// $('div.tutorial_content').hide();
-	$('#write_a_tutorial').click(function(){
-		$('div.tutorial_content').toggle();
-		$('div.tutorial_url').toggle();
+	$('.add-link-radio').click(function(){
+		$('div.ckeditor').hide();
+    $('div.tutorial_url').show();
 	});
+
+  $('.create-tutorial-radio').click(function(){
+    $('div.tutorial_url').hide();
+    $('div.ckeditor').show();
+  });
 
 });

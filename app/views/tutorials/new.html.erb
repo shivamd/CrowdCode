@@ -8,13 +8,13 @@
 
   <%= label_tag :tutorial_type %>
   <div class="tutorial-radio-btns">
-    <div class="add-link-radio">
-    <%= radio_button_tag(:tut_type, "add link") %>
-    <%= label_tag(:add_link, "Add my own link") %>
-    </div>
     <div class="create-tutorial-radio">
-    <%= radio_button_tag(:tut_type, "create tutorial") %>
-    <%= label_tag(:create_tutorial, "Write a tutorial") %>
+      <%= radio_button_tag(:tut_type, checked = true, "create tutorial") %>
+      <%= label_tag(:create_tutorial, "Write a tutorial") %>
+    </div>
+    <div class="add-link-radio">
+      <%= radio_button_tag(:tut_type, "add link") %>
+      <%= label_tag(:add_link, "Add my own link")  %>
     </div>
   </div>
 

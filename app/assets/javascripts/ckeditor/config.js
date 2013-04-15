@@ -1,3 +1,5 @@
+// This file used to edit the WYSIWYG
+
 CKEDITOR.editorConfig = function( config ) {
   config.toolbarGroups = [
       { name: 'document',    groups: [ 'mode' ] },
@@ -12,7 +14,7 @@ CKEDITOR.editorConfig = function( config ) {
   ];
 
   // Hides plugins by name
-  config.removePlugins = 'newpage,print,save,font,removeformat, smiley, iframe,pagebreak,table';
+  config.removePlugins = 'newpage,print,save,font, smiley, iframe,pagebreak';
 }
 
 // Default settings for toolbarGroups.
