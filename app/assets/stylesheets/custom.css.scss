@@ -115,11 +115,11 @@ li {
 		  line-height: 1.2;
 		  margin-top: 7px;
 		  text-decoration: none !important;
-		  color: #444444;
+		  color: #333333;
 		  padding-top: 0;
-		}
-		a:hover {
-			color: #333333;
+		  &:hover {
+		  color: #555555;
+		  }
 		}
 		.tutorial-img {
 			float: left;
@@ -130,8 +130,11 @@ li {
 		position: absolute; left: 35%; bottom: 0;
 		margin: 3%;
 		}
-		.category-link{
-			
+		.category-link, .tutorial-link{
+			color: #819E64;
+			&:hover {
+				color: #9bcd69;
+			}
 		}
 }
 
