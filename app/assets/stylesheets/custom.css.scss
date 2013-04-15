@@ -1,3 +1,5 @@
+/* main css */
+
 @import "bootstrap";
 
 .tutorial-img {
@@ -17,20 +19,16 @@ h1 {
 	font-size: 2em;
 }
 
+li {
+	list-style-type: none;
+}
+
 .container {
 	width: 90%;
 	margin: 0 auto;
 }
 
-.tutorial-box {
-	position: relative;
-	width: 43.5%;
-	margin: 3.208333%;
-	background-color: #ffffff;
-	float: left;
-	border-radius: 5px;
-	box-shadow: 2px 2px 3px rgba(0,0,0,0.2);
-}
+/* Meta-info partial */
 
 .meta-info{
 	position: absolute;
@@ -46,14 +44,12 @@ h1 {
 	margin: 0%;
 }
 
-
 .downvote,
 .upvote {
-	/*display: inline;*/
 	position: absolute;
-	/*float: right;*/
 	bottom: -8px;
 }
+
 .upvote {
 	right: 45px;
 }
@@ -62,8 +58,6 @@ h1 {
 	right: 20px;
 	margin: 0;
 }
-
-
 
 .icon  {
 	font-size: 19px;
@@ -84,24 +78,68 @@ h1 {
 	right: 10px;
 }
 
-
-/* STAR BOOKMARK CREATEION */
 .star .ss-icon:hover, .star-yellow .ss-icon {
-	color: yellow;
+	color: #F0DA65;
 	cursor: pointer
 }
 
-
-
-/* STAR BOOKMARK CREATEION */
-
-
 .icon.comments {
-	padding-right: 86px;		
+	padding-right: 79px;
+	a, i {
+	text-decoration: none;
+	color: #999999;
+		&:hover {
+		  color: #777777;
+		}
+	}
 }
 
-li {
-	list-style-type: none;
+.upvote input[type="submit"],
+.downvote input[type="submit"] {
+	border: none;
+	font-size: 0;
+	width: 30px;
+	height: 30px;
+	float: left;
+	opacity: .8;
+	&:hover{
+		opacity: .94;
+	}
+}
+
+.upvote input[type="submit"]{
+	background: url(/images/upvote.png) no-repeat 0 0;
+}
+
+.downvote input[type="submit"] {
+	background: url(/images/downvote.png) no-repeat 0 0;
+}
+
+.upvote input[disabled="disabled"],
+.downvote input[disabled="disabled"] {
+	cursor: default;
+	opacity: .4;
+	&:hover{
+		opacity: .4;
+	}
+}
+
+.favorite {
+	display: inline;
+	padding-right: 5px ;
+}
+
+
+/* Tutorial Box */
+
+.tutorial-box {
+	position: relative;
+	width: 43.5%;
+	margin: 3.208333%;
+	background-color: #ffffff;
+	float: left;
+	border-radius: 5px;
+	box-shadow: 2px 2px 3px rgba(0,0,0,0.2);
 }
 
 .tutorial-content {
@@ -143,7 +181,7 @@ li {
 
 }
 
-/******* User & Tutorail: Pages & Forms ********/
+/* User & Tutorial: Pages & Forms */
 
 #tutorial_content {
 	width: 600px;
@@ -212,6 +250,13 @@ li {
 	}
 }
 
+.ckeditor,
+.tutorial_url {
+	margin: 15px 0;
+}
+
+/* Sign in form */
+
 .github-icon {
 	margin-left: -41px;
 }
@@ -228,12 +273,7 @@ li {
 	margin-bottom: 5px;
 }
 
-.ckeditor,
-.tutorial_url {
-	margin: 15px 0;
-}
-
-/******* Tablets ********/
+/* Tablets */
 
 @media screen and (max-width: 768px) { 
 	.tutorial-img {
@@ -247,7 +287,7 @@ li {
 	}
 }
 
-/******* Mobile ********/
+/* Mobile */
 
 @media screen and (max-width: 480px) {
 	.tutorial-box {
@@ -259,7 +299,7 @@ li {
 }
 
 
-/***** navbar logo *****/
+/* Navbar logo */
 
 .navbar-inner {
 	padding: 10px 30px;
@@ -282,35 +322,7 @@ ul.dropdown-menu li a:hover {
 
 }
 
-
-/* upvote/downvote */
-
-.upvote input[type="submit"] {
-	background: url(/images/upvote.png) no-repeat 0 0;
-	border: none;
-	font-size: 0;
-	width: 30px;
-	height: 30px;
-	float: left;
-}
-
-.downvote input[type="submit"] {
-	background: url(/images/downvote.png) no-repeat 0 0;
-	border: none;
-	font-size: 0;
-	width: 30px;
-	height: 30px;
-	float: left;
-}
-
-.upvote input[disabled="disabled"],
-.downvote input[disabled="disabled"] {
-	cursor: default;
-	opacity: .4;
-}
-
-
-/*sign in page */
+/* Sign-in page */
 
 div.session {
 	position: relative;
@@ -333,11 +345,9 @@ div.github {
 	}
 }
 
-
 div.session {
 	float: right;
 }
-
 
 /* front page search */
 
