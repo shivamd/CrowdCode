@@ -1,8 +1,10 @@
 
 @import 'bourbon';
 
-#user-info {
-  
+.user-description {
+  clear: both;
+  padding-top: 20px;
+  text-align: center;
 }
 .tabs {
   padding-top: 50px;
@@ -14,6 +16,7 @@
 #profile-pic {
   display: inline;
   float: left;
+  padding-left: 40px;
   margin-top: 29px;
 }
 .top-bar-profile {
