@@ -1,24 +1,26 @@
 <div class="tutorial-show" id="<%= @tutorial.id %>">
-  <%= link_to "Tutorial", Tutorial %> \ <%= link_to @tutorial.category.name, @tutorial.category %>
+  
   <h1><%= @tutorial.title %></h1>
     
-  <%= render 'shared/addthis' %>
   <%= render 'shared/meta_info', tut: @tutorial %>
 
   <% if @markdown %>
     <p><%= @markdown.html_safe  %></p>
   <% else %>
-  	<%= link_to @tutorial.url, generate_url(@tutorial) %>
+    <%= link_to @tutorial.url, generate_url(@tutorial) %>
   <% end %>
 
-  <% if @tags %>
+  <% unless @tags.blank? %>
     <p>Tags: <%= @tags %></p>
   <% end %>
 
   <% if @tutorial.author?(current_user) || (current_user && current_user.admin?) %>
-  <%= button_to "Edit tutorial", edit_tutorial_path, method: "get" %>
-  <%= button_to "Delete tutorial", tutorial_path, method: "delete" %>
+    <%= link_to "edit tutorial", edit_tutorial_path(@tutorial) %>
+    <%= link_to "delete tutoiral", tutorial_path(@tutorial), method: :delete %>
   <% end %>
+  <div class="share-this">
+    <%= render 'shared/addthis' %>
+  </div>
 </div>
 <div class="comments-container">  
   <%= render 'shared/comments_form', comment: @comment %>

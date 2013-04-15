@@ -187,6 +187,17 @@ li {
 .tutorial-show {
 	width: 50%;
 	position: relative;
+		
+	h1 {
+		text-align: center;
+	}
+
+	div.share-this {
+	  position: absolute;
+	  bottom: 13px;
+	  right: 200px;
+
+	}
 }
 
 #tutorial_category_id {
@@ -339,3 +350,7 @@ div.frontpage-search {
 	right: 250px;
 	top: 15px;
 }
+
+
+
+
