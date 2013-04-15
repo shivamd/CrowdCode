@@ -84,6 +84,18 @@ h1 {
 	right: 10px;
 }
 
+
+/* STAR BOOKMARK CREATEION */
+.star .ss-icon:hover, .star-yellow .ss-icon {
+	color: yellow;
+	cursor: pointer
+}
+
+
+
+/* STAR BOOKMARK CREATEION */
+
+
 .icon.comments {
 	padding-right: 86px;		
 }
@@ -277,3 +289,28 @@ li {
 	cursor: default;
 	opacity: .4;
 }
+
+
+/*sign in page */
+
+div.session {
+	position: relative;
+	display: inline;
+}
+
+h1.separation {
+	position: absolute;
+	left: 280px;
+	bottom: 200px;
+}
+
+div.github {
+	position: absolute;
+	width: 300px;
+	left: 350px;
+	bottom: 150px;
+	img {
+		padding-left: 50px;
+	}
+}
+
