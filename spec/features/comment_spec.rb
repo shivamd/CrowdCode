@@ -16,8 +16,7 @@ describe 'Comment', :js => :true do
         click_button "Add comment"  
         visit tutorial_path(tutorial)
       }.to change(Comment, :count).by(1)
-      
-      # expect { page }.to have_content(comment.content)
+      expect { page }.to have_content(comment.content)
     end
   end
 end

@@ -3,14 +3,13 @@ require 'spec_helper'
 describe "Tutorial" do 
 	subject { page }
 
-	describe "Tutoral creation" do 
+	describe "Tutoral creation", :js => true do 
 		let(:user) { create(:user) }
 		let(:submit) { "Submit tutorial" }
-		before do 
+		before(:each) do
 			login(user)
 			visit new_tutorial_path
 		end
-
 		describe "with invalid information" do 
 			it "should not create a tutorial" do 
 				expect { click_button submit }.not_to change(Tutorial,:count)
@@ -19,7 +18,9 @@ describe "Tutorial" do
 
 		describe "with valid information" do 
 			before do 
-				fill_in "Title", with: "a" * 15
+				debugger
+				fill_in "Title", with: "aa" * 15
+				
 				fill_in "Content", with: "b" * 100
 			end
 
