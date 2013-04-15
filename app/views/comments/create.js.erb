@@ -1,2 +1,3 @@
-$('#commentlist ul').append("<%= j render 'shared/comment', :comment => @comment %>");
+$('section#comment-list ul').append("<%= j render 'shared/comment', :comment => @comment %>");
+// $('section#comment-list ul li:last-child').effect("highlight", {}, 3000);
 $('#comment_content').val("");
