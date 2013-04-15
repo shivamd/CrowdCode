@@ -36,4 +36,15 @@
 				  </li>
 		  </div>
 			<% end %>
+
+		<% if @user.bookmarks.any? %>
+		  <div class="bookmarks">
+		  	<h2>Latest Bookmarks</h2>
+		  	  <% @user.bookmarks.limit(5).each do |bookmark| %>
+		  	    <li>
+		  	  	  <%= link_to bookmark.tutorial.title, bookmark.tutorial %>
+		  	    </li>
+		  	  <% end %>
+		  </div>
+		<% end %>
 </div>
