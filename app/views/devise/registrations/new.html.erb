@@ -1,3 +1,4 @@
+<div class="session">
 <h2>Sign up</h2>
 
 <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
@@ -18,3 +19,11 @@
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+  <h1 class="separation">OR</h1>
+
+  <div class="github">
+    <h2>Sign in with Github</h2>
+     <%= link_to image_tag("octocat.png"), user_omniauth_authorize_path(:github)%>
+ </div>
+</div>

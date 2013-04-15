@@ -207,5 +207,26 @@ li {
 }
 
 
-/*navbar */
+/*sign in page */
+
+div.session {
+	position: relative;
+	display: inline;
+}
+
+h1.separation {
+	position: absolute;
+	left: 280px;
+	bottom: 200px;
+}
+
+div.github {
+	position: absolute;
+	width: 300px;
+	left: 350px;
+	bottom: 150px;
+	img {
+		padding-left: 50px;
+	}
+}
 

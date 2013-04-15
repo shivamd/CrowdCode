@@ -1,8 +1,3 @@
-<ul>
 <% tutorials.each do |tut| %>
-	<li>
-    <%= link_to tut.title, generate_url(tut) %>
-    <%= render 'shared/vote_module', tut: tut %>
-  </li>
+	  <%= render 'shared/tutorial_box', tut: tut %>
 <% end %>
-</ul>
