@@ -18,10 +18,10 @@ describe "Tutorial" do
 
 		describe "with valid information" do 
 			before do 
+				fill_in "tutorial_title", with: "aa" * 15
+				choose "tut_type_add_link"
 				debugger
-				fill_in "Title", with: "aa" * 15
-				
-				fill_in "Content", with: "b" * 100
+				fill_in "tutorial_url", with: "http://www.google.com"		
 			end
 
 			it "should create a tutorial" do 
