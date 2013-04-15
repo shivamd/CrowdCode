@@ -1,3 +1,6 @@
+
+@import 'bourbon';
+
 #user-info {
   padding-left: 20px;
 }
@@ -7,9 +10,11 @@
   width: 50%;
   border-bottom: 1px solid #ccc;
 }
+
 #profile-pic {
   padding-left: 20px;
 }
+
 .tabs li {
   display: inline-block;
   float: left;
@@ -36,7 +41,13 @@
     height: 31px;
     padding: 9px 14px;
 }
+.tabs li {
+  @include animation-name(scale, slide);
+  @include animation-iteration-count(infinite);
+  @include transition(all, 10000ms, ease-in-out);
 
+  &:hover {background-color: #ccc; }
+}
 .tabs li a {
   color: #00B8E6;
 }
