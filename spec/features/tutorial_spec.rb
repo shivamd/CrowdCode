@@ -4,13 +4,10 @@ describe "Tutorial" do
 	subject { page }
 
 	describe "Tutoral creation" do 
-		let(:user) { FactoryGirl.create(:user) }
+		let(:user) { create(:user) }
 		let(:submit) { "Submit tutorial" }
 		before do 
-			visit new_user_session_path 
-			fill_in "user_email", with: user.email 
-			fill_in "user_password", with: user.password 
-			click_button "Sign in"
+			login(user)
 			visit new_tutorial_path
 		end
 

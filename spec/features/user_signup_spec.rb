@@ -5,9 +5,7 @@ describe "User flow" do
   it "allows a user to login" do
     visit new_user_session_path
     user = create(:user)
-    fill_in "user_email", with: user.email
-    fill_in "user_password", with: user.password
-    click_button "Sign in"
+    login(user)
     current_path.should == user_root_path
     page.should have_content(user.username)
   end
