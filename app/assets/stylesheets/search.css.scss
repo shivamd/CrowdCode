@@ -1,5 +1,8 @@
 @import "bootstrap";
 
-.search-form {
-	display: none;
+.search-form #search_reset{
+	margin-bottom: 10px;
+}
+.search-form input[value="Search"]{
+	margin-bottom: 10px;
 }
