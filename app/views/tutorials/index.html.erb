@@ -1,9 +1,4 @@
-<%= search_form_for @search, remote: true do |f| %>
-	<%= f.text_field :title_cont, :placeholder => "Title contains" %>
-	<%= f.text_field :tags_content_cont, :placeholder => "Tag contains" %>
-	<%= f.submit "Search" %>
-	<%= f.submit "Clear", :id => :search_reset %>
-<% end %>
+<%= render 'shared/search' %>
 <div class="tutorial-list">
 	<%= render 'tutorials/tutorials', tutorials: @tutorials %>
 </div>
