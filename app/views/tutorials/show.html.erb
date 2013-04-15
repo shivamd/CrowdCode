@@ -1,5 +1,5 @@
 <h1><%= @tutorial.title %></h1>
-<%= link_to "Tutorial", Tutorial %> \ <%= link_to @tutorial.category.name, @tutorial.category %>
+  <%= link_to "Tutorial", Tutorial %> \ <%= link_to @tutorial.category.name, @tutorial.category %>
 <%= render 'shared/addthis' %>
 <%= render 'shared/vote_module', tut: @tutorial %>
 <div class="bookmark">
