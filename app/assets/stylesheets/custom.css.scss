@@ -28,6 +28,12 @@ li {
 	margin: 0 auto;
 }
 
+/* Add-this share box */
+
+.add-this {
+	opacity: .9;
+}
+
 /* Meta-info partial */
 
 .meta-info{
@@ -221,8 +227,10 @@ li {
 		width: 100%;
 	}
 }
+
 .new_tutorial {
 	width: 600px;
+	margin-bottom: 70px;
 }
 
 .tutorial-show {
@@ -367,6 +375,8 @@ div.frontpage-search {
 	right: 250px;
 	top: 15px;
 }
+
+
 
 
 
