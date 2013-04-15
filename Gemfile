@@ -32,6 +32,7 @@ group :test, :development do
   gem 'guard-spork'
   gem 'spork'
   gem 'debugger'
+  gem 'faker'
 end
 
 group :test do
