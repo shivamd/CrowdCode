@@ -11,8 +11,10 @@ describe 'Comment' do
       
       it 'allows me to add a comment' do
         tutorial = Tutorial.first
+        comment = Comment.first
         visit tutorial_path(tutorial.id)
-        # fill_in 'comment_content', with: comment.content
+        fill_in 'comment_content', with: comment.content
+        click_button "Add comment"
         # expect {click_button "Add comment"}.to change(Comment, :count).by(1)
         # expect { page }.to have_content(comment.content)
     end
