@@ -1,5 +1,3 @@
-
-
 <%= form_for @tutorial do |f| %>
 <h2>Create a tutorial</h2>
   <%= render 'shared/error_messages', object: @tutorial %>
@@ -25,9 +23,9 @@
     </div>
   </div>
 
-  <div class="tutorial_content">
+  <div class="ckeditor">
     <%= f.label :content %>
-    <%= f.text_area :content %>
+    <%= f.cktext_area :content, :class => "", :ckeditor => {:uiColor => "#AADC6E", :toolbar => "mini"} %>
   </div>
 
 
