@@ -7,6 +7,7 @@ class Tutorial < ActiveRecord::Base
   has_many :taggings, as: :taggable, dependent: :destroy
   has_many :votes, as: :votable, dependent: :destroy
   belongs_to :category
+  has_many :bookmarks, dependent: :destroy
 
   # validates :content, length: { minimum: 100 }
   # validates :url, :presence => true, :if => :content?

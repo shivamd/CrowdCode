@@ -14,4 +14,5 @@ describe Tutorial do
   it { should belong_to(:user) }
 
   it { should have_many(:comments) }
+  it { should have_many(:bookmarks) }
 end
