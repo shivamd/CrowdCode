@@ -18,9 +18,11 @@ end
 
 module Crowdcode
   class Application < Rails::Application
+
+
     
-    if Rails.development? || Rails.test?
-      APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__)) 
+    if Rails.env.development? || Rails.env.test? 
+      APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
       api_keys = YAML.load_file(APP_ROOT.join('config', 'keys.yml'))
       ENV['GITHUB_KEY'] = api_keys['github_key']
       ENV['GITHUB_SECRET'] = api_keys['github_secret']
