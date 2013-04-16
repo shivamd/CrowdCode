@@ -18,8 +18,7 @@ $(document).ready(function(){
 
 	$('ul').on('ajax:success', 'form.nested-comment', function(){
 		console.log("hey");
-		debugger
-		$(this).closest('nested-comments li.nested').last().effect("highlight", {}, 3000);
+		$(this).parents('#comment-list ul li').find('#nested-comments li').last().effect("highlight", {}, 3000);
 	});
 
 });
