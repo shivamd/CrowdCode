@@ -12,7 +12,11 @@
   <!-- JS for addthis widget -->
   <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5169ce054b6dae19"></script>
   <!-- JS for ckeditor -->
-  <%= javascript_include_tag 'ckeditor/ckeditor.js' %>
+  <script src="/ckeditor/ckeditor.js"></script>
+  <!-- For syntax highlighting in code blocks -->
+  <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/sunburst.min.css">
+  <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+
 </head>
 <body>
   <%= render 'layouts/nav' %>
