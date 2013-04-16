@@ -18,27 +18,32 @@ CKEDITOR.editorConfig = function( config ) {
 
   config.extraPlugins = 'pbckcode'
 
+  //configures PBCKcode editor plugin
   config.pbckcode  = {
-  'cls'         : 'prettyprint linenums', // the class(es) added to the pre tag, useful if you use a syntax highlighter (here it is Google Prettify)
-  'modes'       : [ 
-  	['Ruby' , 'ruby'],
-    ['PHP'  , 'php'], 
-    ['HTML' , 'html'], 
-    ['CSS'  , 'css'] ], // all the languages you want to deal with in the plugin
-    'defaultMode' : 'ruby', // the default value for the mode select. Well in fact it is the first value of the mode array
-  'theme' : "monokai", // the theme of the code editor
-  'highlightjs' : true // turn highlitjs format on/off. default: false 
-};
+  	'cls'         : 'prettyprint linenums', // the class(es) added to the pre tag, useful if you use a syntax highlighter (here it is Google Prettify)
+  	'modes'       : [ 
+  	['PHP'  			, 'php'], 
+  	['Ruby' 			, 'ruby'],
+  	["Python"  		, "python"],
+  	["JavaScript" , "javascript"],
+    ['HTML' 			, 'html'], 
+    ['CSS'  			, 'css'],
+    ["Java"         , "java"]], // all the languages you want to deal with in the plugin
+    'defaultMode' : 'ruby', 
+  	'theme' : "monokai", // the theme of the code editor
+  	'highlightjs' : true // turn highlitjs format on/off. default: false 
+	};
 }
 
-// Themes for pbckcode
-// If you want to change the theme, just pick one of these themes :  
+//** Themes for pbckcode: **//
+
 // **Bright** : "chrome", "clouds", "crimson_editor", "dawn", "dreamweaver", "eclipse", "github", "solarized_light", "textmate", "tomorrow".
 
 // **Dark** : "clouds_midnight", "cobalt", "idle_fingers", "kr_theme", "merbivore", "merbivore_soft", "mono_industrial", "monokai", "pastel_on_dark", "solarized_dark",  "tomorrow_night", "tomorrow_night_blue", "tomorrow_night_bright", "tomorrow_night_eighties", "twilight", "vibrant_ink".
 
 
-// Modes for pbckcode
+//** Modes for pbckcode **//
+
 // 'modes' : [
 //   ["C/C++"        , "c_pp"],
 //   ["C9Search"     , "c9search"],
@@ -87,7 +92,8 @@ CKEDITOR.editorConfig = function( config ) {
 // ];
 
 
-// Default settings for toolbarGroups.
+//** Default Ckeditor settings for toolbarGroups. **//
+
 // config.toolbarGroups = [
 //     { name: 'document',    groups: [ 'mode', 'document', 'doctools' ] },
 //     { name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },

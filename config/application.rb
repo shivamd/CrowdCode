@@ -29,7 +29,7 @@ module Crowdcode
       ENV['TWILIO_SECRET'] = api_keys['twilio_secret']
     end
 
-    # twilio_client = Twilio::REST::Client.new(ENV['TWILIO_KEY'], ENV['TWILIO_SECRET'])
+    twilio_client = Twilio::REST::Client.new(ENV['TWILIO_KEY'], ENV['TWILIO_SECRET'])
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
