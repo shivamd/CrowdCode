@@ -1,5 +1,5 @@
 $(document).ready(function (){
-    
+    $('#tab1').show();
     $('.tabs li a').click(function (e) {
         e.preventDefault();
         var $tab = $(this).parent();
