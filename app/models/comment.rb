@@ -13,6 +13,10 @@ class Comment < ActiveRecord::Base
 
 
   def get_tutorial
-    self.commentable_type.constantize.find(self.commentable_id)
+    if self.commentable_type == "Comment"
+      Tutorial.find(Comment.find(self.commentable_id).commentable_id)
+    else
+      self.commentable_type.constantize.find(self.commentable_id)
+    end
   end
 end
