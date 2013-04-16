@@ -1,4 +1,5 @@
 <li id="<%= comment.id %>">
+  <a name="comment<%=comment.id%>"></a>
   <%= gravatar_for comment.user.email, size: 40 %>
   <%= link_to comment.user.username.capitalize , comment.user.username, class: "username"  %>
   <small>
@@ -8,6 +9,7 @@
     <%= link_to "Edit", edit_comment_path(comment) %>
   <% end %>
     <%= link_to "Reply", "#", class: "reply" %>
+    <%= link_to "#", "#comment#{comment.id}" %>
   </small>
   <p class="main"><%= comment.content %></p>
   <section id="nested-comments">
