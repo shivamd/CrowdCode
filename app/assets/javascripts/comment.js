@@ -6,6 +6,10 @@ $(document).ready(function(){
 		}, 'slow');
 	});
 
+	$('form.new_comment').on('ajax:error', function(event, data){
+		window.location = data.responseText;
+	});
+
 	$('ul').on('click', 'small .reply', function(e){
 		e.preventDefault();
 		$(this).parents().siblings('div').toggle();

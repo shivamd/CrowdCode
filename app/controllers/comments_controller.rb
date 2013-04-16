@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
-  
+    
+  before_filter :authenticate_user!
+
   def create
     if params[:comment].nil?
       @comment = Comment.new(user_id: current_user.id, commentable_type: "Comment",
@@ -27,3 +29,4 @@ class CommentsController < ApplicationController
     redirect_to :back, notice: "Deleted comment"
   end
 end
+  

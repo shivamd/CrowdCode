@@ -8,4 +8,12 @@ class ApplicationController < ActionController::Base
       @tags += tag.content + ' '
     end
   end
+
+  def authenticate_user!
+  	if request.xhr?
+  		render :json => new_user_session_path, :status => :unauthorized
+  	else	
+  		super
+  	end
+  end
 end
