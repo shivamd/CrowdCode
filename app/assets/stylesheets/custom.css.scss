@@ -1,6 +1,7 @@
 /* main css */
 
 @import "bootstrap";
+@import "bourbon";
 
 .tutorial-img {
 	max-width: 100%;
@@ -210,7 +211,7 @@ li {
 .tutorial-show,
 .sign-up,
 .sign-in,
-.profile-container
+.profile-container	
  {
 	background-color: #fff;
 	width: 420px;
@@ -222,6 +223,7 @@ li {
 		width: 100%;
 	}
 }
+
 .new_tutorial {
 	width: 600px;
 }

@@ -16,9 +16,9 @@ module Merit
 
      
 
-      score 100, to: :user, on: 'comments#create' do |comment| 
-        comment.user.comments.count == 70
-      end
+      # score 100, to: :user, on: 'comments#create' do |comment| 
+      #   comment.user.comments.count == 70
+      # end
 
       # score 13, :on => 'comments#create', :to => :user
 

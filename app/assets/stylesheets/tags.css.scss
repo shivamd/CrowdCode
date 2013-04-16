@@ -1,0 +1,14 @@
+@import 'bootstrap';
+@import 'bourbon';
+
+.tag-link {
+  background-color: #00B8E6;
+  color:black;
+}
+.tag-cell {
+  color: black;
+  width: 440px;
+}
+.tags-table tr {
+  border-bottom: 1px dotted gray;
+}
