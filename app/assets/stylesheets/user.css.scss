@@ -8,7 +8,7 @@
 .tabs {
   padding-top: 50px;
   float:left;
-  width: 70%;
+  width: 88%;
   border-bottom: 1px solid #ccc;
 }
 
@@ -43,6 +43,7 @@
 }
 
 .tabs li.active {
+    background: #eee;
     border: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
     border-top-left-radius: 5px;
@@ -53,7 +54,7 @@
 }
 
 .tabs li {
-  &:hover   { background: tint(gray, 77%);
+  &:hover   { background: lighten(#ccc, 10%);
               border-top-left-radius: 5px;
               border-top-right-radius: 5px; }
 }
