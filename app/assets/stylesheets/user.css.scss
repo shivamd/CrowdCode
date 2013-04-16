@@ -54,7 +54,7 @@
 }
 
 .tabs li {
-  &:hover   { background: tint(gray, 77%);
+  &:hover   { background: lighten(#ccc, 10%);
               border-top-left-radius: 5px;
               border-top-right-radius: 5px; }
 }
