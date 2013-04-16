@@ -1,9 +1,9 @@
 <div class="tutorial-box" id="<%= tut.id %>">
   <div class="tutorial-content">
-    <%= link_to image_tag( tut.category.img, class: "tutorial-img"),  tut %>
+    <%= link_to image_tag( tut.category.img, class: "tutorial-img"),  generate_url(tut) %>
     <div class="tutorial-text">
       <%= render 'shared/tutorial_category_link', tut: tut %><br>
-    <%= link_to tut.title, tut, { class: "tutorial-title", target: 'blank' } %>
+    <%= link_to tut.title, generate_url(tut) , { class: "tutorial-title", target: 'blank' } %>
     <%= render 'shared/meta_info', tut: tut %>
     <%= render 'shared/addthis' %>
     </div>
