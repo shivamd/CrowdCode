@@ -22,9 +22,9 @@
 	<div class="tutorials">
 		<div class="tab" id="tab1">
 			<h2>You have submitted <%= @user.tutorials.count%> <%= link_to  'tutorials',new_tutorial_path %></h2>
-			<li>You have made <%= @user.comments.count %> insightful comments.</li>
-			<li>You have cast <%= @user.votes.count %> votes.</li>
-			
+			<li>You have made <%= @user.comments.count %> insightful <%= link_to 'comments', tutorial_path(rand(1..5)) %></li>
+			<li>You have cast <%= @user.votes.count %> <%= link_to 'votes', tutorials_path%></li>
+
 		</div>
 		<% if @user.tutorials.any?  %>
 				<div class="tab" id="tab2">
