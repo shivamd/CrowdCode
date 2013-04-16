@@ -3,6 +3,7 @@
   <h1><%= @tutorial.title %></h1>
     
   <%= render 'shared/meta_info', tut: @tutorial %>
+  
 
   <% if @tutorial.url.present? %>
     <%= link_to @tutorial.url, generate_url(@tutorial) %>

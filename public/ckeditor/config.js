@@ -10,17 +10,17 @@ CKEDITOR.editorConfig = function( config ) {
       { name: 'paragraph',   groups: [ 'list' ] },
       { name: 'links' },
       { name: 'insert' },
-      { name: 'others' }
+      { name: 'pbckcode' }
   ];
 
   // Hides plugins by name
   config.removePlugins = 'newpage,print,save,font, smiley, iframe,pagebreak';
 
-  config.extraPlugins = 'pbckcode'
+  config.extraPlugins = 'pbckcode';
 
   //configures PBCKcode editor plugin
   config.pbckcode  = {
-  	'cls'         : 'prettyprint linenums', // the class(es) added to the pre tag, useful if you use a syntax highlighter (here it is Google Prettify)
+  	// 'cls'         : 'prettyprint linenums', // the class(es) added to the pre tag, useful if you use a syntax highlighter (here it is Google Prettify)
   	'modes'       : [ 
   	['PHP'  			, 'php'], 
   	['Ruby' 			, 'ruby'],
