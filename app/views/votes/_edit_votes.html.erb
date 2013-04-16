@@ -1,3 +1,4 @@
+<% if current_user %>
 <% if upvote?(votable_type.class.to_s, votable_type.id)  %>
   <div class="upvote">
     <%= vote_button("update", "Upvote", votable_type, :put, "disabled") %>
@@ -13,3 +14,4 @@
     <%= vote_button("update", "Downvote", votable_type, :put, "disabled") %>
   </div>
 <% end  %>
+<% end %>
