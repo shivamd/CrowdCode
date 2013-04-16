@@ -1,5 +1,14 @@
-<% @tags.each do |tag| %>
-<ul>
-  <li><%= link_to tag.content, tag %> (number of tutorials: <%= tag.taggings.count %>)</li>
-</ul>
+<div class="tags-index">
+<h1> Find tutorials by tag name</h1>
+<div class="search-form">
+<%= search_form_for @search do |f| %>
+<%= f.text_field :content_cont, :placeholder => "Search by tag" %>
+<%= f.submit "Search", :class => "btn" %>
 <% end %>
+</div>
+<table class="table">
+  <% @tags.each do |tag| %>
+  <tr><td class="tag-cell"><%= link_to tag.content, tag, :class => 'tag-link'%> x<%= tag.taggings.count %> </td> </tr>
+  <% end %>
+</table>
+</div>

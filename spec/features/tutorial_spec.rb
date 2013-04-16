@@ -20,7 +20,6 @@ describe "Tutorial" do
 			before do 
 				fill_in "tutorial_title", with: "aa" * 15
 				choose "tut_type_add_link"
-				debugger
 				fill_in "tutorial_url", with: "http://www.google.com"		
 			end
 

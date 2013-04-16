@@ -1,11 +1,13 @@
 class TagsController < ApplicationController
 
 	def index 
-		@tags = Tag.all
+    @search = Tag.search(params[:q])
+    @tags = @search.result 
+		@tags = Tag.all.sort {|a,b| b.taggings.count <=> a.taggings.count }
 	end
 
 	def show 
-		tag = Tag.find(params[:id])
-		@tutorials = tag.tutorials
+		@tag = Tag.find(params[:id])
+		@tutorials = @tag.tutorials
 	end
 end
