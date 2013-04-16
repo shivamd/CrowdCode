@@ -7,6 +7,6 @@ class GraphsController < ApplicationController
     format.json { render :json => @tutorials.to_json }
     format.html
     end
-    
+  @tutorials.to_json    
   end
 end
