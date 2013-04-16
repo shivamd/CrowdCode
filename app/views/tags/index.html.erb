@@ -1,11 +1,5 @@
 <div class="tags-index">
 <h1> Find tutorials by tag name</h1>
-<div class="search-form">
-<%= search_form_for @search do |f| %>
-<%= f.text_field :content_cont, :placeholder => "Search by tag" %>
-<%= f.submit "Search", :class => "btn" %>
-<% end %>
-</div>
 <table class="table table-hover">
   <% @split_tags.each do |row_of_tags| %>
   <tr>
