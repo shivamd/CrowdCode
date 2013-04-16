@@ -1,6 +1,6 @@
+<h1>Tutorials tagged #<%= @tag.content %></h1>
 <ul>
 <% @tutorials.each do |tut| %>
-
   <li><%= link_to tut.title, generate_url(tut) %></li>
 <% end %>
 </ul>

@@ -1,20 +1,30 @@
 
 @import 'bourbon';
 
-#user-info {
-  padding-left: 20px;
+.user-description {
+  clear: both;
+  padding-top: 20px;
+  padding-left: 25px;
+  text-align: left;
 }
 .tabs {
   padding-top: 50px;
   float:left;
-  width: 50%;
+  width: 83%;
   border-bottom: 1px solid #ccc;
 }
 
 #profile-pic {
-  padding-left: 20px;
+  display: inline;
+  float: left;
+  padding-left: 30px;
+  margin-top: 29px;
 }
-
+.top-bar-profile {
+  float:right;
+  display:inline;
+  width:460px;
+}
 .tabs li {
   display: inline-block;
   float: left;
@@ -42,11 +52,9 @@
     padding: 9px 14px;
 }
 .tabs li {
-  @include animation-name(scale, slide);
-  @include animation-iteration-count(infinite);
-  @include transition(all, 10000ms, ease-in-out);
-
-  &:hover {background-color: #ccc; }
+  &:hover   { background: tint(gray, 77%);
+              border-top-left-radius: 5px;
+              border-top-right-radius: 5px; }
 }
 .tabs li a {
   color: #00B8E6;

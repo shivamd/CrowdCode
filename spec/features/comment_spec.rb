@@ -1,23 +1,22 @@
 require 'spec_helper'
 
-describe 'Comment' do
+describe 'Comment', :js => :true do
   subject {page}
+  
+  let!(:tutorial) { create(:tutorial) }
+  let!(:user) { tutorial.user }
+  let(:comment) { build(:comment) }
 
-  describe 'Make a new comment', :js => :true do
-    before do 
-      FactoryGirl.create(:user)
-      FactoryGirl.build(:comment)
-      FactoryGirl.build(:tutorial)
-    end
-      
-      it 'allows me to add a comment' do
-        tutorial = Tutorial.first
-        comment = Comment.first
-        visit tutorial_path(tutorial.id)
+  describe 'Make a new comment' do  
+    it 'allows me to add a comment' do
+      expect {
+        login(user)
+        visit tutorial_path(tutorial)
         fill_in 'comment_content', with: comment.content
-        click_button "Add comment"
-        expect {click_button "Add comment"}.to change(Comment, :count).by(1)
-        expect { page }.to have_content(comment.content)
+        click_button "Add comment"  
+        visit tutorial_path(tutorial)
+      }.to change(Comment, :count).by(1)
+      expect { page }.to have_content(comment.content)
     end
   end
 end

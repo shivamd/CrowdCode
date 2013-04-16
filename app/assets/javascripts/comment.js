@@ -5,4 +5,5 @@ $(document).ready(function(){
 			scrollTop: $('section#comment-list ul li').last().offset().top + 'px'
 		}, 'slow');
 	});
+
 });

@@ -1,6 +1,7 @@
 /* main css */
 
 @import "bootstrap";
+@import "bourbon";
 
 .tutorial-img {
 	max-width: 100%;
@@ -194,14 +195,6 @@ li {
 	height: 250px;
 }
 
-#comment_content {
-	width: 400px;
-	height: 100px;
-}
-.comments-container {
-	width: 420px;
-	margin: 30px auto; ;
-}
 
 #comment-list ul {
 	margin-left: 0;
@@ -215,7 +208,8 @@ li {
 .new_tutorial,
 .tutorial-show,
 .sign-up,
-.sign-in
+.sign-in,
+.profile-container	
  {
 	background-color: #fff;
 	width: 420px;
@@ -231,6 +225,11 @@ li {
 .new_tutorial {
 	width: 600px;
 	margin-bottom: 70px;
+}
+
+.profile-container {
+	width: 600px;
+	height: 600px;
 }
 
 .tutorial-show {
@@ -377,7 +376,58 @@ div.frontpage-search {
 }
 
 
+/*************** COMMMENTS ***************/
 
+.comments-container {
+	background-color: white;
+	width: 100%;
+}
 
+section#comment-list {
+	h4 {
+		display: inline;
+	}
+	div.comment-stats{
+	  padding-bottom: 20px;
+	  margin-right: 30px;
+	}
+	.username {
+		font-weight: bold;
+		color: black;
+	}
+	small:not(a) {
+		color: #999;
+	}
+	small a {
+		float: right;
+		margin-right: 5px;
+		padding-top: 10px;
+	}
+	p.main {
+		padding-left: 45px;
+		padding-bottom: 20px;
+		margin-top: -10px;
+		width: 75%;
+	}
 
+	li {
+		border-bottom: 1px solid #e3e3e3;
+	}
+	li:last-child {
+		border-bottom: none;
+	}
 
+	img {
+		position: relative;
+		top: 13px;
+	}
+
+}
+
+form.comment-form{
+	width: 100%;
+}
+
+form.new_comment textarea {
+	width: 97.5%;
+}
