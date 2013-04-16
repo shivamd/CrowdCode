@@ -6,9 +6,13 @@
 <%= f.submit "Search", :class => "btn" %>
 <% end %>
 </div>
-<table class="table">
-  <% @tags.each do |tag| %>
-  <tr><td class="tag-cell"><%= link_to tag.content, tag, :class => 'tag-link'%> x<%= tag.taggings.count %> </td> </tr>
+<table class="table table-hover">
+  <% @split_tags.each do |row_of_tags| %>
+  <tr>
+    <% row_of_tags.each do |tag| %>
+    <td class="tag-cell"><%= link_to tag.content, tag, :class => 'tag-link', :target => 'blank' %> x<%= tag.taggings.count %> </td> 
+    <% end %>
+  </tr>
   <% end %>
 </table>
 </div>
