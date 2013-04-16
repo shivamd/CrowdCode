@@ -2,5 +2,9 @@
 <ul>
 <% @tutorials.each do |tut| %>
   <li><%= link_to tut.title, generate_url(tut) %></li>
+  <li>Other tags for this tutorial</li>
+  <% tut.tags.each do |tag| %>
+    <%= link_to tag.content, tag, :class => 'tag-link', :target => 'blank' %>
+  <% end %></li>
 <% end %>
 </ul>

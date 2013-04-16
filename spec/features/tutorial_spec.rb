@@ -15,18 +15,17 @@ describe "Tutorial" do
 				expect { click_button submit }.not_to change(Tutorial,:count)
 			end
 		end
-
 		describe "with valid information" do 
 			before do 
 				fill_in "tutorial_title", with: "aa" * 15
 				choose "tut_type_add_link"
 				fill_in "tutorial_url", with: "http://www.google.com"		
 			end
-
 			it "should create a tutorial" do 
 				expect { click_button submit }.to change(Tutorial,:count).by(1)
 			end
 		end
+
 	end
 end
 
