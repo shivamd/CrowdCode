@@ -1,8 +1,8 @@
 <h1>Tutorials tagged #<%= @tag.content %></h1>
 <ul>
 <% @tutorials.each do |tut| %>
-  <li><%= link_to tut.title, generate_url(tut) %></li>
-  <li>Other tags for this tutorial</li>
+  <h2><%= link_to tut.title, generate_url(tut) %></h2>
+  <p><%= sanitize(truncate(tut.content, :length => 150)) %></p>
   <% tut.tags.each do |tag| %>
     <%= link_to tag.content, tag, :class => 'tag-link', :target => 'blank' %>
   <% end %></li>
