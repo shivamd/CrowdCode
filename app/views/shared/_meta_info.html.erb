@@ -5,6 +5,8 @@
       <% if user_signed_in? && !tut.author?(current_user) %>
         <% voted = current_user.voted?(tut) ? true : false %>
         <%= render 'votes/vote', :votable_type => tut, :voted => voted %>
+      <% else %>
+        <%= render 'votes/vote', :votable_type => tut, :voted => voted %>
       <% end %>
     </div>
   </div>

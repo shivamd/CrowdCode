@@ -1,5 +1,6 @@
 class VotesController < ApplicationController
   respond_to :js, :html
+  before_filter :authenticate_user!
     def create
       vote = Vote.new(params[:vote])
       vote.user_id = current_user.id
