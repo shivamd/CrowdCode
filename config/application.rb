@@ -22,10 +22,14 @@ module Crowdcode
 
     APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
     if Rails.env.development? || Rails.env.test? 
-      github_data = YAML.load_file(APP_ROOT.join('config', 'keys.yml'))
-      ENV['GITHUB_KEY'] = github_data['github_key']
-      ENV['GITHUB_SECRET'] = github_data['github_secret']
+      api_keys = YAML.load_file(APP_ROOT.join('config', 'keys.yml'))
+      ENV['GITHUB_KEY'] = api_keys['github_key']
+      ENV['GITHUB_SECRET'] = api_keys['github_secret']
+      ENV['TWILIO_KEY'] = api_keys['twilio_key']
+      ENV['TWILIO_SECRET'] = api_keys['twilio_secret']
     end
+
+    twilio_client = Twilio::REST::Client.new(ENV['TWILIO_KEY'], ENV['TWILIO_SECRET'])
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.

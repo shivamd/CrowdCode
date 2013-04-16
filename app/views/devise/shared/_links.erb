@@ -1,6 +1,6 @@
 <%- if devise_mapping.omniauthable? %>
   <%- resource_class.omniauth_providers.each do |provider| %>
-    <%= button_to "Sign in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), class:"btn btn-large"  %><br />
+    <%= button_to "Log in with #{provider.to_s.titleize}", omniauth_authorize_path(resource_name, provider), class:"btn btn-large"  %><br />
   <% end -%>
 <% end -%>
 

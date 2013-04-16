@@ -7,9 +7,11 @@ gem 'markup'
 gem 'redcarpet'
 gem 'will_paginate'
 gem 'ckeditor'
+gem 'tableasy'
 gem 'ransack'
 gem 'merit'
 gem 'omniauth-github'
+gem 'twilio-ruby'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

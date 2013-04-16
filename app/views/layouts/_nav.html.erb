@@ -13,6 +13,7 @@
 			        <li><%=link_to category.name, category, class: "dropdown" %></li>
 					  <% end %>
 				 </ul>
+				 <li><%= link_to 'Tags', tags_path %></li>
 			 </li>
 				<li><%= link_to "Tutorials", tutorials_path %></li>
 				<% if current_user  %>
@@ -20,6 +21,7 @@
 				 </ul>
 				 <ul class="nav pull-right">
 				    <li><%= link_to "Log Out", destroy_user_session_path, :method => :delete %></li>
+				    <li><%= link_to "Profile", '/profile' %></li>
 				   </ul>
 				<% else %>
 				  </ul>
