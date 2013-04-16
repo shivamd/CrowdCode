@@ -199,11 +199,6 @@ li {
 	margin-left: 0;
 }
 
-.sign-in input.btn.btn-large {
-	width: 200px;
-	margin-left: 229px;
-}
-
 .new_tutorial,
 .tutorial-show,
 .sign-up,
@@ -272,23 +267,6 @@ li {
 	margin: 15px 0;
 }
 
-/* Sign in form */
-
-.github-icon {
-	margin-left: -41px;
-}
-
-.sign-in form.button_to {
-	position: absolute;
-	top: 520px;
-}
-
-.or {
-	text-align: center;
-	padding-top: 20px;
-	font-size: 30px;
-	margin-bottom: 5px;
-}
 
 /* Tablets */
 
@@ -339,31 +317,34 @@ ul.dropdown-menu li a:hover {
 
 }
 
-/* Sign-in page */
+/* Login & Signup pages */
 
-div.session {
-	position: relative;
-	display: inline;
+.sign-in input.btn.btn-large,
+.sign-up input.btn.btn-large {
+	width: 200px;
+	margin-left: 229px;
 }
 
-h1.separation {
+.github-icon {
+	margin-left: -41px;
+}
+
+.sign-in form.button_to,
+.sign-up form.button_to {
 	position: absolute;
-	left: 280px;
-	bottom: 200px;
+	top: 520px;
 }
 
-div.github {
-	position: absolute;
-	width: 300px;
-	left: 350px;
-	bottom: 150px;
-	img {
-		padding-left: 50px;
-	}
+.sign-up form.button_to {
+	top: 585px;
 }
 
-div.session {
-	float: right;
+
+.or {
+	text-align: center;
+	padding-top: 20px;
+	font-size: 30px;
+	margin-bottom: 5px;
 }
 
 /* front page search */
