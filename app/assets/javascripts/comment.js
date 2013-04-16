@@ -6,8 +6,20 @@ $(document).ready(function(){
 		}, 'slow');
 	});
 
-	$('ul').on('click', 'small .reply', function(){
-		$(this).parents().siblings('form').toggle();
+	$('ul').on('click', 'small .reply', function(e){
+		e.preventDefault();
+		$(this).parents().siblings('div').toggle();
+	});
+
+	$('ul').on('click', '.btn-danger', function(e){
+		console.log("this works")
+		$(this).siblings('form').children('textarea').val("").parents('div.nested-comment').hide();
+	})
+
+	$('ul').on('ajax:success', 'form.nested-comment', function(){
+		console.log("hey");
+		debugger
+		$(this).closest('nested-comments li.nested').last().effect("highlight", {}, 3000);
 	});
 
 });

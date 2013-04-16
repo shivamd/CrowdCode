@@ -1,4 +1,7 @@
-<%= form_tag "/comments/#{comment.id}/comments", method: "post", remote: true, class: "nested-comment" do %>
-  <%= text_field_tag :content  %>
-  <%= submit_tag "submit" %>
-<% end %>
+<div class="nested-comment">
+	<%= form_tag "/comments/#{comment.id}/comments", method: "post", remote: true, class: "nested-comment" do %>
+	  <%= text_area_tag :content, :placeholder => "Enter reply here"  %>
+	  <%= submit_tag "Submit" , class: "btn btn-primary" %>
+	<% end %>
+	<button class="btn btn-danger">Cancel</button>
+</div>

@@ -430,9 +430,26 @@ form.new_comment textarea {
 	width: 97.5%;
 }
 
-	form.nested-comment {
+ div.nested-comment {
 		display: none;
+		width: 100%;
+		padding-left: 40px;
+
+		textarea{
+		height: 50px;
+		width: 92%;
+		}
+		.btn{
+		width: 46.5%;
+		}
+   .btn-danger  {
+   	position: relative;
+   	bottom: 50px;
+   	left: 305px;
+   }
 	}
+
+
 
 
 /******** COMMENTS ******/
