@@ -1,10 +1,10 @@
 $(document).ready(function(){
   $.get('/graphs', function(data){
+    var data = data.slice(0,5);
     console.log(data);
-    var data = data;
+    
     $.plot($('#placeholder'),
-      console.log(data[0].title)
-      [[1,0]]
+      
       );
   })
 })
