@@ -7,8 +7,13 @@
 <% end %>
 </div>
 <table class="table">
-  <% @tags.each do |tag| %>
-  <tr><td class="tag-cell"><%= link_to tag.content, tag, :class => 'tag-link'%> x<%= tag.taggings.count %> </td> </tr>
+  <% @quarter_tags.each do |tag| %>
+  <tr>
+    <td class="tag-cell"><%= link_to tag[0].content, tag[0], :class => 'tag-link', :target => 'blank' %> x<%= tag[0].taggings.count %> </td> 
+    <td class="tag-cell"><%= link_to tag[1].content, tag[1], :class => 'tag-link', :target => 'blank' %> x<%= tag[1].taggings.count %> </td> 
+    <td class="tag-cell"><%= link_to tag[2].content, tag[2], :class => 'tag-link', :target => 'blank' %> x<%= tag[2].taggings.count %> </td> 
+    <td class="tag-cell"><%= link_to tag[3].content, tag[3], :class => 'tag-link', :target => 'blank' %> x<%= tag[3].taggings.count %> </td> 
+  </tr>
   <% end %>
 </table>
 </div>
