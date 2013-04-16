@@ -30,8 +30,7 @@
 
 
   <%= label_tag :tags %>
-  <%= text_field_tag :tag %>
-  <small>"e.g. ruby ruby-on-rails javascript oauth" </small> <br>
+  <%= text_field_tag :tag, nil, placeholder: "e.g. ruby ruby-on-rails javascript oauth" %>
   <%= f.submit "Submit tutorial", class: "btn btn-success" %>
 <% end %>
 
