@@ -9,7 +9,7 @@ Crowdcode::Application.routes.draw do
             :only => [:create, :update]  
 
   resources :bookmarks, only: [:create, :destroy]
-  
+  resources :graphs, only: [:index]  
   match 'profile', :to => 'users#show', :as => :user_root, via: :get
   match '/:username', :to => 'users#show', :as => :public_profile, via: :get
 

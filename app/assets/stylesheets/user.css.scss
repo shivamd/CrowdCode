@@ -52,7 +52,7 @@
     padding: 9px 14px;
 }
 .tabs li {
-  &:hover   { background: tint(gray, 77%);
+    &:hover   { background: tint(gray, 77%);
               border-top-left-radius: 5px;
               border-top-right-radius: 5px; }
 }
