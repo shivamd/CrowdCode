@@ -4,10 +4,10 @@
     
   <%= render 'shared/meta_info', tut: @tutorial %>
 
-  <% if @markdown %>
-    <p><%= @markdown.html_safe  %></p>
-  <% else %>
+  <% if @tutorial.url.present? %>
     <%= link_to @tutorial.url, generate_url(@tutorial) %>
+  <% else %>
+    <%= @markdown.html_safe  %>
   <% end %>
 
   <% unless @tags.blank? %>
