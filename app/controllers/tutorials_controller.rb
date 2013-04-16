@@ -37,6 +37,8 @@ class TutorialsController < ApplicationController
 
 	
 	def create 
+		p params[:tutorial]
+		puts '*' * 400
 		@tutorial = Tutorial.new(params[:tutorial])
 		@tutorial.user_id = current_user.id
 		if @tutorial.save 
