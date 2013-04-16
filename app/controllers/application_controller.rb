@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_user!
-  	if request.xhr?
+  	if request.xhr? && !current_user
   		render :json => new_user_session_path, :status => :unauthorized
   	else	
   		super

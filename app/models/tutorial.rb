@@ -8,6 +8,7 @@ class Tutorial < ActiveRecord::Base
   has_many :votes, as: :votable, dependent: :destroy
   belongs_to :category
   has_many :bookmarks, dependent: :destroy
+  before_save :clean_tutorial_url
 
   # validates :content, length: { minimum: 100 }
   # validates :url, :presence => true, :if => :content?
@@ -54,5 +55,11 @@ class Tutorial < ActiveRecord::Base
 
   def bookmarked_by?(user)
     Bookmark.find_by_user_id_and_tutorial_id(user.id, self.id)
+  end
+
+  def clean_tutorial_url
+    if self.url.present?
+      self.url = self.url.gsub("http://", "")
+    end
   end
 end
