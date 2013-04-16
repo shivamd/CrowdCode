@@ -18,4 +18,11 @@ describe "User flow" do
     expect{ click_button "Sign up"}.to change(User, :count).by(1)
   end
 
+  it "does not let an invalid user sign up" do
+    visit new_user_registration_path
+    fill_in "user_username", with: "trololo"
+    fill_in "user_email", with: "myemail.com"
+    fill_in "user_password", with: "word"
+    expect {click_button "Sign up"}.to_not change(User, :count).by(1)
+  end
 end

@@ -20,7 +20,8 @@ describe "Tutorial" do
 			before do 
 				fill_in "tutorial_title", with: "aa" * 15
 				choose "tut_type_add_link"
-				fill_in "tutorial_url", with: "http://www.google.com"		
+				fill_in "tutorial_url", with: "http://www.google.com"	
+				fill_in "tag", with: "ruby"	
 			end
 
 			it "should create a tutorial" do 
