@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
   has_many :comments, dependent: :destroy
   has_many :votes, dependent: :destroy
   has_many :bookmarks, dependent: :destroy
-
+  validates_uniqueness_of :username
   def voted?(votable)
     get_vote(votable).present?
   end
