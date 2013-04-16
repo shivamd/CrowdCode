@@ -4,7 +4,9 @@ Crowdcode::Application.routes.draw do
   resources :categories, only: [:index, :show]
   resources :tutorials
   resources :tags, only: [:index, :show]
-  resources :comments
+  resources :comments do 
+    resources :comments 
+  end
   resources :votes, 
             :only => [:create, :update]  
 

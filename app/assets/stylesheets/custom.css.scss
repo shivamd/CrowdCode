@@ -402,6 +402,11 @@ section#comment-list {
 		top: 13px;
 	}
 
+	li.nested {
+	 margin-left: 40px;
+	 background: #f4f5f7;
+	 position: relative;
+	}
 }
 
 form.comment-form{
@@ -412,10 +417,33 @@ form.new_comment textarea {
 	width: 97.5%;
 }
 
-/* CKeditor Box */
+ div.nested-comment {
+		display: none;
+		width: 100%;
+		padding-left: 40px;
+
+		textarea{
+		height: 50px;
+		width: 92%;
+		}
+		.btn{
+		width: 46.5%;
+		}
+   .btn-danger  {
+   	position: relative;
+   	bottom: 50px;
+   	left: 305px;
+   }
+	}
+
+/*************** COMMMENTS ***************/
+
+
+
 .ace_print_margin_layer {
 	color: #fff !important;
 }
 .ace_text-layer {
 	color: #fff !important;
 }
+

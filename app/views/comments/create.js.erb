@@ -1,3 +1,10 @@
-$('section#comment-list ul').append("<%= j render 'shared/comment', :comment => @comment %>");
-// $('section#comment-list ul li:last-child').effect("highlight", {}, 3000);
-$('#comment_content').val("");
+<% if @comment.commentable_type == "Tutorial" %>
+  $('section#comment-list ul').append("<%= j render 'shared/comment', :comment => @comment %>");
+  $('#comment_content').val("");
+<% else %>
+	$('li#<%= @comment.commentable_id%> section').append("<%= j render 'comments/nested_comment', c: @comment %>")
+	$('form.nested-comment').val("")
+	$('div.nested-comment').hide();
+	$('form.new_comment').show()
+<% end %>
+

@@ -1,1 +1,6 @@
-<%= render 'shared/comments_form' %>
+<%= form_for @comment, id: "comment-form" do |f| %>
+<%= f.hidden_field :commentable_id %>
+<%= f.hidden_field :commentable_type %>
+<%= f.text_area :content, size: "30x5", placeholder: "Add comment here" %><br>
+<%= f.submit "Add comment", class: "btn btn-primary" %>
+<% end %>

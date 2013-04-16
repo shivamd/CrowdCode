@@ -1,9 +1,13 @@
 class CommentsController < ApplicationController
   
   def create
-    @comment = Comment.new(params[:comment])
-    @comment.user_id = current_user.id
-    @tutorial = @comment.get_tutorial
+    if params[:comment].nil?
+      @comment = Comment.new(user_id: current_user.id, commentable_type: "Comment",
+                   commentable_id: params[:comment_id], content: params[:content])
+    else
+      @comment = Comment.new(params[:comment])
+      @comment.user_id = current_user.id
+    end
     @comment.save
   end
 
