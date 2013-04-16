@@ -1,10 +1,11 @@
 <% if @comment.commentable_type == "Tutorial" %>
   $('section#comment-list ul').append("<%= j render 'shared/comment', :comment => @comment %>");
+  $('.comment-stats').html("<%= j render 'comments/comment_count', :tutorial => @comment.commentable %>");
   $('#comment_content').val("");
 <% else %>
-	$('li#<%= @comment.commentable_id%> section').append("<%= j render 'comments/nested_comment', c: @comment %>")
-	$('form.nested-comment').val("")
+	$('li#<%= @comment.commentable_id%> section').append("<%= j render 'comments/nested_comment', c: @comment %>");
+	$('form.nested-comment').val("");
 	$('div.nested-comment').hide();
-	$('form.new_comment').show()
+	$('form.new_comment').show();
 <% end %>
 
