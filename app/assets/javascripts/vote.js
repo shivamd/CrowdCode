@@ -1,8 +1,8 @@
 var Vote = {
 
   init: function(){
-    $('.votes').on('ajax:success', 'form.button_to', this.updateForm);
-    $('.votes').on('ajax:error', 'form.button_to', this.redirect);
+    $('body').on('ajax:success', '.votes form.button_to', this.updateForm);
+    $('body').on('ajax:error', '.votes form.button_to', this.redirect);
   },
 
   updateForm: function(event, data){
