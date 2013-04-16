@@ -415,6 +415,11 @@ section#comment-list {
 		top: 13px;
 	}
 
+	li.nested {
+	 margin-left: 40px;
+	 background: #f4f5f7;
+	 position: relative;
+	}
 }
 
 form.comment-form{
@@ -424,3 +429,10 @@ form.comment-form{
 form.new_comment textarea {
 	width: 97.5%;
 }
+
+	form.nested-comment {
+		display: none;
+	}
+
+
+/******** COMMENTS ******/

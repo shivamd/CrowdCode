@@ -1,0 +1,4 @@
+<%= form_tag "/comments/#{comment.id}/comments", method: "post", remote: true, class: "nested-comment" do %>
+  <%= text_field_tag :content  %>
+  <%= submit_tag "submit" %>
+<% end %>

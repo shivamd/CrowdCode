@@ -1,12 +1,17 @@
-<li>
+<li id="<%= comment.id %>">
   <%= gravatar_for comment.user.email, size: 40 %>
   <%= link_to comment.user.username.capitalize , comment.user.username, class: "username"  %>
   <small>
   <%= time_ago_in_words(comment.created_at) %> ago
   <% if current_user && current_user.id == comment.user.id %>
-	  <%= link_to "Delete", comment_path(comment), method: :delete %>
-	  <%= link_to "Edit", edit_comment_path(comment) %>
-	<% end %>
+    <%= link_to "Delete", comment_path(comment), method: :delete %>
+    <%= link_to "Edit", edit_comment_path(comment) %>
+    <%= link_to "Reply", '#', class: "reply" %>
+  <% end %>
   </small>
   <p class="main"><%= comment.content %></p>
+  <section id="nested-comments">
+    <%= render 'comments/nested_comments', comment: comment %>
+  </section>
+  <%= render 'comments/nested_comment_form', comment: comment %>
 </li>

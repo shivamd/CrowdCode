@@ -6,4 +6,8 @@ $(document).ready(function(){
 		}, 'slow');
 	});
 
+	$('ul').on('click', 'small .reply', function(){
+		$(this).parents().siblings('form').toggle();
+	});
+
 });
