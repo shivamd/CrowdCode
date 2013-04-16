@@ -6,11 +6,9 @@
 <%= f.submit "Search", :class => "btn" %>
 <% end %>
 </div>
-<table class="tags-table">
-  
+<table class="table">
   <% @tags.each do |tag| %>
-  <tr><td class="tag-cell"><%= link_to tag.content, tag, :class => 'tag-link'%> x<%= tag.taggings.count %></td> </tr>
+  <tr><td class="tag-cell"><%= link_to tag.content, tag, :class => 'tag-link'%> x<%= tag.taggings.count %> </td> </tr>
   <% end %>
-  
 </table>
 </div>
