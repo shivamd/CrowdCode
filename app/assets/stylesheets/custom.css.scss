@@ -447,3 +447,30 @@ form.new_comment textarea {
 	color: #fff !important;
 }
 
+
+
+/******* SIDEBAR *********/
+
+div.tutorial-show {
+	position: relative;
+
+	div.sidebar{
+		position: absolute;
+		top: 100px;
+		left: -40px;
+		background: #f7f5f3;
+		.star-yellow .ss-icon, .star .ss-icon {
+			font-size: 25px;
+			margin-left: 5px;
+		}
+		.star .ss-icon {
+			color: #e3e3e3;
+		}
+		.addthis_toolbox {
+		background-color: white;
+		}
+	}
+}
+
+
+/******* SIDEBAR *********/
