@@ -1,11 +1,6 @@
 <section id="comment-list">
   <div class="comment-stats">
-    <% if tutorial.comments.count > 0 %> 
-      <h4><%= pluralize(tutorial.comments.count, "Comment")%> </h4>
-      <a href="#comment-form">Add new comment</a>
-    <% else %>
-        <h4>Be the first one to comment!</h4>
-    <% end %>
+   <%= render 'comments/comment_count', tutorial: tutorial %>
   </div>
   <ul>
   <% @comments.each do |comment| %>
