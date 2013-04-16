@@ -9,6 +9,9 @@ $(document).ready(function(){
 	$('ul').on('click', 'small .reply', function(e){
 		e.preventDefault();
 		$(this).parents().siblings('div').toggle();
+		$('body').animate({
+			scrollTop: $(this).parent().siblings('div.nested-comment').offset().top + 'px'
+		}, 'slow');
 	});
 
 	$('ul').on('click', '.btn-danger', function(e){
