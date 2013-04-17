@@ -1,23 +1,23 @@
 <script type="text/javascript">
-$(function(){
-  $.ajax({
-    type: "GET",
-    url: '/graphs/all',
-    dataType: "json"
-  }).done(function(data){
-    var chart = d3.select('#placeholder').append('div')
-                .attr("class", "chart");
-    chart.selectAll('div')
-        .data(data)
-        .enter().append('div')
-        .style("width", function(d) {return d * 10 + "px"})
-        .text(function(d) { return d });
-    console.log(data);
-  }).fail(function(){
-    console.log("not this time");
-  })
-  var data = d3.json(data)
-})
+// $(function(){
+//   $.ajax({
+//     type: "GET",
+//     url: '/graphs/all',
+//     dataType: "json"
+//   }).done(function(data){
+//     var chart = d3.select('#placeholder').append('div')
+//                 .attr("class", "chart");
+//     chart.selectAll('div')
+//         .data(data)
+//         .enter().append('div')
+//         .style("width", function(d) {return d * 10 + "px"})
+//         .text(function(d) { return d });
+//     console.log(data);
+//   }).fail(function(){
+//     console.log("not this time");
+//   })
+//   var data = d3.json(data)
+// })
 </script>
 
 
