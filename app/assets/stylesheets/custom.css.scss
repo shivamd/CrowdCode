@@ -34,7 +34,7 @@ li {
 	opacity: .9;
 }
 
-/* Meta-info partial */
+/* Meta-info partial: inside tut-box */
 
 .meta-info{
 	position: absolute;
@@ -135,6 +135,14 @@ li {
 	padding-right: 5px ;
 }
 
+/* Meta-info partial: on tutorial_show page */
+
+.meta-tut-show {
+	position: relative;
+	left: -36px;
+	width: 132px;
+	margin: 40px;
+}
 
 /* Tutorial Box */
 
@@ -194,6 +202,24 @@ li {
 	height: 250px;
 }
 
+.date-and-time {
+	/*position: relative;*/
+}
+
+.edit-delete {
+	float: right;
+	display: inline;
+	a:first-child {
+		margin-right:20px;
+	}
+}
+
+.created-by {
+	font-style: italic;
+	margin-bottom: 20px;
+	display: inline-block;
+	width: 80%;
+}
 
 #comment-list ul {
 	margin-left: 0;
@@ -231,7 +257,6 @@ li {
 	position: relative;
 		
 	h1 {
-		text-align: center;
 	}
 
 	div.share-this {
