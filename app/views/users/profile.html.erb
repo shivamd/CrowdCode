@@ -1,0 +1,74 @@
+<div class="profile-container">
+<span id="profile-pic"><%= gravatar_for(@user.email) %></span><br>
+<div class="top-bar-profile">
+<h1 id="user-info"><%= @user.username.capitalize %>
+</h1>
+<small><%= link_to "Edit", edit_user_registration_path %></small>
+<small>Last signed in <%= (time_ago_in_words(@user.last_sign_in_at)) %> ago</small>
+<br>
+</div>
+<div class="user-description">
+<%= @user.description %>
+</div>
+<ul class="tabs">
+	<li class="active"><a href="#tab1">Summary</a></li>
+	<li><a href="#tab2">Tutorials</a></li>
+	<li><a href="#tab3">Comments</a></li>
+	<li><a href="#tab4">Votes</a></li>
+	<li><a href="#tab5">Bookmarks</a></li>
+</ul>
+
+<div class="stats">
+	<div class="tutorials">
+		<div class="tab" id="tab1">
+			<h2>You have submitted <%= @user.tutorials.count%> <%= link_to  'tutorials',new_tutorial_path %></h2>
+			<li>You have made <%= @user.comments.count %> insightful <%= link_to 'comments', tutorial_path(rand(1..5)) %></li>
+			<li>You have cast <%= @user.votes.count %> <%= link_to 'votes', tutorials_path%></li>
+		</div>
+		<% if @user.tutorials.any?  %>
+				<div class="tab" id="tab2">
+				 <h2><%= @user.username%>'s Tutorials</h2>
+				<% @user.tutorials.each do |tut| %>
+					<li><%= link_to tut.title, generate_url(tut) %></li>
+				<% end %>
+			</div>
+		
+		<% end %>
+
+		<% if @user.comments.any? %>
+		  <div class="tab" id="tab3">
+			  <h2>Latest Comments</h2>
+				  <% @user.comments.limit(5).each do |comment| %>
+					  <li>
+						  <%= link_to comment.content, comment.commentable_type.constantize.find(comment.commentable_id) %> 
+						  <small><%= time_ago_in_words(comment.created_at)%> ago</small> 
+					  </li>
+				  <% end %>
+		    </div>
+		  <% end %>
+
+		<% if @user.votes.any? %>
+		  <div class="tab" id="tab4">
+			 <h2>Latest Votes</h2>
+				<% @user.votes.limit(5).each do |vote| %>
+				  <li>
+				  	<%= link_to vote.votable_type.constantize.find(vote.votable_id).title, vote.votable_type.constantize.find(vote.votable_id) %>
+				  	<small><%= time_ago_in_words(vote.created_at) %> ago</small>
+				<% end %> 
+				  </li>
+		  </div>
+			<% end %>
+
+		<% if @user.bookmarks.any? %>
+		  <div class="tab" id="tab5">
+		  	<h2>Latest Bookmarks</h2>
+		  	  <% @user.bookmarks.limit(5).each do |bookmark| %>
+		  	    <li>
+		  	  	  <%= link_to bookmark.tutorial.title, bookmark.tutorial %>
+		  	    </li>
+		  	    <small><%= time_ago_in_words(bookmark.created_at)%> ago</small> 
+		  	  <% end %>
+		  </div>
+		<% end %>
+</div>
+</div>

@@ -7,7 +7,7 @@
   </div> 
   <div class="date-and-time"> 
     <div class="created-by">
-      <p>By: <a href="/#{@tutorial.user.username}"><%=  "#{@tutorial.user.username.capitalize}"%></a> on <%= @tutorial.created_at.strftime("%B #{@tutorial.created_at.day.ordinalize}, %Y") %></p>
+      <p>By: <a href="/<%= @tutorial.user.username %>"><%=  "#{@tutorial.user.username.capitalize}"%></a> on <%= @tutorial.created_at.strftime("%B #{@tutorial.created_at.day.ordinalize}, %Y") %></p>
     </div>
     <% if @tutorial.author?(current_user) || (current_user && current_user.admin?) %>
       <div class="edit-delete">

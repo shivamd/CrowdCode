@@ -1,36 +1,37 @@
-<%= form_for @tutorial do |f| %>
-<h2>Create a tutorial</h2>
-  <%= render 'shared/error_messages', object: @tutorial %>
-  <%= f.label "Choose Category:" %>
-  <%= collection_select(:tutorial, :category_id, Category.all, :id, :name) %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
+<div class="tutorial-form">
+  <%= form_for @tutorial do |f| %>
+  <h2>Create a tutorial</h2>
+    <%= render 'shared/error_messages', object: @tutorial %>
+    <%= f.label "Choose Category:" %>
+    <%= collection_select(:tutorial, :category_id, Category.all, :id, :name) %>
+    <%= f.label :title %>
+    <%= f.text_field :title %>
 
-  <%= label_tag :tutorial_type %>
-  <div class="tutorial-radio-btns">
-    <div class="create-tutorial-radio">
-      <%= radio_button_tag(:tut_type, checked = true, "create tutorial") %>
-      <%= label_tag(:create_tutorial, "Write a tutorial") %>
+    <%= label_tag :tutorial_type %>
+    <div class="tutorial-radio-btns">
+      <div class="create-tutorial-radio">
+        <%= radio_button_tag(:tut_type, checked = true, "create tutorial") %>
+        <%= label_tag(:create_tutorial, "Write a tutorial") %>
+      </div>
+      <div class="add-link-radio">
+        <%= radio_button_tag(:tut_type, "add link") %>
+        <%= label_tag(:add_link, "Add my own link")  %>
+      </div>
     </div>
-    <div class="add-link-radio">
-      <%= radio_button_tag(:tut_type, "add link") %>
-      <%= label_tag(:add_link, "Add my own link")  %>
+
+    <div class="tutorial_url">
+      <%= f.label :url %>
+      <%= f.text_field :url %>
     </div>
-  </div>
 
-  <div class="tutorial_url">
-    <%= f.label :url %>
-    <%= f.text_field :url %>
-  </div>
-
-  <div class="ckeditor">
-    <%= f.label :content %>
-    <%= f.cktext_area :content %>
-  </div>
+    <div class="ckeditor">
+      <%= f.label :content %>
+      <%= f.cktext_area :content %>
+    </div>
 
 
-  <%= label_tag :tags %>
-  <%= text_field_tag :tag, nil, placeholder: "e.g. ruby ruby-on-rails javascript oauth" %>
-  <%= f.submit "Submit tutorial", class: "btn btn-success" %>
-<% end %>
-
+    <%= label_tag :tags %>
+    <%= text_field_tag :tag, nil, placeholder: "e.g. ruby ruby-on-rails javascript oauth" %>
+    <%= f.submit "Submit tutorial", class: "btn btn-success" %>   
+  <% end %>!}
+</div>

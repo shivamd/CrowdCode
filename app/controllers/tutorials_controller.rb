@@ -21,11 +21,9 @@ class TutorialsController < ApplicationController
 		if @tutorial.update_attributes(params[:tutorial])
 			@tutorial.tags.clear
 			@tutorial.create_tags(params[:tag])
-			flash_update_success
-			redirect_to @tutorial
+			redirect_to @tutorial, notice: "Update successful!"
 		else
-      flash_update_failed
-      redirect_to :back
+      redirect_to :back, notice: "Something went wrong"
     end
 	end
 

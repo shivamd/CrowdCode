@@ -1,21 +1,22 @@
-<h2>Create a tutorial</h2>
+<div class="tutorial-form">
+  <h2>Edit your tutorial</h2>
 
-<%= form_for @tutorial do |f| %>
-  <%= render 'shared/error_messages', object: @tutorial %>
-  <%= f.label :title %>
-  <%= f.text_field :title, value: @tutorial.title %>
- 
-  <% if @tutorial.content.blank? %>
-    <%= f.label :url %>
-    <%= f.text_field :url %>
-  <% else %>
-    <%= f.label :content %>
-    <%= f.text_area :content, value: @tutorial.content %>
+  <%= form_for @tutorial do |f| %>
+    <%= render 'shared/error_messages', object: @tutorial %>
+    <%= f.label "Choose Category:" %>
+    <%= collection_select(:tutorial, :category_id, Category.all, :id, :name) %>
+    <%= f.label :title %>
+    <%= f.text_field :title, value: @tutorial.title %>
+   
+    <% if @tutorial.content.blank? %>
+      <%= f.label :url %>
+      <%= f.text_field :url, value: @tutorial.url %>
+    <% else %>
+      <%= f.label :content %>
+      <%= f.cktext_area :content, value: @tutorial.content %>
+    <% end %>
+    <%= label_tag :tags %>
+    <%= text_field_tag :tag, @tags %>
+    <%= f.submit "Update" %>
   <% end %>
-
-
-  <small>e.g "ruby ruby-on-rails javascript oauth"</small>
-  <%= label_tag :tags %>
-  <%= text_field_tag :tag, @tags %>
-  <%= f.submit "Update" %>
-<% end %>
+</div>

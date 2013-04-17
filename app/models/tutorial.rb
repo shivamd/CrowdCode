@@ -16,7 +16,7 @@ class Tutorial < ActiveRecord::Base
   # validates :content, presence: true, if: "url.nil?"
 #   validates :url, :presence => true, :if => "content.nil?"
 
-  validates :title, presence: true, length: { minimum: 15 } 
+  validates :title, presence: true, length: { minimum: 4 } 
   validates :user_id, presence: true, numericality: true
 
   default_scope order("popularity desc")
