@@ -10,13 +10,10 @@ class Tutorial < ActiveRecord::Base
   has_many :bookmarks, dependent: :destroy
   before_save :clean_tutorial_url
 
-  # validates :content, length: { minimum: 100 }
-  # validates :url, :presence => true, :if => :content?
-  # validates :content, :presence => true, :if => :url?
-  # validates :content, presence: true, if: "url.nil?"
-#   validates :url, :presence => true, :if => "content.nil?"
-
-  validates :title, presence: true, length: { minimum: 15 } 
+  VALID_URL_REGEX = /^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/ix
+  validates :content, presence: true, length: { minimum: 100 }, if: :url?
+  validates :url, presence: true, format: { with: VALID_URL_REGEX }, if: :content?
+  validates :title, presence: true, length: { minimum: 10 } 
   validates :user_id, presence: true, numericality: true
 
   default_scope order("popularity desc")
@@ -46,11 +43,11 @@ class Tutorial < ActiveRecord::Base
   end
 
   def content?
-    content == ""
+    content.blank?
   end
 
   def url?
-    url == ""
+    url.blank?
   end
 
   def bookmarked_by?(user)
