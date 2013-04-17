@@ -13,13 +13,16 @@ $(function(){
         .data(data)
         .enter()
         .append('rect')
-        .attr('x', 0)
-        .attr('y', 0)
-        .attr('width', 20)
-        .attr('height', 100)
         .attr('x', function(d,i){
           return i * (w/data.length);
         })
+        .attr('y', function(d){
+          return h - d;
+        })
+        .attr('height', function(d){
+          return d * 400;
+        })
+        .attr('width', 20);
   }).fail(function(){
     console.log("not this time");
   })

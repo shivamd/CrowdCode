@@ -5,7 +5,7 @@ class GraphsController < ApplicationController
 
   def all
     tutorials = Tutorial.limit(10)
-    @results = tutorials.map { |tutorial| Hash[tutorial.id, tutorial.votes.count] }
+    @results = tutorials.map { |tutorial| tutorial.votes.count }
     respond_with @results
   end
 end
