@@ -17,7 +17,7 @@
     <% end %>
   </div>
   <% if @tutorial.url.present? %>
-    <%= link_to @tutorial.url, generate_url(@tutorial) %>
+    <%= link_to "http://www.#{@tutorial.url}", generate_url(@tutorial), class: "tutorial" %>
   <% else %>
     <%= @markdown.html_safe  %>
   <% end %>
