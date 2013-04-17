@@ -28,7 +28,8 @@ CKEDITOR.editorConfig = function( config ) {
   	["JavaScript" , "javascript"],
     ['HTML' 			, 'html'], 
     ['CSS'  			, 'css'],
-    ["Java"         , "java"]], // all the languages you want to deal with in the plugin
+    ["Java"       , "java"],
+    ["Command Line", "sh"],], // all the languages you want to deal with in the plugin
     'defaultMode' : 'ruby', 
   	'theme' : "monokai", // the theme of the code editor
   	'highlightjs' : true // turn highlitjs format on/off. default: false 
