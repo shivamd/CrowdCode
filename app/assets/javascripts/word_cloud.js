@@ -1,5 +1,5 @@
 WordCloud = {
 	init: function(wordList) {
-		$("#wordcloud").jQCloud(wordList);
+		$("#wordcloud").jQCloud(wordList).draggable();
 	}
 }
