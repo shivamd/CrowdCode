@@ -189,11 +189,6 @@ li {
 
 /* User & Tutorial: Pages & Forms */
 
-pre.prettyprint {
-	background-color: inherit;
-	border: inherit;
-}
-
 #tutorial_content {
 	width: 600px;
 	height: 250px;
@@ -272,6 +267,17 @@ pre.prettyprint {
 	margin: 15px 0;
 }
 
+
+/* Code Blocks */
+
+pre.prettyprint {
+	background-color: inherit;
+	border: inherit;
+}
+
+code {
+	font-size: 14px;
+}
 
 /* Tablets */
 
