@@ -31,6 +31,7 @@
 			<% if @user.tutorials.count == 0 %>
 				<h2>no tutorials yet</h2>
 				<% else %>
+				<h2>Tutorials</h2>
 				<% @user.tutorials.each do |tut| %>
 						<li><%= link_to tut.title, generate_url(tut) %></li>
 				<% end %>
