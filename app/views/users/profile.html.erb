@@ -25,50 +25,58 @@
 			<li>You have made <%= @user.comments.count %> insightful <%= link_to 'comments', tutorial_path(rand(1..5)) %></li>
 			<li>You have cast <%= @user.votes.count %> <%= link_to 'votes', tutorials_path%></li>
 		</div>
-		<% if @user.tutorials.any?  %>
-				<div class="tab" id="tab2">
-				 <h2><%= @user.username%>'s Tutorials</h2>
+
+	
+			<div class="tab" id ="tab2">
+			<% if @user.tutorials.count == 0 %>
+				<h2>no tutorials yet</h2>
+				<% else %>
 				<% @user.tutorials.each do |tut| %>
-					<li><%= link_to tut.title, generate_url(tut) %></li>
+						<li><%= link_to tut.title, generate_url(tut) %></li>
+				<% end %>
+			<% end %>
+		</div>
+
+
+		<div class="tab" id ="tab3">
+			<% if @user.comments.count == 0 %>
+				<h2>No comments yet.</h2>
+				<% else %>
+				<h2>Latest Comments</h2>
+				<% @user.comments.limit(5).each do |comment| %>
+						<li>
+					  <%= link_to comment.content, comment.commentable_type.constantize.find(comment.commentable_id) %> 
+					  <small><%= time_ago_in_words(comment.created_at)%> ago</small> 
+				  </li>
+				<% end %>
+			<% end %>
+		</div>
+
+		<div class="tab" id ="tab4">
+				<% if @user.votes.count == 0 %>
+					<h2>No votes yet.</h2>
+					<% else %>
+					<h2>Latest Votes</h2>
+					<% @user.votes.limit(5).each do |vote| %>
+							<li>
+						 <%= link_to vote.votable_type.constantize.find(vote.votable_id).title, vote.votable_type.constantize.find(vote.votable_id) %>
+				  	<small><%= time_ago_in_words(vote.created_at) %> ago</small>
+					  </li>
+					<% end %>
 				<% end %>
 			</div>
-		
-		<% end %>
 
-		<% if @user.comments.any? %>
-		  <div class="tab" id="tab3">
-			  <h2>Latest Comments</h2>
-				  <% @user.comments.limit(5).each do |comment| %>
-					  <li>
-						  <%= link_to comment.content, comment.commentable_type.constantize.find(comment.commentable_id) %> 
-						  <small><%= time_ago_in_words(comment.created_at)%> ago</small> 
-					  </li>
-				  <% end %>
-		    </div>
-		  <% end %>
-
-		<% if @user.votes.any? %>
-		  <div class="tab" id="tab4">
-			 <h2>Latest Votes</h2>
-				<% @user.votes.limit(5).each do |vote| %>
-				  <li>
-				  	<%= link_to vote.votable_type.constantize.find(vote.votable_id).title, vote.votable_type.constantize.find(vote.votable_id) %>
-				  	<small><%= time_ago_in_words(vote.created_at) %> ago</small>
-				<% end %> 
-				  </li>
-		  </div>
-			<% end %>
-
-		<% if @user.bookmarks.any? %>
 		  <div class="tab" id="tab5">
-		  	<h2>Latest Bookmarks</h2>
+		  	<% if @user.bookmarks.count == 0 %>
+		  	<h2>No bookmarks yet</h2>
+		  	<% else %>
 		  	  <% @user.bookmarks.limit(5).each do |bookmark| %>
 		  	    <li>
-		  	  	  <%= link_to bookmark.tutorial.title, bookmark.tutorial %>
-		  	    </li>
-		  	    <small><%= time_ago_in_words(bookmark.created_at)%> ago</small> 
-		  	  <% end %>
-		  </div>
-		<% end %>
-</div>
+	  	  	  <%= link_to bookmark.tutorial.title, bookmark.tutorial %>
+	  	    </li>
+	  	    <small><%= time_ago_in_words(bookmark.created_at)%> ago</small> 
+	  	  <% end %>
+	  </div>
+	<% end %>
+	</div>
 </div>
