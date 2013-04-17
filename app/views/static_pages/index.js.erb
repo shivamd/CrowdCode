@@ -1,9 +1,8 @@
 $('.tutorials').append("<%= j render 'static_pages/tutorials', tutorials: @tutorials %>");
+ addthis.toolbox(".tutorial-box");
+$('.tutorial-text .add-this').hide();
 <% if @tutorials.next_page %>
-  $('.pagination').replaceWith('<%= will_paginate(@tutorials) %>');
-  addthis.toolbox(".tutorial-box");
-  $('.tutorial-text .add-this').hide();
-  
+  $('.pagination').replaceWith('<%= will_paginate(@tutorials) %>'); 
 <% else %>
   $('.pagination').remove();
 <% end %>

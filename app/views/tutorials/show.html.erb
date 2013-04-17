@@ -19,7 +19,7 @@
     <%= link_to "delete tutoiral", tutorial_path(@tutorial), method: :delete %>
   <% end %>
   <div class="share-this">
-    <%= render 'shared/addthis' %>
+    <%= render 'shared/addthis', tut: @tutorial %>
   </div>
   <div class="comments-container">  
     <%= render 'shared/comments', tutorial: @tutorial %>

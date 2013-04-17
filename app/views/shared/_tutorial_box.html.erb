@@ -5,7 +5,7 @@
       <%= render 'shared/tutorial_category_link', tut: tut %><br>
     <%= link_to tut.title, generate_url(tut) , { class: "tutorial-title", target: 'blank' } %>
     <%= render 'shared/meta_info', tut: tut %>
-    <%= render 'shared/addthis' %>
+    <%= render 'shared/addthis', tut: tut %>
     </div>
   </div>
 </div>
