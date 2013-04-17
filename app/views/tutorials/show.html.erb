@@ -17,7 +17,7 @@
 
   <% if @tutorial.author?(current_user) || (current_user && current_user.admin?) %>
     <%= link_to "edit tutorial", edit_tutorial_path(@tutorial) %>
-    <%= link_to "delete tutoiral", tutorial_path(@tutorial), method: :delete %>
+    <%= link_to "delete tutorial", tutorial_path(@tutorial), method: :delete %>
   <% end %>
   <div class="share-this">
     <%= render 'shared/addthis', tut: @tutorial %>
