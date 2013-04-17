@@ -5,10 +5,10 @@
   </div>
   <div class="users-tutorials">
     <h3><%= @user.username.capitalize %>'s Recent Tutorials</h3>
-    <ul>
+    <div class="tutorials profile-tuts">
       <% @user.tutorials.each do |tut| %>
-      <li><%= link_to tut.title, tut %></li>
+        <%= render 'shared/tutorial_box', tut: tut %>
       <% end %>
-    </ul>
+    </div>
   </div>
 </div>
