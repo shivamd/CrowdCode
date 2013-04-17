@@ -10,8 +10,6 @@ class Comment < ActiveRecord::Base
   validates :user_id, presence: true
   validates :commentable_id, presence: true
 
-
-
   def get_tutorial
     if self.commentable_type == "Comment"
       Tutorial.find(Comment.find(self.commentable_id).commentable_id)

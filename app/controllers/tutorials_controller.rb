@@ -29,16 +29,12 @@ class TutorialsController < ApplicationController
     end
 	end
 
-
 	def destroy
 		@tutorial = Tutorial.find(params[:id]).destroy
 		redirect_to '/profile'
 	end
 
-	
 	def create 
-		p params[:tutorial]
-		puts '*' * 400
 		@tutorial = Tutorial.new(params[:tutorial])
 		@tutorial.user_id = current_user.id
 		if @tutorial.save 
@@ -56,7 +52,4 @@ class TutorialsController < ApplicationController
     @comments = @tutorial.comments.includes(:user)
     @comment = @tutorial.comments.new
 	end
-
-
-	
 end
