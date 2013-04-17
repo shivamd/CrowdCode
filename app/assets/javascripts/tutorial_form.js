@@ -11,4 +11,10 @@ $(document).ready(function(){
     $('div.ckeditor').show();
   });
 
+  if ($('div.tutorial-form ul li').first().text() == "*Url is invalid") {
+    $('input#tut_type_add_link').attr('checked', 'checked')
+    $('.tutorial_url').css("display","block");
+    $('form .ckeditor').hide();
+  }
+
 });
