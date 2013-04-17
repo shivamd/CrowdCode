@@ -19,4 +19,8 @@ class Comment < ActiveRecord::Base
       self.commentable_type.constantize.find(self.commentable_id)
     end
   end
+
+  def author?(user)
+    self.user == user
+  end
 end
