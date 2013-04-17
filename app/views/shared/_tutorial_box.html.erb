@@ -3,7 +3,7 @@
     <%= link_to image_tag( tut.category.img, class: "tutorial-img"),  generate_url(tut) %>
     <div class="tutorial-text">
       <%= render 'shared/tutorial_category_link', tut: tut %><br>
-    <% if tut.url.empty? %>
+    <% if tut.url.nil? || tut.url.empty? %>
       <%= link_to tut.title, generate_url(tut) , { class: "tutorial-title" } %>
     <% else %>
       <%= link_to tut.title, generate_url(tut) , { class: "tutorial-title", target: '_blank' } %>
