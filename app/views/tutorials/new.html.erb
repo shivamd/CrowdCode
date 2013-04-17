@@ -1,10 +1,10 @@
 <%= form_for @tutorial do |f| %>
 <h2>Create a tutorial</h2>
   <%= render 'shared/error_messages', object: @tutorial %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
   <%= f.label "Choose Category:" %>
   <%= collection_select(:tutorial, :category_id, Category.all, :id, :name) %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
 
   <%= label_tag :tutorial_type %>
   <div class="tutorial-radio-btns">
