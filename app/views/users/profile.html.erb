@@ -68,7 +68,7 @@
 
 		  <div class="tab" id="tab5">
 		  	<% if @user.bookmarks.count == 0 %>
-		  	<h2>No bookmarks yet</h2>
+		  		<h2>No bookmarks yet.</h2>
 		  	<% else %>
 		  	  <% @user.bookmarks.limit(5).each do |bookmark| %>
 		  	    <li>
