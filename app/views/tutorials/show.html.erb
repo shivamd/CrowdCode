@@ -3,7 +3,6 @@
   <h1><%= @tutorial.title %></h1>
     
   <%= render 'shared/meta_info', tut: @tutorial %>
-  
 
   <% if @tutorial.url.present? %>
     <%= link_to @tutorial.url, generate_url(@tutorial) %>
@@ -19,9 +18,6 @@
     <%= link_to "edit tutorial", edit_tutorial_path(@tutorial) %>
     <%= link_to "delete tutoiral", tutorial_path(@tutorial), method: :delete %>
   <% end %>
-  <div class="share-this">
-    <%= render 'shared/addthis', tut: @tutorial %>
-  </div>
   <div class="comments-container">  
     <%= render 'shared/comments', tutorial: @tutorial %>
     <%= render 'shared/comments_form', comment: @comment %>
