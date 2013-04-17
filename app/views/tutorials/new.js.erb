@@ -1,0 +1,5 @@
+	<% if @tutorial.errors.full_messages.include?("Url is invalid") %>
+		<% debugger %>
+	  $('input#tutorial_url').show();
+	 	$('div.ckeditor').hide();
+	<% end %>

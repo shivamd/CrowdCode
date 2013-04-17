@@ -6,6 +6,7 @@
         <% voted = current_user.voted?(tut) ? true : false %>
         <%= render 'votes/vote', :votable_type => tut, :voted => voted %>
       <% else %>
+        <% voted = current_user.voted?(tut) ? true : false %>
         <%= render 'votes/vote', :votable_type => tut, :voted => voted %>
       <% end %>
     </div>
