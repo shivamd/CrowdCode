@@ -330,10 +330,10 @@ code {
 }
 
 
-/* Navbar logo */
+/* Navbar */
 
 .navbar-inner {
-	padding: 10px 30px;
+	padding: 8px 30px;
 }
 
 .brand {
@@ -350,7 +350,6 @@ nav li a {
 
 ul.dropdown-menu li a:hover {
 	background: #999; /*overwrites bootstrap*/
-
 }
 
 /* Login & Signup pages */
@@ -392,7 +391,7 @@ div.frontpage-search {
 }
 
 
-/*************** COMMMENTS ***************/
+/* COMMMENTS */
 
 .comments-container {
 	background-color: white;
@@ -472,9 +471,7 @@ form.new_comment textarea {
    }
 	}
 
-/*************** COMMMENTS ***************/
-
-
+/* Code block syntax highlighting background */
 
 .ace_print_margin_layer {
 	color: #fff !important;
@@ -483,9 +480,7 @@ form.new_comment textarea {
 	color: #fff !important;
 }
 
-
-
-/******* SIDEBAR *********/
+/* SIDEBAR */
 
 div.tutorial-show {
 	position: relative;
@@ -507,6 +502,3 @@ div.tutorial-show {
 		}
 	}
 }
-
-
-/******* SIDEBAR *********/
