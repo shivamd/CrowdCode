@@ -14,7 +14,7 @@ Crowdcode::Application.routes.draw do
   resources :graphs, only: [:index]
   match 'profile', :to => 'users#show', :as => :user_root, via: :get
   match '/:username', :to => 'users#show', :as => :public_profile, via: :get
-
+  match '/graphs/all', :to => 'graphs#all', via: :get
   
   # resources :users, :only => [:show]
 

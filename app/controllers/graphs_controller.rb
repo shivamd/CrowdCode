@@ -1,10 +1,11 @@
 class GraphsController < ApplicationController
-  respond_to :json
+  respond_to :html, :json
   def index
-    @tutorials = Tutorial.all
-    respond_to do |format|
-      format.json { render :json => @tutorials }
-      format.html   
-    end
+  end
+
+  def all
+    tutorials = Tutorial.all
+    @results = tutorials.map { |tutorial| tutorial.votes.count }
+    respond_with @results
   end
 end
