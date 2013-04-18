@@ -12,7 +12,7 @@ class Tag < ActiveRecord::Base
 
   def self.with_tutorial_count
   	Tag.all.map do |t|
-  	  { text: t.content, weight: t.tutorials.count, link: "http://localhost:3000/tags/#{t.id}" }
+  	  { text: t.content, weight: t.tutorials.count, link: "http://www.crowdco.de/tags/#{t.id}" }
   	end
   end
 
