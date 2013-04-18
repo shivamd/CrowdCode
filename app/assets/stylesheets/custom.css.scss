@@ -20,6 +20,15 @@ h1 {
 	font-size: 2em;
 }
 
+.get-started .btn-large {
+	padding: 20px;
+	font-size: 22px;
+}
+
+.get-started .btn.btn-success  {
+	margin-top: 22px;
+}
+
 li {
 	list-style-type: none;
 }
@@ -769,9 +778,10 @@ div.hero-unit {
 	border-bottom: 1px solid white;
 	box-shadow:0 1px rgba(255, 255, 255, 0.17);
 	h3 {
-		font-size: 250%;
+		font-size: 383%;
 		font-weight: normal;
-		padding-top: 20px;
+		padding-top: 0px;
+		padding-bottom: 19px;
 	}
 	p {
 		font-size: 150%;
