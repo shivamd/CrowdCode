@@ -1,4 +1,7 @@
 <div class="tutorial-show" id="<%= @tutorial.id %>">
+   <% if @tutorial.url.blank?  %>
+    <%= render 'shared/ribbon' %>
+  <% end %>
   <div class="tutorial-title">
     <h1><%= @tutorial.title %></h1>
   </div>
