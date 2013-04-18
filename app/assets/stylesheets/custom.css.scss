@@ -785,3 +785,65 @@ div.alert {
 	width: 100%;
 }
 
+
+/***About us page ***/
+
+ul.team {
+	li {
+		float: left;
+		text-align: center;
+
+		strong {
+			display: block;
+		}
+	}
+	.people {
+		margin: 0 120px 15px;
+	}
+	li:last-child div.people {
+		margin-right: 0px;
+	}
+	li:last-child strong {
+		padding-left: 120px;
+	}
+}
+
+
+
+h3.about {
+	text-align: center;
+}
+
+div.people {
+		border: 10px solid white;
+		border-radius: 50%;
+		display: inline-block;
+		background: #dfdfdf;
+		position: relative;
+		.info{
+			background-color: rgba(255,255,255, 0.5);
+			border-radius: 50%;
+			display: inline-block;
+			position: absolute;
+			width: 185px;
+			height: 180px;
+			top: 0px;
+			right: 0px;
+			display: none;;
+			a.github {
+				position: absolute;
+				bottom: 75px;
+				left: -15px;
+			}
+			a.mail {
+				position: absolute;
+				right: -15px;
+				bottom: 75px;
+			}
+		}
+		img {
+			border-radius: 50%;
+			max-width: 100%;
+			display: inline-block;
+		}
+}

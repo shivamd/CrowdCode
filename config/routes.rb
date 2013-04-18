@@ -12,6 +12,7 @@ Crowdcode::Application.routes.draw do
 
   resources :bookmarks, only: [:create, :destroy]
   
+  match '/about', to: "static_pages#about"
   match 'profile', :to => 'users#profile', :as => :user_root, via: :get
   match '/:username', :to => 'users#profile', :as => :public_profile, via: :get
 
