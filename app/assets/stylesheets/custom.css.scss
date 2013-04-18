@@ -83,15 +83,20 @@ li {
 .icon.votes {
 	position: absolute;
 	right: 10px;
+	opacity: .5;
 }
-
+.star {
+	opacity: .5;
+}
 .star .ss-icon:hover, .star-yellow .ss-icon {
 	color: #F0DA65;
-	cursor: pointer
+	cursor: pointer;
+	opacity: 1.0;
 }
 
 .icon.comments {
 	padding-right: 79px;
+	opacity: .5;
 	a, i {
 	text-decoration: none;
 	color: #999999;
@@ -108,7 +113,7 @@ li {
 	width: 30px;
 	height: 30px;
 	float: left;
-	opacity: .8;
+	opacity: .4;
 	&:hover{
 		opacity: .94;
 	}
@@ -125,9 +130,9 @@ li {
 .upvote input[disabled="disabled"],
 .downvote input[disabled="disabled"] {
 	cursor: default;
-	opacity: .4;
+	opacity: .2;
 	&:hover{
-		opacity: .4;
+		opacity: .2;
 	}
 }
 
@@ -530,7 +535,7 @@ div.tutorial-show {
 
 @media screen and (max-width: 480px) {
 	.tutorial-box {
-		max-height: 200px;
+		height: 122px;
 		overflow: hidden;
 		float: none;
 		margin: 5.20833% auto;
@@ -542,12 +547,20 @@ div.tutorial-show {
 
 	.tutorial-img {
 		display: none;
+	}
 
+	.tutorial-text .tutorial-title {
+		width: 87%;
 	}
 
 	.addthis_floating_style {
 		position: static;
 		margin: 0 auto;
+	}
+
+	.tutorials,
+	.category-tuts {
+		margin-bottom: 86px;
 	}
 }
 
@@ -559,6 +572,7 @@ div.tutorial-show {
 	bottom: 0;
 	width: 100%;
 	z-index: 9999;
+	margin-top: 79px;
 }
 
 .fixed-menu .box a {
