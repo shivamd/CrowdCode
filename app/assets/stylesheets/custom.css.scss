@@ -519,12 +519,15 @@ div#wordcloud {
 	}
 	span:nth-child(odd) {
 		color: #555555;
+		padding:7px;
 	}
 	span:nth-child(even) a:hover {
 		color: #53a753;
+		padding:5px;
 	}
 
 	span:nth-child(odd) a:hover {
 		color: #222;
 	}
+	
 }
