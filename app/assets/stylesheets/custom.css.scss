@@ -25,7 +25,9 @@ li {
 
 .container {
 	width: 90%;
+	/*width: 100%;*/
 	margin: 0 auto;
+	/*padding: 5px;*/
 }
 
 /* Add-this share box */
@@ -530,5 +532,25 @@ div#wordcloud {
 
 	span:nth-child(odd) a:hover {
 		color: #222;
+	}
+}
+
+
+div.hero-unit {
+  margin-top: -20px;
+  margin-left: -74px;
+  width: 102%;
+  text-align: center;
+	background-color: #CC8A33;
+	color: white;
+	h3 {
+		font-size: 250%;
+		font-weight: normal;
+	}
+	p {
+		font-size: 170%;
+	}
+	a {
+		margin: 0 auto;
 	}
 }
