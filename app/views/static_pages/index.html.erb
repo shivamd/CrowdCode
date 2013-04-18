@@ -1,12 +1,12 @@
-<div class="frontpage-search">
+<div class="frontpage-search visible-desktop">
   <%= search_form_for @search do |f| %>
     <%= f.text_field :title_cont, placeholder: "Search" %>
   <% end %>
 </div>
 <% unless current_user %>
-	<div class="hero-unit main">
+	<div class="hero-unit main visible-desktop">
 	  <h3>Central Repository for Coding Tutorials</h3>
-	  	<p>From all over the web, in once place.</p>
+	  	<p>From all over the web, in one place.</p>
 	  	<%= link_to "Get Started Now", new_user_session_path, class: "btn btn-success btn-large"  %>
 	</div>
 <% end %>
