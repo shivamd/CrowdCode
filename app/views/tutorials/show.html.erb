@@ -24,16 +24,13 @@
   <% else %>
     <%= @markdown.html_safe  %>
   <% end %>
-
-  <% unless @tags.blank? %>
+  <hr />  
+    <% unless @tags.blank? %>
     <p>Tags:<% @tags.each do |tag| %>
             <%= link_to tag.content.capitalize, tag %>
             <% end %>
     </p>
   <% end %>
-
-  
-  <hr />  
   <div class="comments-container">  
     <%= render 'shared/comments', tutorial: @tutorial %>
     <%= render 'shared/comments_form', comment: @comment %>
