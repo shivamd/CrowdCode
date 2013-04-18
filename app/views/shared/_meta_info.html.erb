@@ -18,6 +18,7 @@
     <% elsif current_user %>
       <span class="icon star-yellow"><i class="ss-icon">star</i></span>
     <% else %>
+      <span class="icon star"><i class="ss-icon">star</i></span>
     <% end %>
   </div>
   <span class="icon comments"><a href="/tutorials/<%= tut.id %>#comment-list"><i class="ss-icon">chat</i></a><span class="comment-count"><%= tut.comments.count %></span></span>

@@ -1,5 +1,6 @@
 class BookmarksController < ApplicationController
 	respond_to :js
+	before_filter :authenticate_user!
 	def create
 		Bookmark.create(user_id: current_user.id, tutorial_id: params[:id])
 		@tutorial = Tutorial.find(params[:id])
