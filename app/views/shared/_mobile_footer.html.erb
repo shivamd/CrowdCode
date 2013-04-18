@@ -8,6 +8,8 @@
     </div>
     
     <div class="menu-categories" style="display:none;">
+      <h5>Categories</h5>
+      <hr>
       <% @categories.each do |category| %>
       <p><a href="/categories/<%= category.id%>"><%= category.name %></a></p>
       <% end %>
