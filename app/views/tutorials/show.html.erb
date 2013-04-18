@@ -33,25 +33,7 @@
     <%= render 'shared/comments_form', comment: @comment %>
   </div>
 
-  <div class="sidebar">
-    <div class="addthis_toolbox addthis_floating_style addthis_32x32_style">
-
-    <!-- BEGIN commenting out this for now as it is not really part of the "share" bar 
-     <div class="favorite">
-      <% if current_user && !@tutorial.bookmarked_by?(current_user) %>
-      <span class="icon star"><i class="ss-icon">star</i></span>
-    <% elsif current_user %>
-        <span class="icon star-yellow"><i class="ss-icon">star</i></span>
-      <% else %>
-      <% end %>
-    </div>
-    END -->
-    <a class="addthis_button_twitter"></a>
-    <a class="addthis_button_facebook"></a>
-    <a class="addthis_button_google_plusone_share"></a>
-    <a class="addthis_button_stumbleupon"></a>
-    <a class="addthis_button_reddit"></a>
-    <a class="addthis_button_email"></a>
-    </div>
+  <div class="sidebar  visible-desktop">
+     <%= render 'shared/addthis_toolbox' %>
   </div>
 </div>

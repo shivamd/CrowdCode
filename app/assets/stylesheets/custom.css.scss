@@ -1,6 +1,7 @@
 /* main css */
 
 @import "bootstrap";
+@import "bootstrap-responsive";
 
 .tutorial-img {
 	max-width: 100%;
@@ -191,6 +192,7 @@ li {
 
 .tutorial-text {
 	padding: 20px 5px 20px 20px;
+	width: 100%;
 
 }
 
@@ -314,24 +316,21 @@ code {
 		font-size: 0.8em;
 		text-decoration: none !important;
 	}
-}
 
-/* Mobile */
-
-@media screen and (max-width: 480px) {
-	.tutorial-box {
-		max-height: 200px;
-		overflow: hidden;
-		float: none;
-		margin: 5.20833% auto;
+	body {
+		padding-left: 0;
+		padding-right: 0;
 	}
 }
+
+
 
 
 /* Navbar */
 
 .navbar-inner {
 	padding: 8px 30px;
+	border-radius: 0px;
 }
 
 .brand {
@@ -352,24 +351,38 @@ ul.dropdown-menu li a:hover {
 
 /* Login & Signup pages */
 
+.sign-in,
+.sign-up {
+	overflow: hidden;
+}
+
+.sign-in a,
+.sign-up a {
+	float: right;
+	clear: both;
+}
+
 .sign-in input.btn.btn-large,
 .sign-up input.btn.btn-large {
+	margin-top: 80px;
 	width: 200px;
-	margin-left: 229px;
+	float: right;
 }
 
 .github-icon {
+	float: left;
+	width: 240px;
 	margin-left: -41px;
 }
 
+
 .sign-in form.button_to,
 .sign-up form.button_to {
-	position: absolute;
-	top: 520px;
+	width:200px;
+	float: right;
 }
 
 .sign-up form.button_to {
-	top: 585px;
 }
 
 
@@ -378,6 +391,19 @@ ul.dropdown-menu li a:hover {
 	padding-top: 20px;
 	font-size: 30px;
 	margin-bottom: 5px;
+}
+
+#user_remember_me {
+	width: 20px;
+	float: left;
+}
+
+#user_remember_me + label {
+	display: inline;
+}
+
+.sign-up .btn.btn-success {
+	margin-top: 20px;
 }
 
 /* front page search */
@@ -499,3 +525,107 @@ div.tutorial-show {
 		}
 	}
 }
+
+/* Mobile */
+
+@media screen and (max-width: 480px) {
+	.tutorial-box {
+		max-height: 200px;
+		overflow: hidden;
+		float: none;
+		margin: 5.20833% auto;
+		width: 100%}
+
+	.tutorial-content .tutorial-title {
+		font-size: 1.2em;
+	}
+
+	.tutorial-img {
+		display: none;
+
+	}
+
+	.addthis_floating_style {
+		position: static;
+		margin: 0 auto;
+	}
+}
+
+/* MOBILE - fixed menu */
+
+.fixed-menu {
+	border-top: 1px solid #bbb;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	z-index: 9999;
+}
+
+.fixed-menu .box a {
+	box-sizing: border-box;
+	background: #fff;
+	border-right: 1px solid #bbb;
+	color: #99CC66;
+	float: left;
+	height: 50px;
+	line-height: 48px;
+	opacity: 0.95;
+	padding-top: 5px;
+	text-align: center;
+	width: 33.33333333%;
+	text-decoration: none;
+
+	:hover,
+	:active {
+		background: none;
+	}
+}
+
+.fixed-menu a.last-box {
+	border-right: 0;
+}
+
+.fixed-menu .box .ss-icon {
+	font-size: 28px;
+}
+
+	.menu-categories a,
+	.menu-share-links a {
+		display: block;
+		font-size: 13px;
+		line-height: 18px;
+		padding: 0px;
+		text-align: left;
+		color: #99CC66;
+	}
+
+	.menu-categories p{
+		margin: 0px;
+	}
+
+
+.menu-categories,
+.menu-share-links {
+	box-sizing: border-box;
+	background: #fff;
+	border: 1px solid #bbb;
+	border-radius: 5px 5px 0 0;
+	position: fixed;
+	bottom: 50px;
+	text-align: center;
+	height: 270px;
+	width: 33.666666666666%;
+	padding: 10px;
+	left: 33%;
+	z-index: 9997;
+}
+
+.menu-share-links {
+	border-right: none;
+	width: 33.3333%;
+	left: 66%;
+	height: 250px;
+	border-radius: 5px 0 0 0;
+	/*z-index: 9998;*/
+}
+
