@@ -210,7 +210,6 @@ li {
 .tutorial-text {
 	padding: 20px 5px 20px 20px;
 	width: 100%;
-
 }
 
 /* User & Tutorial: Pages & Forms */
@@ -220,6 +219,9 @@ li {
 	height: 250px;
 }
 
+.tutorial-show {
+	word-wrap: break-word;
+}
 .date-and-time {
 	/*position: relative;*/
 }
