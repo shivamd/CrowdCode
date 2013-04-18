@@ -212,7 +212,6 @@ li {
 .tutorial-text {
 	padding: 20px 5px 20px 20px;
 	width: 100%;
-
 }
 
 /* User & Tutorial: Pages & Forms */
@@ -222,6 +221,9 @@ li {
 	height: 250px;
 }
 
+.tutorial-show {
+	word-wrap: break-word;
+}
 .date-and-time {
 	/*position: relative;*/
 }
@@ -389,8 +391,8 @@ ul.dropdown-menu li a:hover {
 	clear: both;
 }
 
-.sign-in input.btn.btn-large,
-.sign-up input.btn.btn-large {
+.sign-in .button_to input.btn.btn-large,
+.sign-up .button_to input.btn.btn-large {
 	margin-top: 80px;
 	width: 200px;
 	float: right;
@@ -407,9 +409,6 @@ ul.dropdown-menu li a:hover {
 .sign-up form.button_to {
 	width:200px;
 	float: right;
-}
-
-.sign-up form.button_to {
 }
 
 
@@ -429,7 +428,8 @@ ul.dropdown-menu li a:hover {
 	display: inline;
 }
 
-.sign-up .btn.btn-success {
+.sign-up .btn.btn-success, 
+.sign-in .btn.btn-success {
 	margin-top: 20px;
 }
 
@@ -593,6 +593,54 @@ div.tutorial-show {
 
 	.add-this#social-buttons {
 	display: none !important;
+	}
+
+	.sign-in,
+	.sign-up {
+		width: 78%;
+		padding: 30px 40px 50px 25px;
+	}
+
+	.github-icon {
+		display: none;
+		margin-top: 26px;
+	}
+
+	.sign-in form.button_to,
+	.sign-up form.button_to,
+	.sign-in form.button_to input.btn.btn-large,
+	.sign-up form.button_to input.btn.btn-large {
+		margin-top: 10px;
+		width: 100%;
+	}
+
+	.btn-large {
+		font-size: 140%;
+	}
+	
+	.btn {
+		font-weight: bold;
+	}
+
+	.sign-in .btn.btn-success,
+	.sign-up .btn.btn-success {
+		margin-top: 31px;
+	}
+
+	.or {
+		font-size: 19px;
+		padding-top: 0px;
+		margin-bottom: 0px;
+	}
+
+	input[type="password"], 
+	input[type="email"], 
+	input[type="text"] {
+		height: 35px;
+	}
+
+	.tutorial-show .tutorial-title {
+		padding-top: 25px;
 	}
 }
 
