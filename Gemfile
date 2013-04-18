@@ -12,6 +12,8 @@ gem 'ransack'
 gem 'merit'
 gem 'omniauth-github'
 gem 'twilio-ruby'
+gem "jqcloud-rails"
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 

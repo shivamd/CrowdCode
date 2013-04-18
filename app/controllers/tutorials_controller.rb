@@ -23,6 +23,7 @@ class TutorialsController < ApplicationController
 			@tutorial.create_tags(params[:tag])
 			redirect_to @tutorial, notice: "Update successful!"
 		else
+			debugger
       redirect_to :back, notice: "Something went wrong"
     end
 	end
@@ -50,7 +51,7 @@ class TutorialsController < ApplicationController
 	def show 
 		@tutorial = Tutorial.includes(:category).find(params[:id])
 		@markdown = MARKDOWN.render(@tutorial.content) if @tutorial.content
-		get_tags_string(@tutorial)
+		@tags = @tutorial.tags
     @comments = @tutorial.comments.includes(:user)
     @comment = @tutorial.comments.new
 	end

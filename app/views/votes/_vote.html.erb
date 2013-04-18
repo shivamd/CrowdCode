@@ -1,12 +1,19 @@
 <% if voted %>
-  <% if upvote?(votable_type.class.to_s, votable_type.id) %>
+  <% if current_user.admin? %>
+    <div class="upvote">
+      <%= vote_button "create", "Upvote", votable_type %>
+    </div>
+    <div class="downvote">
+      <%= vote_button "create", "Downvote", votable_type %>
+    </div>
+  <% elsif upvote?(votable_type.class.to_s, votable_type.id) %>
   <div class="upvote">
     <%= vote_button("update", "Upvote", votable_type, :put, "disabled") %>
     </div>
     <div class="downvote">
     <%= vote_button("update", "Downvote", votable_type, :put) %>
     </div>
-  <% else %>
+  <% elsif %>
   <div class="upvote">
     <%= vote_button("update", "Upvote", votable_type, :put) %>
     </div>
@@ -15,7 +22,7 @@
     </div>
   <% end %>
 <% else %>
-<div class="upvote">
+ <div class="upvote">
   <%= vote_button "create", "Upvote", votable_type %>
   </div>
   <div class="downvote">

@@ -5,6 +5,8 @@
       <% if user_signed_in? && !tut.author?(current_user) %>
         <% voted = current_user.voted?(tut) ? true : false %>
         <%= render 'votes/vote', :votable_type => tut, :voted => voted %>
+      <% elsif current_user && current_user.admin? %>
+        <%= render 'votes/vote', votable_type: tut, voted: false %>
       <% else %>
         <%= render 'votes/vote', :votable_type => tut, :voted => voted %>
       <% end %>
@@ -16,7 +18,8 @@
     <% elsif current_user %>
       <span class="icon star-yellow"><i class="ss-icon">star</i></span>
     <% else %>
+      <span class="icon star"><i class="ss-icon">star</i></span>
     <% end %>
   </div>
-  <span class="icon comments"><a href="/tutorials/<%= tut.id %>#comment-list"><i class="ss-icon">chat</i></a><%= tut.comments.count %></span>
+  <span class="icon comments"><a href="/tutorials/<%= tut.id %>#comment-list"><i class="ss-icon">chat</i></a><span class="comment-count"><%= tut.comments.count %></span></span>
 </div>

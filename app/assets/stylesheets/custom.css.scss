@@ -94,6 +94,10 @@ li {
 	opacity: 1.0;
 }
 
+.star-yellow .ss-icon:hover {
+	color: grey;
+}
+
 .icon.comments {
 	padding-right: 79px;
 	opacity: .5;
@@ -270,6 +274,11 @@ li {
 	  bottom: 13px;
 	  right: 200px;
 
+	}
+	a.tutorial {
+		color: grey;
+		text-decoration: underline;
+		font-size: 128.5%;
 	}
 }
 
@@ -643,3 +652,25 @@ div.tutorial-show {
 	/*z-index: 9998;*/
 }
 
+/****** cloud tag *****/
+
+div#wordcloud {
+	position: relative;
+	width: 100%;
+	height: 500px;
+	margin: 0 auto;
+	
+	span:nth-child(even) {
+		color: #9ed369;
+	}
+	span:nth-child(odd) {
+		color: #555555;
+	}
+	span:nth-child(even) a:hover {
+		color: #53a753;
+	}
+
+	span:nth-child(odd) a:hover {
+		color: #222;
+	}
+}

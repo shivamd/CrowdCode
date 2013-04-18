@@ -17,13 +17,16 @@
     <% end %>
   </div>
   <% if @tutorial.url.present? %>
-    <%= link_to @tutorial.url, generate_url(@tutorial) %>
+    <%= link_to "http://www.#{@tutorial.url}", generate_url(@tutorial), class: "tutorial" %>
   <% else %>
     <%= @markdown.html_safe  %>
   <% end %>
 
   <% unless @tags.blank? %>
-    <p>Tags: <%= @tags %></p>
+    <p>Tags:<% @tags.each do |tag| %>
+            <%= link_to tag.content.capitalize, tag %>
+            <% end %>
+    </p>
   <% end %>
 
   

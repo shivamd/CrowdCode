@@ -9,4 +9,11 @@ class Tag < ActiveRecord::Base
   def sanitize
     self.content.downcase! if self.content =~ /[A-Z]/
   end
+
+  def self.with_tutorial_count
+  	Tag.all.map do |t|
+  	  { text: t.content, weight: t.tutorials.count, link: "http://localhost:3000/tags/#{t.id}" }
+  	end
+  end
+
 end
