@@ -5,11 +5,5 @@ class StaticPagesController < ApplicationController
   	@search = Tutorial.search(params[:q])
   	redirect_to tutorials_url unless params[:q].nil?
   end
-
-  def about
-  end
-
-  def contact
-  end
   
 end
