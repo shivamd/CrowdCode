@@ -805,6 +805,7 @@ ul.team {
 		strong {
 			display: block;
 		}
+
 	}
 	.people {
 		margin: 0 120px 15px;
@@ -812,7 +813,8 @@ ul.team {
 	li:last-child div.people {
 		margin-right: 0px;
 	}
-	li:last-child strong {
+	li:last-child strong,
+	li:last-child .ryan {
 		padding-left: 120px;
 	}
 }
