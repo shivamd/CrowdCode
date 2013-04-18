@@ -15,4 +15,8 @@
 <div class="tutorials">
   <%= render 'static_pages/tutorials', tutorials: @tutorials %>
 </div>
+
 <%= will_paginate @tutorials %>
+<div class="easter-egg">
+  <%= link_to image_tag("/egg.jpeg"), "/about" %>
+</div>
