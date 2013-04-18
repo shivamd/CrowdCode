@@ -85,13 +85,13 @@ li {
 	right: 10px;
 	opacity: .5;
 }
-.star {
+.star .ss-icon{
 	opacity: .5;
 }
 .star .ss-icon:hover, .star-yellow .ss-icon {
 	color: #F0DA65;
 	cursor: pointer;
-	opacity: 1.0;
+	opacity: .94;
 }
 
 .star-yellow .ss-icon:hover {
@@ -100,12 +100,12 @@ li {
 
 .icon.comments {
 	padding-right: 79px;
-	opacity: .5;
 	a, i {
 	text-decoration: none;
 	color: #999999;
 		&:hover {
 		  color: #777777;
+		  opacity: .94;
 		}
 	}
 }
@@ -143,6 +143,14 @@ li {
 .favorite {
 	display: inline;
 	padding-right: 5px ;
+}
+
+.comment-count {
+		opacity: 0.5;
+}
+
+.comments .ss-icon {
+	opacity: 0.5;
 }
 
 /* Meta-info partial: on tutorial_show page */
