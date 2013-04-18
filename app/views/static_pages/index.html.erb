@@ -3,11 +3,13 @@
     <%= f.text_field :title_cont, placeholder: "Search" %>
   <% end %>
 </div>
-<div class="hero-unit main">
-  <h3>Central Repository for Coding Tutorials</h3>
-  	<p>Thousands of tutorials from all over the web, in once place.</p>
-  	<%= link_to "Get Started Now", new_user_session_path, class: "btn btn-primary"  %>
-</div>
+<% unless current_user %>
+	<div class="hero-unit main">
+	  <h3>Central Repository for Coding Tutorials</h3>
+	  	<p>From all over the web, in once place.</p>
+	  	<%= link_to "Get Started Now", new_user_session_path, class: "btn btn-success btn-large"  %>
+	</div>
+<% end %>
 <div class="tutorials">
   <%= render 'static_pages/tutorials', tutorials: @tutorials %>
 </div>
