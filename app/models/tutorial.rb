@@ -10,7 +10,7 @@ class Tutorial < ActiveRecord::Base
   has_many :bookmarks, dependent: :destroy
   before_save :clean_tutorial_url
 
-  VALID_URL_REGEX = /^(http|https):\/\/[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/ix
+  VALID_URL_REGEX = /^(http|https):\/\/|[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,6}(:[0-9]{1,5})?(\/.*)?$/ix
   validates :content, presence: true, length: { minimum: 100 }, if: :url?
   validates :url, presence: true, format: { with: VALID_URL_REGEX }, if: :content?
   validates :title, presence: true, length: { minimum: 4 } 
