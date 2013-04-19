@@ -5,5 +5,5 @@ Made by Shivam, Matthew, and Ryan as a final project for Dev Bootcamp.
 CrowdCode is a central repository for programming tutorials.  You can post links to tutorials or write your own.  The editor supports
 text highlighting in eight languages.
 
-'''
+
 www.crowdco.de
