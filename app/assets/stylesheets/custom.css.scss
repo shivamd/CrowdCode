@@ -55,6 +55,10 @@ li {
 	margin: 10px 0;
 }
 
+.tutorial-show .meta-info {
+	right: 0px;
+}
+
 .vote-btns {
 	position: absolute;
 	right: 0; 
@@ -169,7 +173,7 @@ li {
 .meta-tut-show {
 	position: relative;
 	left: -36px;
-	width: 132px;
+	width: 133px;
 	margin: 40px;
 }
 
@@ -207,7 +211,7 @@ li {
 		}
 		#social-buttons {
 		position: absolute; 
-		left: 183px; 
+		left: 183px%; 
 		bottom: 0;
 		margin: 3%;
 		}
