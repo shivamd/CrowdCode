@@ -12,7 +12,8 @@ gem 'ransack'
 gem 'merit'
 gem 'omniauth-github'
 gem 'twilio-ruby'
-gem "jqcloud-rails"
+gem 'jqcloud-rails'
+gem 'newrelic_rpm'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
