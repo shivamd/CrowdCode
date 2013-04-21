@@ -177,8 +177,9 @@ li {
 
 .tutorial-box {
 	position: relative;
-	width: 43.5%;
-	margin: 3.208333%;
+	width: 47.5%;
+	height: 173px;
+	margin: 1.208333%;
 	background-color: #ffffff;
 	float: left;
 	border-radius: 5px;
@@ -191,7 +192,7 @@ li {
 		  width: 58.555556%;
 		  word-wrap: break-word;
 		  font-weight: bold;
-		  font-size: 1.8em;
+		  font-size: 1.7em;
 		  text-align: left;
 		  line-height: 1.2;
 		  margin-top: 7px;
@@ -200,7 +201,8 @@ li {
 		}
 		.tutorial-img {
 			float: left;
-			width: 35%;
+			width: 173px;
+			height: 173px;
 			margin-right: 5%;
 		}
 		#social-buttons {
@@ -209,6 +211,7 @@ li {
 		}
 		.category-link, .tutorial-link{
 			color: #819E64;
+			font-size: 15px;
 			&:hover {
 				color: #9bcd69;
 			}
