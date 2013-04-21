@@ -211,7 +211,7 @@ li {
 		}
 		#social-buttons {
 		position: absolute; 
-		left: 183px%; 
+		left: 183px; 
 		bottom: 0;
 		margin: 3%;
 		}
@@ -290,7 +290,7 @@ li {
 }
 
 .tutorial-show {
-	width: 50%;
+	width: 600px;
 	position: relative;
 	margin-top: 50px;
 	h1 {
@@ -360,6 +360,10 @@ code {
 @media screen and (max-width: 768px) { 
 	.tutorial-img {
 		width: 100%;
+	}
+
+	.tutorial-show {
+		width: 74%
 	}
 	.tutorial-title {
 		display: block;
