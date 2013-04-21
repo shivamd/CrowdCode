@@ -4,22 +4,12 @@
   <title>Crowdcode</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <!-- CSS for icons -->
-
   <link href="/webfonts/ss-pika.css" media="all" rel="stylesheet" type="text/css">
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
- 
-  <!-- JS for addthis widget -->
-  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5169ce054b6dae19"></script>
-  <!-- JS for ckeditor -->
-  <script src="/ckeditor/ckeditor.js"></script>
   <!-- For syntax highlighting in code blocks -->
   <link rel="stylesheet" href="/stylesheets/tomorrow-night.css">
-  <script src="/javascripts/highlight.pack.js"></script>
-
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-
-
 </head>
 <body>
   <%= render 'layouts/nav' %>
@@ -30,5 +20,10 @@
     <%= yield %>
   </div>
   <%= render '/shared/mobile_footer', categories: @categories %>
+  <!-- JS for addthis widget -->
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5169ce054b6dae19"></script>
+  <!-- JS for ckeditor -->
+  <script src="/ckeditor/ckeditor.js"></script>
+  <script src="/javascripts/highlight.pack.js"></script>
 </body>
 </html>
