@@ -50,7 +50,7 @@ li {
 
 .meta-info{
 	position: absolute;
-	right: 0; 
+	right: 15px; 
 	bottom: 0;
 	margin: 10px 0;
 }
@@ -206,7 +206,9 @@ li {
 			margin-right: 5%;
 		}
 		#social-buttons {
-		position: absolute; left: 35%; bottom: 0;
+		position: absolute; 
+		left: 183px; 
+		bottom: 0;
 		margin: 3%;
 		}
 		.category-link, .tutorial-link{
@@ -340,6 +342,16 @@ code {
 }
 
 /* Tablets */
+
+@media screen and (max-width: 1134px) {
+	.tutorial-box {
+		width: 600px;
+	} 
+
+	.tutorial-content #social-buttons {
+		left: 183px;
+	}
+}
 
 @media screen and (max-width: 768px) { 
 	.tutorial-img {
