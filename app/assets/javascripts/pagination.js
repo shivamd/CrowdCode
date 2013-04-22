@@ -2,7 +2,6 @@ $(document).ready(function(){
 	var isLoadingData;
 	$(window).scroll(function(){
 		var url = $('.pagination .next_page').attr('href');
-		console.log((url && ($(window).scrollTop() > ($(document).height() - $(window).height() - 50))) && !isLoadingData );
 		if ((url && ($(window).scrollTop() > ($(document).height() - $(window).height() - 50))) && !isLoadingData ) {
 			isLoadingData = true;
 			$('.pagination').html('<img src="ajax	-loader.gif" />');
