@@ -1,6 +1,10 @@
 == CrowdCode
 Made by Shivam, Matthew, and Ryan as a final project for Dev Bootcamp.
 
+Dev Bootcamp is an immersive 9-week computer programming program.
+The program is 9 weeks of intensive training in professional web development, including Ruby on Rails, HTML5, CSS, and Javascript
+http://www.devbootcamp.com
+
 ==About
 CrowdCode is a central repository for programming tutorials.  You can post links to tutorials or write your own.  The editor supports
 text highlighting in eight languages.
