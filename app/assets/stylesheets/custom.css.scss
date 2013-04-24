@@ -50,18 +50,18 @@ li {
 
 .meta-info{
 	position: absolute;
-	right: 15px; 
+	right: 15px;
 	bottom: 0;
 	margin: 10px 0;
 }
 
 .tutorial-show .meta-info {
-	right: 0px;
+	right: -12px;
 }
 
 .vote-btns {
 	position: absolute;
-	right: 0; 
+	right: 0;
 	bottom: 0;
 	margin: 0%;
 }
@@ -210,8 +210,8 @@ li {
 			margin-right: 5%;
 		}
 		#social-buttons {
-		position: absolute; 
-		left: 183px; 
+		position: absolute;
+		left: 183px;
 		bottom: 0;
 		margin: 3%;
 		}
@@ -266,7 +266,7 @@ li {
 .tutorial-show,
 .sign-up,
 .sign-in,
-.profile-container	
+.profile-container
  {
 	background-color: #fff;
 	width: 420px;
@@ -310,7 +310,7 @@ li {
 }
 
 #tutorial_category_id {
-	width: 434px;	
+	width: 434px;
 }
 
 
@@ -319,7 +319,7 @@ li {
 		display: inline;
 		margin: 0 15px 0 5px;
 	}
-	
+
 	.add-link-radio,
 	.create-tutorial-radio {
 		input {
@@ -350,14 +350,14 @@ code {
 @media screen and (max-width: 1134px) {
 	.tutorial-box {
 		width: 600px;
-	} 
+	}
 
 	.tutorial-content #social-buttons {
 		left: 183px;
 	}
 }
 
-@media screen and (max-width: 768px) { 
+@media screen and (max-width: 768px) {
 	.tutorial-img {
 		width: 100%;
 	}
@@ -457,7 +457,7 @@ ul.dropdown-menu li a:hover {
 	display: inline;
 }
 
-.sign-up .btn.btn-success, 
+.sign-up .btn.btn-success,
 .sign-in .btn.btn-success {
 	margin-top: 20px;
 }
@@ -646,7 +646,7 @@ div.tutorial-show {
 	.btn-large {
 		font-size: 140%;
 	}
-	
+
 	.btn {
 		font-weight: bold;
 	}
@@ -662,8 +662,8 @@ div.tutorial-show {
 		margin-bottom: 0px;
 	}
 
-	input[type="password"], 
-	input[type="email"], 
+	input[type="password"],
+	input[type="email"],
 	input[type="text"] {
 		height: 35px;
 	}
@@ -770,7 +770,7 @@ div#wordcloud {
 	width: 100%;
 	height: 500px;
 	margin: 0 auto;
-	
+
 	span:nth-child(even) {
 		color: #9ed369;
 	}
