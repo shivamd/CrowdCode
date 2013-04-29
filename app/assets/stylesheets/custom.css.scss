@@ -339,10 +339,12 @@ li {
 .tutorial-show pre {
 	background-color: inherit;
 	border: inherit;
+	padding: 9.5px 0px;
 }
 
-code {
+pre code {
 	font-size: 14px;
+	border-radius: 0px;
 }
 
 /* Tablets */
