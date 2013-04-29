@@ -15,7 +15,6 @@ body {
 	font-family: Helvetica;
 }
 
-
 h1 {
 	font-size: 2em;
 }
@@ -303,10 +302,14 @@ li {
 
 	}
 	a.tutorial {
-		color: grey;
+		color: gray;
 		text-decoration: underline;
 		font-size: 128.5%;
 	}
+	p {
+		line-height: 24px;
+	}
+
 }
 
 #tutorial_category_id {
@@ -339,10 +342,12 @@ li {
 .tutorial-show pre {
 	background-color: inherit;
 	border: inherit;
+	padding: 9.5px 0px;
 }
 
-code {
+pre code {
 	font-size: 14px;
+	border-radius: 0px;
 }
 
 /* Tablets */
