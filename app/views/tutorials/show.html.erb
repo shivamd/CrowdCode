@@ -1,3 +1,12 @@
+<%= content_for :highlight_script do  %>
+  <!-- The below scripts and js are here because I do not want to load them on any other pages -->
+  <%= javascript_include_tag "highlightjs" %>
+  <!-- Sets theme syntax highlighting in code blocks -->
+  <link rel="stylesheet" href="/stylesheets/tomorrow-night.css">
+  <!-- highlight js for syntax highlighting -->
+  <script src="/javascripts/highlight.pack.js"></script>
+<% end %>
+
 <div class="tutorial-show" id="<%= @tutorial.id %>">
    <% if @tutorial.url.blank?  %>
     <%= render 'shared/ribbon' %>
@@ -7,8 +16,8 @@
   </div>
   <div class="meta-tut-show">
     <%= render 'shared/meta_info', tut: @tutorial %>
-  </div> 
-  <div class="date-and-time"> 
+  </div>
+  <div class="date-and-time">
     <div class="created-by">
       <p>By: <a href="/<%= @tutorial.user.username %>"><%=  "#{@tutorial.user.username.capitalize}"%></a> on <%= @tutorial.created_at.strftime("%B #{@tutorial.created_at.day.ordinalize}, %Y") %></p>
     </div>
@@ -24,14 +33,14 @@
   <% else %>
     <%= @markdown.html_safe  %>
   <% end %>
-  <hr />  
+  <hr />
     <% unless @tags.blank? %>
     <p>Tags:<% @tags.each do |tag| %>
             <%= link_to tag.content.capitalize, tag %>
             <% end %>
     </p>
   <% end %>
-  <div class="comments-container">  
+  <div class="comments-container">
     <%= render 'shared/comments', tutorial: @tutorial %>
     <%= render 'shared/comments_form', comment: @comment %>
   </div>
