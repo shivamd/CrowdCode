@@ -235,9 +235,6 @@ li {
 	height: 250px;
 }
 
-.tutorial-show {
-	word-wrap: break-word;
-}
 .date-and-time {
 	/*position: relative;*/
 }
@@ -289,9 +286,10 @@ li {
 }
 
 .tutorial-show {
-	width: 600px;
+	width: 680px;
 	position: relative;
 	margin-top: 50px;
+	word-wrap: break-word;
 	h1 {
 	}
 
