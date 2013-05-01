@@ -11,17 +11,17 @@ require "sprockets/railtie"
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
-  Bundler.require(*Rails.groups(:assets => %w(development test)))
+  # Bundler.require(*Rails.groups(:assets => %w(development test)))
   # If you want your assets lazily compiled in production, use this line
-  # Bundler.require(:default, :assets, Rails.env)
+  Bundler.require(:default, :assets, Rails.env)
 end
 
 module Crowdcode
   class Application < Rails::Application
 
 
-    
-    if Rails.env.development? || Rails.env.test? 
+
+    if Rails.env.development? || Rails.env.test?
       APP_ROOT = Pathname.new(File.expand_path('../../', __FILE__))
       api_keys = YAML.load_file(APP_ROOT.join('config', 'keys.yml'))
       ENV['GITHUB_KEY'] = api_keys['github_key']
