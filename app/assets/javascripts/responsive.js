@@ -1,6 +1,6 @@
 $(document).ready(function(){
-  var $categories = $('.menu-categories')
-  var $shareLinks = $('.menu-categories')
+  $categories = $('.menu-categories')
+  $shareLinks = $('.menu-share-links')
 
   $('#list-menu').on('click', showCategories);
   $('.last-box').on('click', showShareLinks);
