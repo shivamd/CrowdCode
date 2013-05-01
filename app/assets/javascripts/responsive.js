@@ -7,7 +7,7 @@ $(document).ready(function(){
 });
 
 function showCategories(e) {
-   e.preventDefault();
+  e.preventDefault();
   $shareLinks.hide();
   $categories.slideToggle();
 };
@@ -16,4 +16,4 @@ function showShareLinks(e) {
   e.preventDefault();
   $categories.hide();
   $shareLinks.slideToggle();
-});
+};
