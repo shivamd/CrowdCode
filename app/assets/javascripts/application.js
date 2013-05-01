@@ -22,7 +22,6 @@
 //= require responsive
 //= require search
 //= require tabs
-//= require touchscreen_click_patch
 //= require tutorial_bookmark
 //= require tutorial_form
 //= require vote
