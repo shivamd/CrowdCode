@@ -1,43 +1,24 @@
-  <div class="fixed-menu visible-phone">
-    <div class="box box1">
-      <i class="ss-icon"><a href="/">home</a></i>
-    </div>
+<div class="fixed-menu visible-phone">
+  <div class="box box1">
+    <i class="ss-icon"><a href="/">home</a></i>
+  </div>
 
-    <div class="box box2">
-      <i class="ss-icon"><a href="#" id="list-menu">list</a></i>
-    </div>
-    
-    <div class="menu-categories" style="display:none;">
-      <h5>Categories</h5>
-      <hr>
-      <% @categories.each do |category| %>
+  <div class="box box2">
+    <i class="ss-icon"><a href="#" id="list-menu">list</a></i>
+  </div>
+
+  <div class="menu-categories" style="display:none;">
+    <h5>Categories</h5>
+    <hr>
+    <% @categories.each do |category| %>
       <p><a href="/categories/<%= category.id%>"><%= category.name %></a></p>
-      <% end %>
-    </div>
+    <% end %>
+  </div>
 
-
-    <div class="box box3">
-      <i class="ss-icon"><a class="last-box" href="#">action</a></i>
-    </div>
-    <div class="menu-share-links" style="display:none;">
-    <%= render 'shared/addthis_toolbox', tut: @tutorial %>
-    </div>
-
-  <script>  
-    $('#list-menu').on('click', function(e){
-       e.preventDefault();
-       $('.menu-share-links').hide();
-      $('.menu-categories').slideToggle();
-    });
-    $('.last-box').on('click', function(e){
-      e.preventDefault();
-      $('.menu-categories').hide();
-      $('.menu-share-links').slideToggle();
-  }); 
-
-      // return false;
-
-    
-
-    
-  </script>
+  <div class="box box3">
+    <i class="ss-icon"><a class="last-box" href="#">action</a></i>
+  </div>
+  <div class="menu-share-links" style="display:none;">
+  <%= render 'shared/addthis_toolbox', tut: @tutorial %>
+  </div>
+</div>

@@ -19,6 +19,7 @@
 //= require frontpage_bookmark
 //= require nav
 //= require pagination
+//= require responsive
 //= require search
 //= require tabs
 //= require touchscreen_click_patch
