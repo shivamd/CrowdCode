@@ -288,7 +288,10 @@ li {
 	position: relative;
 	margin-top: 50px;
 	word-wrap: break-word;
-	h1 {
+	.tutorial-title {
+		font-size: 109%;
+		margin-top: 54px;
+		margin-bottom: 46px;
 	}
 
 	div.share-this {
